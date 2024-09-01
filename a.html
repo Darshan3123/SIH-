@@ -4,377 +4,267 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-     <script src="./tailwind.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- serach input -->
-             <!-- <div
-              class='flex xl:w-80 max-xl:w-full bg-gray-100 px-6 py-3 rounded outline outline-transparent focus-within:outline-[#007bff] focus-within:bg-transparent'>
-              <input type='text' placeholder='Search something...'
-                class='w-full text-sm bg-transparent rounded outline-none pr-2' />
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="16px"
-                class="cursor-pointer fill-gray-400">
-                <path
-                  d="m190.707 180.101-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z">
-                </path>
-              </svg>
-            </div>  -->\
-            \
-            \
-            <!-- <div class="bg-green-200 shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
-      <div class="p-6 ">
-        <h3 class="text-lg font-semibold"></h3>
-        <p class="mt-2 text-sm text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
-          arcu, at fermentum dui. Maecenas</p>
-        <button type="button"
-          class="mt-4 px-5 py-2.5 rounded-lg text-white text-sm tracking-wider border-none outline-none bg-blue-600 hover:bg-blue-700">View</button>
-      </div>
-    </div> -->
-
-
-
-    <!-- black box -->
-    <!-- <div class="flex flex-col h-screen">
-        <header class="bg-gray-100 py-4 px-6 shadow-md flex justify-between items-center">
-            <div class="flex items-center">
-                <h1 class="text-xl font-bold text-gray-800 mr-4">SchooLama</h1>
-                <input type="text" placeholder="Search..." class="rounded-md border border-gray-400 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <div class="flex">
+        <div class="bg-gray-100 p-4 w-64">
+            <h1 class="text-lg font-bold mb-4">MENU</h1>
+            <ul>
+                <li class="mb-2"><a href="#" class="hover:underline">Home</a></li>
+                <li class="mb-2"><a href="#" class="hover:underline">Teachers</a></li>
+                <li class="mb-2"><a href="#" class="hover:underline">Students</a></li>
+                <li class="mb-2"><a href="#" class="hover:underline">Parents</a></li>
+                <li class="mb-2"><a href="#" class="hover:underline">Subjects</a></li>
+                <li class="mb-2"><a href="#" class="hover:underline">Classes</a></li>
+                <li class="mb-2"><a href="#" class="hover:underline">Lessons</a></li>
+                <li class="mb-2"><a href="#" class="hover:underline">Exams</a></li>
+                <li class="mb-2"><a href="#" class="hover:underline">Assignments</a></li>
+                <li class="mb-2"><a href="#" class="hover:underline">Results</a></li>
+                <li class="mb-2"><a href="#" class="hover:underline">Attendance</a></li>
+                <li class="mb-2"><a href="#" class="hover:underline">Events</a></li>
+                <li class="mb-2"><a href="#" class="hover:underline">Messages</a></li>
+                <li class="mb-2"><a href="#" class="hover:underline">Announcements</a></li>
+                <h1 class="text-lg font-bold mb-4 mt-6">OTHER</h1>
+                <li class="mb-2"><a href="#" class="hover:underline">Profile</a></li>
+                <li class="mb-2"><a href="#" class="hover:underline">Settings</a></li>
+                <li class="mb-2"><a href="#" class="hover:underline">Logout</a></li>
+            </ul>
+        </div>
+        <div class="flex-1 p-4">
+            <div class="grid grid-cols-4 gap-4 mb-4">
+                <div class="bg-purple-100 p-4 rounded-md">
+                    <h2 class="text-lg font-bold mb-2">2024/25</h2>
+                    <p class="text-xl font-bold">1.218</p>
+                    <p class="text-gray-500">Students</p>
+                </div>
+                <div class="bg-purple-100 p-4 rounded-md">
+                    <h2 class="text-lg font-bold mb-2">2024/25</h2>
+                    <p class="text-xl font-bold">124</p>
+                    <p class="text-gray-500">Teachers</p>
+                </div>
+                <div class="bg-purple-100 p-4 rounded-md">
+                    <h2 class="text-lg font-bold mb-2">2024/25</h2>
+                    <p class="text-xl font-bold">960</p>
+                    <p class="text-gray-500">Parents</p>
+                </div>
+                <div class="bg-purple-100 p-4 rounded-md">
+                    <h2 class="text-lg font-bold mb-2">2024/25</h2>
+                    <p class="text-xl font-bold">30</p>
+                    <p class="text-gray-500">Staffs</p>
+                </div>
             </div>
-            <div class="flex items-center">
-                <button class="rounded-full bg-blue-500 p-2 text-white mr-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                        <path d="M10 0a10 10 0 100 20 10 10 0 000-20z" />
-                    </svg>
-                </button>
-                <div class="relative inline-block">
-                    <button class="rounded-full bg-gray-400 p-2 text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+            <div class="grid grid-cols-3 gap-4 mb-4">
+                <div class="bg-white p-4 rounded-md">
+                    <h2 class="text-lg font-bold mb-4">Students</h2>
+                    <div class="relative w-full h-40">
+                        <svg class="w-full h-full rounded-full" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="transparent" stroke="#ddd" stroke-width="10" />
+                            <circle cx="50" cy="50" r="40" fill="transparent" stroke="#ddd" stroke-width="10" />
+                            <circle cx="50" cy="50" r="30" fill="transparent" stroke="#ddd" stroke-width="10" />
+                            <circle cx="50" cy="50" r="20" fill="transparent" stroke="#ddd" stroke-width="10" />
+                            <circle cx="50" cy="50" r="10" fill="transparent" stroke="#ddd" stroke-width="10" />
+                            <path d="M50 50 L50 20" stroke="yellow" stroke-width="4" />
+                            <path d="M50 50 L50 80" stroke="yellow" stroke-width="4" />
+                            <path d="M50 50 L20 50" stroke="yellow" stroke-width="4" />
+                            <path d="M50 50 L80 50" stroke="yellow" stroke-width="4" />
+                            <circle cx="50" cy="50" r="10" fill="yellow" />
+                            <circle cx="50" cy="50" r="4" fill="white" />
+                            <path d="M50 50 L50 20" stroke="#ddd" stroke-width="1" />
+                            <path d="M50 50 L50 80" stroke="#ddd" stroke-width="1" />
+                            <path d="M50 50 L20 50" stroke="#ddd" stroke-width="1" />
+                            <path d="M50 50 L80 50" stroke="#ddd" stroke-width="1" />
+                            <circle cx="50" cy="50" r="20" fill="white" />
+                            <circle cx="50" cy="50" r="10" fill="#ddd" />
+                            <path d="M50 50 L50 20" stroke="#ddd" stroke-width="1" />
+                            <path d="M50 50 L50 80" stroke="#ddd" stroke-width="1" />
+                            <path d="M50 50 L20 50" stroke="#ddd" stroke-width="1" />
+                            <path d="M50 50 L80 50" stroke="#ddd" stroke-width="1" />
+                            <circle cx="50" cy="50" r="30" fill="#ddd" />
                         </svg>
-                    </button>
-                    <div class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white">
-                        <ul class="py-2">
-                            <li class="px-4 py-2 hover:bg-gray-100">John Doe</li>
-                            <li class="px-4 py-2 hover:bg-gray-100">Admin</li>
-                            <li class="px-4 py-2 hover:bg-gray-100">Logout</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <main class="flex flex-1 overflow-hidden">
-            <aside class="bg-gray-200 w-64 px-4 py-6">
-                <ul class="space-y-4">
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
-                                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
-                            </svg>
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
-                            </svg>
-                            Teachers
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7.5 5.466A5.5 5.5 0 019 10a5.5 5.5 0 015.5 5.466L12.64 9.47a3 3 0 00-4.422 0L6.36 15.466z" clip-rule="evenodd" />
-                            </svg>
-                            Students
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M5 3a2 2 0 012-2h10a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V3zm1.5 12a.5.5 0 00.5.5h7a.5.5 0 00.5-.5v-2a.5.5 0 00-.5-.5h-7a.5.5 0 00-.5.5v2z" />
-                            </svg>
-                            Parents
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a1 1 0 00-1 1v1a1 1 0 001 1h10a1 1 0 001-1V3a1 1 0 00-1-1H9zm1 8a1 1 0 001 1v1a1 1 0 001-1h1a1 1 0 001-1v-2a1 1 0 00-1-1h-1a1 1 0 00-1 1v1a1 1 0 001 1z" />
-                            </svg>
-                            Subjects
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a1 1 0 00-1 1v1a1 1 0 001 1h10a1 1 0 001-1V3a1 1 0 00-1-1H9zm1 8a1 1 0 001 1v1a1 1 0 001-1h1a1 1 0 001-1v-2a1 1 0 00-1-1h-1a1 1 0 00-1 1v1a1 1 0 001 1z" />
-                            </svg>
-                            Classes
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a1 1 0 00-1 1v1a1 1 0 001 1h10a1 1 0 001-1V3a1 1 0 00-1-1H9zm1 8a1 1 0 001 1v1a1 1 0 001-1h1a1 1 0 001-1v-2a1 1 0 00-1-1h-1a1 1 0 00-1 1v1a1 1 0 001 1z" />
-                            </svg>
-                            Lessons
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a1 1 0 00-1 1v1a1 1 0 001 1h10a1 1 0 001-1V3a1 1 0 00-1-1H9zm1 8a1 1 0 001 1v1a1 1 0 001-1h1a1 1 0 001-1v-2a1 1 0 00-1-1h-1a1 1 0 00-1 1v1a1 1 0 001 1z" />
-                            </svg>
-                            Exams
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a1 1 0 00-1 1v1a1 1 0 001 1h10a1 1 0 001-1V3a1 1 0 00-1-1H9zm1 8a1 1 0 001 1v1a1 1 0 001-1h1a1 1 0 001-1v-2a1 1 0 00-1-1h-1a1 1 0 00-1 1v1a1 1 0 001 1z" />
-                            </svg>
-                            Assignments
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a1 1 0 00-1 1v1a1 1 0 001 1h10a1 1 0 001-1V3a1 1 0 00-1-1H9zm1 8a1 1 0 001 1v1a1 1 0 001-1h1a1 1 0 001-1v-2a1 1 0 00-1-1h-1a1 1 0 00-1 1v1a1 1 0 001 1z" />
-                            </svg>
-                            Results
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a1 1 0 00-1 1v1a1 1 0 001 1h10a1 1 0 001-1V3a1 1 0 00-1-1H9zm1 8a1 1 0 001 1v1a1 1 0 001-1h1a1 1 0 001-1v-2a1 1 0 00-1-1h-1a1 1 0 00-1 1v1a1 1 0 001 1z" />
-                            </svg>
-                            Attendance
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a1 1 0 00-1 1v1a1 1 0 001 1h10a1 1 0 001-1V3a1 1 0 00-1-1H9zm1 8a1 1 0 001 1v1a1 1 0 001-1h1a1 1 0 001-1v-2a1 1 0 00-1-1h-1a1 1 0 00-1 1v1a1 1 0 001 1z" />
-                            </svg>
-                            Events
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a1 1 0 00-1 1v1a1 1 0 001 1h10a1 1 0 001-1V3a1 1 0 00-1-1H9zm1 8a1 1 0 001 1v1a1 1 0 001-1h1a1 1 0 001-1v-2a1 1 0 00-1-1h-1a1 1 0 00-1 1v1a1 1 0 001 1z" />
-                            </svg>
-                            Messages
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a1 1 0 00-1 1v1a1 1 0 001 1h10a1 1 0 001-1V3a1 1 0 00-1-1H9zm1 8a1 1 0 001 1v1a1 1 0 001-1h1a1 1 0 001-1v-2a1 1 0 00-1-1h-1a1 1 0 00-1 1v1a1 1 0 001 1z" />
-                            </svg>
-                            Announcements
-                        </a>
-                    </li>
-                    <h2 class="text-lg font-bold text-gray-800 mt-8">OTHER</h2>
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a1 1 0 00-1 1v1a1 1 0 001 1h10a1 1 0 001-1V3a1 1 0 00-1-1H9zm1 8a1 1 0 001 1v1a1 1 0 001-1h1a1 1 0 001-1v-2a1 1 0 00-1-1h-1a1 1 0 00-1 1v1a1 1 0 001 1z" />
-                            </svg>
-                            Profile
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a1 1 0 00-1 1v1a1 1 0 001 1h10a1 1 0 001-1V3a1 1 0 00-1-1H9zm1 8a1 1 0 001 1v1a1 1 0 001-1h1a1 1 0 001-1v-2a1 1 0 00-1-1h-1a1 1 0 00-1 1v1a1 1 0 001 1z" />
-                            </svg>
-                            Settings
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center text-gray-800 hover:text-blue-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a1 1 0 00-1 1v1a1 1 0 001 1h10a1 1 0 001-1V3a1 1 0 00-1-1H9zm1 8a1 1 0 001 1v1a1 1 0 001-1h1a1 1 0 001-1v-2a1 1 0 00-1-1h-1a1 1 0 00-1 1v1a1 1 0 001 1z" />
-                            </svg>
-                            Logout
-                        </a>
-                    </li>
-                </ul>
-            </aside>
-            <div class="flex flex-1 flex-col p-6 space-y-6">
-                <div class="grid grid-cols-4 gap-6">
-                    <div class="bg-yellow-200 p-6 rounded-md shadow-md flex flex-col items-center justify-center">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-2">2024/25</h2>
-                        <h3 class="text-3xl font-bold text-gray-800">1.218</h3>
-                        <p class="text-gray-600">Students</p>
-                    </div>
-                    <div class="bg-yellow-200 p-6 rounded-md shadow-md flex flex-col items-center justify-center">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-2">2024/25</h2>
-                        <h3 class="text-3xl font-bold text-gray-800">124</h3>
-                        <p class="text-gray-600">Teachers</p>
-                    </div>
-                    <div class="bg-blue-200 p-6 rounded-md shadow-md flex flex-col items-center justify-center">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-2">2024/25</h2>
-                        <h3 class="text-3xl font-bold text-gray-800">960</h3>
-                        <p class="text-gray-600">Parents</p>
-                    </div>
-                    <div class="bg-gray-200 p-6 rounded-md shadow-md flex flex-col items-center justify-center">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-2">2024/25</h2>
-                        <h3 class="text-3xl font-bold text-gray-800">30</h3>
-                        <p class="text-gray-600">Staffs</p>
-                    </div>
-                </div>
-                <div class="grid grid-cols-3 gap-6">
-                    <div class="bg-white p-6 rounded-md shadow-md flex flex-col space-y-6">
-                        <h2 class="text-lg font-bold text-gray-800">Students</h2>
-                        <div class="flex flex-col items-center space-y-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7.5 5.466A5.5 5.5 0 019 10a5.5 5.5 0 015.5 5.466L12.64 9.47a3 3 0 00-4.422 0L6.36 15.466z" clip-rule="evenodd" />
-                            </svg>
-                            <div class="flex items-center space-x-4">
-                                <div class="flex items-center space-x-2">
-                                    <div class="w-4 h-4 rounded-full bg-blue-300"></div>
-                                    <p class="text-gray-600">1,234</p>
+                        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2">
+                            <div class="flex space-x-4">
+                                <div>
+                                    <p class="text-lg font-bold">1,234</p>
+                                    <p class="text-gray-500">Boys (55%)</p>
                                 </div>
-                                <div class="flex items-center space-x-2">
-                                    <div class="w-4 h-4 rounded-full bg-yellow-300"></div>
-                                    <p class="text-gray-600">1,134</p>
+                                <div>
+                                    <p class="text-lg font-bold">1,134</p>
+                                    <p class="text-gray-500">Girls (45%)</p>
                                 </div>
                             </div>
-                            <p class="text-xs text-gray-500">Boys (55%) Girls (45%)</p>
                         </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-md shadow-md flex flex-col space-y-6">
-                        <h2 class="text-lg font-bold text-gray-800">Attendance</h2>
-                        <div class="flex items-center space-x-4 mb-4">
-                            <div class="w-4 h-4 rounded-full bg-yellow-300"></div>
-                            <p class="text-gray-600">present</p>
-                            <div class="w-4 h-4 rounded-full bg-blue-300"></div>
-                            <p class="text-gray-600">absent</p>
-                        </div>
-                        <div class="h-48">
-                            <canvas id="attendanceChart"></canvas>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-md shadow-md flex flex-col space-y-6">
-                        <h2 class="text-lg font-bold text-gray-800">Events</h2>
-                        <ul class="space-y-4">
-                            <li class="flex justify-between items-center">
-                                <div>
-                                    <h3 class="text-sm font-bold text-gray-800">Summer Camp Trip</h3>
-                                    <p class="text-xs text-gray-600">Outdoor activities and games for all students.</p>
-                                </div>
-                                <p class="text-xs text-gray-600">12:00 PM - 2:00 PM</p>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <div>
-                                    <h3 class="text-sm font-bold text-gray-800">Music Concert</h3>
-                                    <p class="text-xs text-gray-600">Classic music concert for all students and teachers.</p>
-                                </div>
-                                <p class="text-xs text-gray-600">12:00 PM - 3:00 PM</p>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <div>
-                                    <h3 class="text-sm font-bold text-gray-800">Science Fair</h3>
-                                    <p class="text-xs text-gray-600">Traditional science festival for all students.</p>
-                                </div>
-                                <p class="text-xs text-gray-600">2:00 PM - 4:00 PM</p>
-                            </li>
-                        </ul>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="bg-white p-6 rounded-md shadow-md flex flex-col space-y-6">
-                        <h2 class="text-lg font-bold text-gray-800">Finance</h2>
-                        <div class="flex items-center space-x-4 mb-4">
-                            <div class="w-4 h-4 rounded-full bg-blue-300"></div>
-                            <p class="text-gray-600">income</p>
-                            <div class="w-4 h-4 rounded-full bg-yellow-300"></div>
-                            <p class="text-gray-600">expense</p>
+                <div class="bg-white p-4 rounded-md">
+                    <h2 class="text-lg font-bold mb-4">Attendance</h2>
+                    <div class="flex items-center mb-2">
+                        <div class="w-4 h-4 rounded-full bg-yellow-400 mr-2"></div>
+                        <p class="text-gray-500">present</p>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <div class="w-4 h-4 rounded-full bg-cyan-400 mr-2"></div>
+                        <p class="text-gray-500">absent</p>
+                    </div>
+                    <div class="relative h-60">
+                        <canvas id="attendanceChart" class="w-full h-full"></canvas>
+                        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2">
+                            <div class="flex space-x-4">
+                                <p class="text-xs text-gray-500">Mon</p>
+                                <p class="text-xs text-gray-500">Tue</p>
+                                <p class="text-xs text-gray-500">Wed</p>
+                                <p class="text-xs text-gray-500">Thu</p>
+                                <p class="text-xs text-gray-500">Fri</p>
+                            </div>
                         </div>
-                        <div class="h-48">
-                            <canvas id="financeChart"></canvas>
+                        <div class="absolute right-0 top-0 transform -translate-y-1/2">
+                            <div class="flex flex-col">
+                                <p class="text-xs text-gray-500">100</p>
+                                <p class="text-xs text-gray-500">75</p>
+                                <p class="text-xs text-gray-500">50</p>
+                                <p class="text-xs text-gray-500">25</p>
+                                <p class="text-xs text-gray-500">0</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="bg-white p-6 rounded-md shadow-md flex flex-col space-y-6">
-                        <h2 class="text-lg font-bold text-gray-800">Announcements</h2>
-                        <ul class="space-y-4">
-                            <li class="flex justify-between items-center">
-                                <div>
-                                    <h3 class="text-sm font-bold text-gray-800">About 4A Math Test</h3>
-                                    <p class="text-xs text-gray-600">The Math test scheduled for 2nd January has been cancelled. A new date will be announced soon.</p>
+                </div>
+                <div class="bg-white p-4 rounded-md">
+                    <h2 class="text-lg font-bold mb-4">Finance</h2>
+                    <div class="relative h-60">
+                        <canvas id="financeChart" class="w-full h-full"></canvas>
+                        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2">
+                            <div class="flex space-x-4">
+                                <p class="text-xs text-gray-500">2700</p>
+                                <p class="text-xs text-gray-500">3600</p>
+                            </div>
+                        </div>
+                        <div class="absolute right-0 top-0 transform -translate-y-1/2">
+                            <div class="flex flex-col">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-4 h-4 rounded-full bg-blue-400 mr-2"></div>
+                                    <p class="text-gray-500">income</p>
                                 </div>
-                                <p class="text-xs text-gray-600">2025-01-02</p>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <div>
-                                    <h3 class="text-sm font-bold text-gray-800">Field Trip Rescheduled</h3>
-                                    <p class="text-xs text-gray-600">The field trip to London has been rescheduled. Please check back for the new date and further instructions.</p>
+                                <div class="flex items-center mb-2">
+                                    <div class="w-4 h-4 rounded-full bg-pink-400 mr-2"></div>
+                                    <p class="text-gray-500">expense</p>
                                 </div>
-                                <p class="text-xs text-gray-600">2025-01-05</p>
-                            </li>
-                        </ul>
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">View All</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </main>
-        <footer class="bg-gray-100 py-4 px-6 flex items-center justify-between">
-            <p class="text-gray-600">&copy; 2023 SchooLama. All rights reserved.</p>
-            <div class="flex items-center space-x-4">
-                <button class="rounded-full bg-gray-400 p-2 text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                        <path d="M10 0a10 10 0 100 20 10 10 0 000-20z" />
-                    </svg>
-                </button>
-                <button class="rounded-full bg-gray-400 p-2 text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
-                    </svg>
-                </button>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div class="bg-white p-4 rounded-md">
+                    <h2 class="text-lg font-bold mb-4">Events</h2>
+                    <div class="border border-gray-300 rounded-md p-4 mb-2">
+                        <h3 class="text-lg font-bold mb-2">Summer Camp Trip</h3>
+                        <p class="text-gray-500">Outdoor activities and games for all students.</p>
+                        <p class="text-gray-500">12:00 PM - 2:00 PM</p>
+                    </div>
+                    <div class="border border-gray-300 rounded-md p-4 mb-2">
+                        <h3 class="text-lg font-bold mb-2">Music Concert</h3>
+                        <p class="text-gray-500">Classic music concert for all students and teachers.</p>
+                        <p class="text-gray-500">12:00 PM - 3:00 PM</p>
+                    </div>
+                    <div class="border border-gray-300 rounded-md p-4 mb-2">
+                        <h3 class="text-lg font-bold mb-2">Science Fair</h3>
+                        <p class="text-gray-500">Traditional science festival for all students.</p>
+                        <p class="text-gray-500">2:00 PM - 4:00 PM</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-md">
+                    <h2 class="text-lg font-bold mb-4">Announcements</h2>
+                    <div class="border border-gray-300 rounded-md p-4">
+                        <h3 class="text-lg font-bold mb-2">About 4A Math Test</h3>
+                        <p class="text-gray-500">The Math test scheduled for 2nd January has been cancelled. A new date will be announced soon.</p>
+                        <p class="text-gray-500">2025-01-02</p>
+                    </div>
+                </div>
             </div>
-        </footer>
-    </div> -->
-
-    
-
-
-
-
-
-
-
-
-    <div class="grid grid-cols-4 gap-6">
-        <div class="bg-yellow-200 p-6 rounded-md shadow-md flex flex-col items-center justify-center">
-            <h2 class="text-2xl font-bold text-gray-800 mb-2">2024/25</h2>
-            <h3 class="text-3xl font-bold text-gray-800">1.218</h3>
-            <p class="text-gray-600">Students</p>
-        </div>
-        <div class="bg-yellow-200 p-6 rounded-md shadow-md flex flex-col items-center justify-center">
-            <h2 class="text-2xl font-bold text-gray-800 mb-2">2024/25</h2>
-            <h3 class="text-3xl font-bold text-gray-800">124</h3>
-            <p class="text-gray-600">Teachers</p>
-        </div>
-        <div class="bg-blue-200 p-6 rounded-md shadow-md flex flex-col items-center justify-center">
-            <h2 class="text-2xl font-bold text-gray-800 mb-2">2024/25</h2>
-            <h3 class="text-3xl font-bold text-gray-800">960</h3>
-            <p class="text-gray-600">Parents</p>
-        </div>
-        <div class="bg-gray-200 p-6 rounded-md shadow-md flex flex-col items-center justify-center">
-            <h2 class="text-2xl font-bold text-gray-800 mb-2">2024/25</h2>
-            <h3 class="text-3xl font-bold text-gray-800">30</h3>
-            <p class="text-gray-600">Staffs</p>
         </div>
     </div>
-        
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const attendanceChart = document.getElementById('attendanceChart').getContext('2d');
+        const financeChart = document.getElementById('financeChart').getContext('2d');
+
+        const attendanceData = {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+            datasets: [
+                {
+                    label: 'Present',
+                    data: [60, 70, 90, 70, 60],
+                    backgroundColor: 'yellow',
+                    borderColor: 'yellow',
+                    borderWidth: 1,
+                },
+                {
+                    label: 'Absent',
+                    data: [50, 60, 75, 60, 50],
+                    backgroundColor: 'cyan',
+                    borderColor: 'cyan',
+                    borderWidth: 1,
+                }
+            ]
+        };
+
+        const financeData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [
+                {
+                    label: 'Income',
+                    data: [2800, 2900, 3100, 3300, 3200, 3000, 2900, 3000, 3200, 3400, 3300, 3200],
+                    borderColor: 'blue',
+                    borderWidth: 1,
+                    fill: true,
+                    tension: 0.4,
+                },
+                {
+                    label: 'Expense',
+                    data: [2700, 2800, 2900, 3000, 2900, 2800, 2700, 2800, 2900, 3000, 2900, 2800],
+                    borderColor: 'pink',
+                    borderWidth: 1,
+                    fill: true,
+                    tension: 0.4,
+                }
+            ]
+        };
+
+        const attendanceChartInstance = new Chart(attendanceChart, {
+            type: 'bar',
+            data: attendanceData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        const financeChartInstance = new Chart(financeChart, {
+            type: 'line',
+            data: financeData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
