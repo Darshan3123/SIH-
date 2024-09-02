@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees Related Notices</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+    <nav class="bg-[#fcfcfc] shadow-lg fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10">
+        <!-- Navbar Content -->
+        <!-- Insert the full navbar HTML here -->
+    </nav>
+
+    <div class="ml-64 p-8">
+        <h1 class="text-3xl font-bold mb-6">Fees Related Notices</h1>
+
+        <!-- Add Notice Form -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold mb-4">Add New Notice</h2>
+            <form id="addNoticeForm" class="space-y-4">
+                <div>
+                    <label for="noticeTitle" class="block text-sm font-medium text-gray-700">Title</label>
+                    <input type="text" id="noticeTitle" name="noticeTitle"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                        placeholder="Notice Title">
+                </div>
+                <div>
+                    <label for="noticeContent" class="block text-sm font-medium text-gray-700">Content</label>
+                    <textarea id="noticeContent" name="noticeContent"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                        placeholder="Notice Content"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit"
+                        class="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">Add
+                        Notice</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Notices List -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4">Existing Notices</h2>
+            <ul id="noticesList" class="space-y-4">
+                <!-- Notice Item -->
+                <li class="flex justify-between items-start p-4 border-b border-gray-200">
+                    <div>
+                        <h3 class="text-lg font-semibold">Notice Title</h3>
+                        <p class="text-gray-700">This is a placeholder for the notice content related to fees.</p>
+                        <p class="text-gray-500">Date: September 2024</p>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">Edit</button>
+                        <button class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600">Delete</button>
+                    </div>
+                </li>
+                <!-- More notice items can be added here -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for handling form submission, editing, and deleting
+        document.getElementById('addNoticeForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Add your logic for adding a notice here
+        });
+
+        document.querySelectorAll('button.bg-blue-500').forEach(button => {
+            button.addEventListener('click', function () {
+                // Add your logic for editing a notice here
+            });
+        });
+
+        document.querySelectorAll('button.bg-red-500').forEach(button => {
+            button.addEventListener('click', function () {
+                // Add your logic for deleting a notice here
+            });
+        });
+    </script>
+</body>
+
+</html>
