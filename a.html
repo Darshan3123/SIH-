@@ -3,268 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./tailwind.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Responsive Form with Tailwind CSS</title>
+    <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="flex">
-        <div class="bg-gray-100 p-4 w-64">
-            <h1 class="text-lg font-bold mb-4">MENU</h1>
-            <ul>
-                <li class="mb-2"><a href="#" class="hover:underline">Home</a></li>  
-                <li class="mb-2"><a href="#" class="hover:underline">Teachers</a></li>
-                <li class="mb-2"><a href="#" class="hover:underline">Students</a></li>
-                <li class="mb-2"><a href="#" class="hover:underline">Parents</a></li>
-                <li class="mb-2"><a href="#" class="hover:underline">Subjects</a></li>
-                <li class="mb-2"><a href="#" class="hover:underline">Classes</a></li>
-                <li class="mb-2"><a href="#" class="hover:underline">Lessons</a></li>
-                <li class="mb-2"><a href="#" class="hover:underline">Exams</a></li>
-                <li class="mb-2"><a href="#" class="hover:underline">Assignments</a></li>
-                <li class="mb-2"><a href="#" class="hover:underline">Results</a></li>
-                <li class="mb-2"><a href="#" class="hover:underline">Attendance</a></li>
-                <li class="mb-2"><a href="#" class="hover:underline">Events</a></li>
-                <li class="mb-2"><a href="#" class="hover:underline">Messages</a></li>
-                <li class="mb-2"><a href="#" class="hover:underline">Announcements</a></li>
-                <h1 class="text-lg font-bold mb-4 mt-6">OTHER</h1>
-                <li class="mb-2"><a href="#" class="hover:underline">Profile</a></li>
-                <li class="mb-2"><a href="#" class="hover:underline">Settings</a></li>
-                <li class="mb-2"><a href="#" class="hover:underline">Logout</a></li>
-            </ul>
-        </div>
-        <div class="flex-1 p-4">
-            <div class="grid grid-cols-4 gap-4 mb-4">
-                <div class="bg-purple-100 p-4 rounded-md">
-                    <h2 class="text-lg font-bold mb-2">2024/25</h2>
-                    <p class="text-xl font-bold">1.218</p>
-                    <p class="text-gray-500">Students</p>
-                </div>
-                <div class="bg-purple-100 p-4 rounded-md">
-                    <h2 class="text-lg font-bold mb-2">2024/25</h2>
-                    <p class="text-xl font-bold">124</p>
-                    <p class="text-gray-500">Teachers</p>
-                </div>
-                <div class="bg-purple-100 p-4 rounded-md">
-                    <h2 class="text-lg font-bold mb-2">2024/25</h2>
-                    <p class="text-xl font-bold">960</p>
-                    <p class="text-gray-500">Parents</p>
-                </div>
-                <div class="bg-purple-100 p-4 rounded-md">
-                    <h2 class="text-lg font-bold mb-2">2024/25</h2>
-                    <p class="text-xl font-bold">30</p>
-                    <p class="text-gray-500">Staffs</p>
-                </div>
-            </div>
-            <div class="grid grid-cols-3 gap-4 mb-4">
-                <div class="bg-white p-4 rounded-md">
-                    <h2 class="text-lg font-bold mb-4">Students</h2>
-                    <div class="relative w-full h-40">
-                        <svg class="w-full h-full rounded-full" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" fill="transparent" stroke="#ddd" stroke-width="10" />
-                            <circle cx="50" cy="50" r="40" fill="transparent" stroke="#ddd" stroke-width="10" />
-                            <circle cx="50" cy="50" r="30" fill="transparent" stroke="#ddd" stroke-width="10" />
-                            <circle cx="50" cy="50" r="20" fill="transparent" stroke="#ddd" stroke-width="10" />
-                            <circle cx="50" cy="50" r="10" fill="transparent" stroke="#ddd" stroke-width="10" />
-                            <path d="M50 50 L50 20" stroke="yellow" stroke-width="4" />
-                            <path d="M50 50 L50 80" stroke="yellow" stroke-width="4" />
-                            <path d="M50 50 L20 50" stroke="yellow" stroke-width="4" />
-                            <path d="M50 50 L80 50" stroke="yellow" stroke-width="4" />
-                            <circle cx="50" cy="50" r="10" fill="yellow" />
-                            <circle cx="50" cy="50" r="4" fill="white" />
-                            <path d="M50 50 L50 20" stroke="#ddd" stroke-width="1" />
-                            <path d="M50 50 L50 80" stroke="#ddd" stroke-width="1" />
-                            <path d="M50 50 L20 50" stroke="#ddd" stroke-width="1" />
-                            <path d="M50 50 L80 50" stroke="#ddd" stroke-width="1" />
-                            <circle cx="50" cy="50" r="20" fill="white" />
-                            <circle cx="50" cy="50" r="10" fill="#ddd" />
-                            <path d="M50 50 L50 20" stroke="#ddd" stroke-width="1" />
-                            <path d="M50 50 L50 80" stroke="#ddd" stroke-width="1" />
-                            <path d="M50 50 L20 50" stroke="#ddd" stroke-width="1" />
-                            <path d="M50 50 L80 50" stroke="#ddd" stroke-width="1" />
-                            <circle cx="50" cy="50" r="30" fill="#ddd" />
-                        </svg>
-                        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2">
-                            <div class="flex space-x-4">
-                                <div>
-                                    <p class="text-lg font-bold">1,234</p>
-                                    <p class="text-gray-500">Boys (55%)</p>
-                                </div>
-                                <div>
-                                    <p class="text-lg font-bold">1,134</p>
-                                    <p class="text-gray-500">Girls (45%)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white p-4 rounded-md">
-                    <h2 class="text-lg font-bold mb-4">Attendance</h2>
-                    <div class="flex items-center mb-2">
-                        <div class="w-4 h-4 rounded-full bg-yellow-400 mr-2"></div>
-                        <p class="text-gray-500">present</p>
-                    </div>
-                    <div class="flex items-center mb-2">
-                        <div class="w-4 h-4 rounded-full bg-cyan-400 mr-2"></div>
-                        <p class="text-gray-500">absent</p>
-                    </div>
-                    <div class="relative h-60">
-                        <canvas id="attendanceChart" class="w-full h-full"></canvas>
-                        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2">
-                            <div class="flex space-x-4">
-                                <p class="text-xs text-gray-500">Mon</p>
-                                <p class="text-xs text-gray-500">Tue</p>
-                                <p class="text-xs text-gray-500">Wed</p>
-                                <p class="text-xs text-gray-500">Thu</p>
-                                <p class="text-xs text-gray-500">Fri</p>
-                            </div>
-                        </div>
-                        <div class="absolute right-0 top-0 transform -translate-y-1/2">
-                            <div class="flex flex-col">
-                                <p class="text-xs text-gray-500">100</p>
-                                <p class="text-xs text-gray-500">75</p>
-                                <p class="text-xs text-gray-500">50</p>
-                                <p class="text-xs text-gray-500">25</p>
-                                <p class="text-xs text-gray-500">0</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white p-4 rounded-md">
-                    <h2 class="text-lg font-bold mb-4">Finance</h2>
-                    <div class="relative h-60">
-                        <canvas id="financeChart" class="w-full h-full"></canvas>
-                        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2">
-                            <div class="flex space-x-4">
-                                <p class="text-xs text-gray-500">2700</p>
-                                <p class="text-xs text-gray-500">3600</p>
-                            </div>
-                        </div>
-                        <div class="absolute right-0 top-0 transform -translate-y-1/2">
-                            <div class="flex flex-col">
-                                <div class="flex items-center mb-2">
-                                    <div class="w-4 h-4 rounded-full bg-blue-400 mr-2"></div>
-                                    <p class="text-gray-500">income</p>
-                                </div>
-                                <div class="flex items-center mb-2">
-                                    <div class="w-4 h-4 rounded-full bg-pink-400 mr-2"></div>
-                                    <p class="text-gray-500">expense</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-4 mb-4">
-                <div class="bg-white p-4 rounded-md">
-                    <h2 class="text-lg font-bold mb-4">Events</h2>
-                    <div class="border border-gray-300 rounded-md p-4 mb-2">
-                        <h3 class="text-lg font-bold mb-2">Summer Camp Trip</h3>
-                        <p class="text-gray-500">Outdoor activities and games for all students.</p>
-                        <p class="text-gray-500">12:00 PM - 2:00 PM</p>
-                    </div>
-                    <div class="border border-gray-300 rounded-md p-4 mb-2">
-                        <h3 class="text-lg font-bold mb-2">Music Concert</h3>
-                        <p class="text-gray-500">Classic music concert for all students and teachers.</p>
-                        <p class="text-gray-500">12:00 PM - 3:00 PM</p>
-                    </div>
-                    <div class="border border-gray-300 rounded-md p-4 mb-2">
-                        <h3 class="text-lg font-bold mb-2">Science Fair</h3>
-                        <p class="text-gray-500">Traditional science festival for all students.</p>
-                        <p class="text-gray-500">2:00 PM - 4:00 PM</p>
-                    </div>
-                </div>
-                <div class="bg-white p-4 rounded-md">
-                    <h2 class="text-lg font-bold mb-4">Announcements</h2>
-                    <div class="border border-gray-300 rounded-md p-4">
-                        <h3 class="text-lg font-bold mb-2">About 4A Math Test</h3>
-                        <p class="text-gray-500">The Math test scheduled for 2nd January has been cancelled. A new date will be announced soon.</p>
-                        <p class="text-gray-500">2025-01-02</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        const attendanceChart = document.getElementById('attendanceChart').getContext('2d');
-        const financeChart = document.getElementById('financeChart').getContext('2d');
+        function addDetailsToTable(event) {
+            event.preventDefault(); // Prevent form submission and page reload
 
-        const attendanceData = {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-            datasets: [
-                {
-                    label: 'Present',
-                    data: [60, 70, 90, 70, 60],
-                    backgroundColor: 'yellow',
-                    borderColor: 'yellow',
-                    borderWidth: 1,
-                },
-                {
-                    label: 'Absent',
-                    data: [50, 60, 75, 60, 50],
-                    backgroundColor: 'cyan',
-                    borderColor: 'cyan',
-                    borderWidth: 1,
-                }
-            ]
-        };
+            // Get form data
+            const firstName = document.getElementById('firstName').value;
+            const midName = document.getElementById('midName').value;
+            const lastName = document.getElementById('lastName').value;
+            const dob = document.getElementById('dob').value;
+            const email = document.getElementById('email').value;
+            const mobile = document.getElementById('mobile').value;
+            const parentsMobile = document.getElementById('parentsMobile').value;
+            const address = document.getElementById('address').value;
+            const password = document.getElementById('password').value;
 
-        const financeData = {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-            datasets: [
-                {
-                    label: 'Income',
-                    data: [2800, 2900, 3100, 3300, 3200, 3000, 2900, 3000, 3200, 3400, 3300, 3200],
-                    borderColor: 'blue',
-                    borderWidth: 1,
-                    fill: true,
-                    tension: 0.4,
-                },
-                {
-                    label: 'Expense',
-                    data: [2700, 2800, 2900, 3000, 2900, 2800, 2700, 2800, 2900, 3000, 2900, 2800],
-                    borderColor: 'pink',
-                    borderWidth: 1,
-                    fill: true,
-                    tension: 0.4,
-                }
-            ]
-        };
+            // Create a new row
+            const table = document.getElementById('detailsTableBody');
+            const newRow = table.insertRow();
 
-        const attendanceChartInstance = new Chart(attendanceChart, {
-            type: 'bar',
-            data: attendanceData,
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                }
-            }
-        });
+            // Add cells and data
+            newRow.innerHTML = `
+                <td class="border px-4 py-2">${firstName}</td>
+                <td class="border px-4 py-2">${midName}</td>
+                <td class="border px-4 py-2">${lastName}</td>
+                <td class="border px-4 py-2">${dob}</td>
+                <td class="border px-4 py-2">${email}</td>
+                <td class="border px-4 py-2">${mobile}</td>
+                <td class="border px-4 py-2">${parentsMobile}</td>
+                <td class="border px-4 py-2">${address}</td>
+                <td class="border px-4 py-2">${password}</td>
+            `;
 
-        const financeChartInstance = new Chart(financeChart, {
-            type: 'line',
-            data: financeData,
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                }
-            }
-        });
+            // Reset the form after submission
+            document.getElementById('registrationForm').reset();
+        }
     </script>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full mb-8">
+        <h2 class="text-2xl font-bold mb-6 text-center">Registration Form</h2>
+        <form id="registrationForm" class="space-y-4" onsubmit="addDetailsToTable(event)">
+            <!-- Row 1: First Name, Middle Name, Last Name -->
+            <div class="flex flex-wrap -mx-2">
+                <!-- First Name -->
+                <div class="w-full md:w-1/3 px-2 mb-4">
+                    <label for="firstName" class="block text-sm font-medium text-gray-700">First Name</label>
+                    <input type="text" id="firstName" name="firstName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="First Name">
+                </div>
+
+                <!-- Middle Name -->
+                <div class="w-full md:w-1/3 px-2 mb-4">
+                    <label for="midName" class="block text-sm font-medium text-gray-700">Middle Name</label>
+                    <input type="text" id="midName" name="midName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Middle Name">
+                </div>
+
+                <!-- Last Name -->
+                <div class="w-full md:w-1/3 px-2 mb-4">
+                    <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Last Name">
+                </div>
+            </div>
+
+            <!-- Row 2: Date of Birth, Email -->
+            <div class="flex flex-wrap -mx-2">
+                <!-- Date of Birth -->
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <label for="dob" class="block text-sm font-medium text-gray-700">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+
+                <!-- Email -->
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Email">
+                </div>
+            </div>
+
+            <!-- Row 3: Mobile, Parent's Mobile -->
+            <div class="flex flex-wrap -mx-2">
+                <!-- Mobile -->
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <label for="mobile" class="block text-sm font-medium text-gray-700">Mobile</label>
+                    <input type="tel" id="mobile" name="mobile" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Mobile Number">
+                </div>
+
+                <!-- Parent's Mobile -->
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <label for="parentsMobile" class="block text-sm font-medium text-gray-700">Parent's Mobile</label>
+                    <input type="tel" id="parentsMobile" name="parentsMobile" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Parent's Mobile Number">
+                </div>
+            </div>
+
+            <!-- Row 4: Address -->
+            <div class="flex flex-wrap -mx-2">
+                <!-- Address -->
+                <div class="w-full px-2 mb-4">
+                    <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
+                    <textarea id="address" name="address" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Your Address"></textarea>
+                </div>
+            </div>
+
+            <!-- Row 5: Password -->
+            <div class="flex flex-wrap -mx-2">
+                <!-- Password -->
+                <div class="w-full px-2 mb-4">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" name="password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Password">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Details Table -->
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-4xl w-full">
+        <h2 class="text-2xl font-bold mb-6 text-center">Details Table</h2>
+        <table class="min-w-full bg-white">
+            <thead>
+                <tr>
+                    <th class="border px-4 py-2">First Name</th>
+                    <th class="border px-4 py-2">Middle Name</th>
+                    <th class="border px-4 py-2">Last Name</th>
+                    <th class="border px-4 py-2">DOB</th>
+                    <th class="border px-4 py-2">Email</th>
+                    <th class="border px-4 py-2">Mobile</th>
+                    <th class="border px-4 py-2">Parent's Mobile</th>
+                    <th class="border px-4 py-2">Address</th>
+                    <th class="border px-4 py-2">Password</th>
+                </tr>
+            </thead>
+            <tbody id="detailsTableBody">
+                <!-- Dynamically added rows will go here -->
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
