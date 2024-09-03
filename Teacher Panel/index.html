@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://necolas.github.io/normalize.css/8.0.1/normalize.css"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    .main-content {
+      margin-left: 16rem;
+      /* Width of the sidebar */
+      padding: 1rem;
+      margin-top: 5rem;
+      /* Height of the header */
+    }
+  </style>
+</head>
+
+<header class="flex justify-between items-center py-4   border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
+  <div class="flex items-center w-full max-w-4xl mx-auto px-4">
+    <!-- Search bar -->
+    <input type="search" placeholder="Search"
+      class="w-full py-2 pl-10 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600">
+  </div>
+  <div class="flex items-center ml-4">
+    <!-- Profile icon -->
+    <img src="profile-icon.png" alt="Profile Icon" class="w-8 h-8 rounded-full object-cover">
+  </div>
+</header>
+
+<!-- side bar -->
+<nav class="bg-[#fcfcfc]   fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10">
+  SCMS
+  <ul class="mt-8">
+    <li>
+      <a href="index.html"
+        class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+        <span>Dashboard</span>
+      </a>
+    </li>
+
+  </ul>
+  <!-- Documents Section -->
+  <div class="mt-6">
+    <div class="flex cursor-pointer group">
+      <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Documents</h6>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+        viewBox="0 0 451.847 451.847">
+        <path
+          d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+          data-original="#000000" />
+      </svg>
+    </div>
+
+    <ul class="space-y-1 mt-2 pl-4 hidden">
+      <li>
+        <a href="add_teacher.html"
+          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span>Time Table</span>
+        </a>
+      </li>
+      <li>
+        <a href="teachers.html"
+          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span>Materials</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- Students Section -->
+  <div class="mt-6">
+    <div class="flex cursor-pointer group">
+      <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Students</h6>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+        viewBox="0 0 451.847 451.847">
+        <path
+          d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+          data-original="#000000" />
+      </svg>
+    </div>
+
+    <ul class="space-y-1 mt-2 pl-4 hidden">
+      <li>
+        <a href="add_student.html"
+          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span>Attendence</span>
+        </a>
+      </li>
+      <li>
+        <a href="students.html"
+          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span>All Students</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- Assignment Section -->
+  <div class="mt-6">
+    <div class="flex cursor-pointer group">
+      <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Assignments</h6>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+        viewBox="0 0 451.847 451.847">
+        <path
+          d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+          data-original="#000000" />
+      </svg>
+    </div>
+
+    <ul class="space-y-1 mt-2 pl-4 hidden">
+      <li>
+        <a href="add_student.html"
+          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span>Add Assignment</span>
+        </a>
+      </li>
+      <li>
+        <a href="students.html"
+          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span>Status</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- Quiz Section -->
+  <div class="mt-6">
+    <div class="flex cursor-pointer group">
+      <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Quiz</h6>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+        viewBox="0 0 451.847 451.847">
+        <path
+          d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+          data-original="#000000" />
+      </svg>
+    </div>
+
+    <ul class="space-y-1 mt-2 pl-4 hidden">
+      <li>
+        <a href="add_student.html"
+          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span>Add Quiz</span>
+        </a>
+      </li>
+      <li>
+        <a href="students.html"
+          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span>Result</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- Notices Section -->
+  <div class="mt-6">
+    <div class="flex cursor-pointer group">
+      <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Notices</h6>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+        viewBox="0 0 451.847 451.847">
+        <path
+          d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+          data-original="#000000" />
+      </svg>
+    </div>
+
+    <ul class="space-y-1 mt-2 pl-4 hidden">
+      <li>
+        <a href="fees_notices.html"
+          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span>Fees Related</span>
+        </a>
+      </li>
+      <li>
+        <a href="events_notices.html"
+          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span>Events</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="mt-6">
+    <div class="flex cursor-pointer group">
+      <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Actions</h6>
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black -rotate-90"
+        viewBox="0 0 451.847 451.847">
+        <path
+          d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+          data-original="#000000" />
+      </svg> -->
+    </div>
+
+    <ul class="space-y-1 mt-2 pl-4">
+      <li>
+        <a href=""
+          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span>Profile</span>
+        </a>
+      </li>
+      <li>
+        <a href=""
+          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span>Logout</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<body class="main-content">
+
+  <main> </main>
+
+</body>
+
+<script>
+  document.querySelectorAll('.group').forEach(group => {
+    group.addEventListener('click', () => {
+      const subMenu = group.nextElementSibling;
+      subMenu.classList.toggle('hidden');
+    });
+  });
+</script>
+
+</html>
