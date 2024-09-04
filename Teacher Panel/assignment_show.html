@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Panel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://necolas.github.io/normalize.css/8.0.1/normalize.css"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    .main-content {
+      margin-left: 16rem;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    .chart-container {
+      position: relative;
+      height: 247px;
+    }
+  </style>
+</head>
+
+<body class="main-content">
+  <header class="flex justify-between items-center py-4   border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
+    <div class="flex items-center w-full max-w-4xl mx-auto px-4">
+      <!-- Search bar -->
+      <input type="search" placeholder="Search"
+        class="w-full py-2 pl-10 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600">
+    </div>
+    <div class="flex items-center ml-4">
+      <!-- Profile icon -->
+      <img src="profile-icon.png" alt="Profile Icon" class="w-8 h-8 rounded-full object-cover">
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <nav class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10">
+    SCMS
+    <ul class="mt-8">
+      <li>
+        <a href="index.html"
+          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span>Dashboard</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Documents Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Documents</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
+      </div>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href="time-table.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Time Table</span>
+          </a>
+        </li>
+        <li>
+          <a href="doc.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Materials</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Students Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Students</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
+      </div>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href="take_attendance.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Take Attendance</span>
+          </a>
+        </li>
+        <li>
+          <a href="see_attendance.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>See Attendance</span>
+          </a>
+        </li>
+        <li>
+          <a href="students.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>All Students</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Assignment Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Assignments</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
+      </div>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href="add_assignment.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Add Assignment</span>
+          </a>
+        </li>
+        <li>
+          <a href="assignments.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Status</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Quiz Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Quiz</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
+      </div>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href="add_quiz.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Add Quiz</span>
+          </a>
+        </li>
+        <li>
+          <a href="quizzes.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Quizzes List</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Notices Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Notices</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
+      </div>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href="add_notice.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Add Notice</span>
+          </a>
+        </li>
+        <li>
+          <a href="notices.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>All Notices</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Actions Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Actions</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
+      </div>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href="profile.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="logout.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <body>
+    <main>
+        <div class="font-sans overflow-x-auto">
+            <table class="min-w-full bg-white">
+              <thead class="bg-gray-100 whitespace-nowrap">
+                <tr>
+                  <th class="p-4 text-left text-xs font-semibold text-gray-800">
+                  Enroll ment 
+                  </th>
+                  <th class="p-4 text-left text-xs font-semibold text-gray-800">
+                    Name
+                  </th>
+                  <th class="p-4 text-left text-xs font-semibold text-gray-800">
+                    Document
+                  </th>
+                  <th class="p-4 text-left text-xs font-semibold text-gray-800">
+                    Submit date
+                  </th>
+                  <th class="p-4 text-left text-xs font-semibold text-gray-800">
+                   Status
+                  </th>
+                  <th class="p-4 text-left text-xs font-semibold text-gray-800">
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+      
+              <tbody class="whitespace-nowrap">
+                <tr class="hover:bg-gray-50">
+                  <td class="p-4 text-[15px] text-gray-800">
+                   MCA04025
+                  </td>
+                  <td class="p-4 text-[15px] text-gray-800">
+                    Darshan
+                  </td>
+                  <td class="p-4 text-[15px] text-gray-800">
+                  <a href="./a.jpg">assignmentssssssssss</a>
+                  </td>
+                  <td class="p-4 text-[15px] text-gray-800">
+                    2022-05-15
+                  </td>
+                  <td class="p-4">
+                    <button class="mr-4" title="Edit">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 fill-blue-500 hover:fill-blue-700"
+                        viewBox="0 0 348.882 348.882">
+                        <path
+                          d="m333.988 11.758-.42-.383A43.363 43.363 0 0 0 304.258 0a43.579 43.579 0 0 0-32.104 14.153L116.803 184.231a14.993 14.993 0 0 0-3.154 5.37l-18.267 54.762c-2.112 6.331-1.052 13.333 2.835 18.729 3.918 5.438 10.23 8.685 16.886 8.685h.001c2.879 0 5.693-.592 8.362-1.76l52.89-23.138a14.985 14.985 0 0 0 5.063-3.626L336.771 73.176c16.166-17.697 14.919-45.247-2.783-61.418zM130.381 234.247l10.719-32.134.904-.99 20.316 18.556-.904.99-31.035 13.578zm184.24-181.304L182.553 197.53l-20.316-18.556L294.305 34.386c2.583-2.828 6.118-4.386 9.954-4.386 3.365 0 6.588 1.252 9.082 3.53l.419.383c5.484 5.009 5.87 13.546.861 19.03z"
+                          data-original="#000000" />
+                        <path
+                          d="M303.85 138.388c-8.284 0-15 6.716-15 15v127.347c0 21.034-17.113 38.147-38.147 38.147H68.904c-21.035 0-38.147-17.113-38.147-38.147V100.413c0-21.034 17.113-38.147 38.147-38.147h131.587c8.284 0 15-6.716 15-15s-6.716-15-15-15H68.904C31.327 32.266.757 62.837.757 100.413v180.321c0 37.576 30.571 68.147 68.147 68.147h181.798c37.576 0 68.147-30.571 68.147-68.147V153.388c.001-8.284-6.715-15-14.999-15z"
+                          data-original="#000000" />
+                      </svg>
+                    </button>
+                    <button class="mr-4" title="Delete">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 fill-red-500 hover:fill-red-700" viewBox="0 0 24 24">
+                        <path
+                          d="M19 7a1 1 0 0 0-1 1v11.191A1.92 1.92 0 0 1 15.99 21H8.01A1.92 1.92 0 0 1 6 19.191V8a1 1 0 0 0-2 0v11.191A3.918 3.918 0 0 0 8.01 23h7.98A3.918 3.918 0 0 0 20 19.191V8a1 1 0 0 0-1-1Zm1-3h-4V2a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v2H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2ZM10 4V3h4v1Z"
+                          data-original="#000000" />
+                        <path d="M11 17v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Zm4 0v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Z"
+                          data-original="#000000" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+      
+                <tr class="hover:bg-gray-50">
+                    <td class="p-4 text-[15px] text-gray-800">
+                     MCA04025
+                    </td>
+                    <td class="p-4 text-[15px] text-gray-800">
+                     kush
+                    </td>
+                    <td class="p-4 text-[15px] text-gray-800">
+                     assment1.jpg
+                    </td>
+                    <td class="p-4 text-[15px] text-gray-800">
+                      2022-05-15
+                    </td>
+                    <td class="p-4">
+                      <button class="mr-4" title="Edit">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 fill-blue-500 hover:fill-blue-700"
+                          viewBox="0 0 348.882 348.882">
+                          <path
+                            d="m333.988 11.758-.42-.383A43.363 43.363 0 0 0 304.258 0a43.579 43.579 0 0 0-32.104 14.153L116.803 184.231a14.993 14.993 0 0 0-3.154 5.37l-18.267 54.762c-2.112 6.331-1.052 13.333 2.835 18.729 3.918 5.438 10.23 8.685 16.886 8.685h.001c2.879 0 5.693-.592 8.362-1.76l52.89-23.138a14.985 14.985 0 0 0 5.063-3.626L336.771 73.176c16.166-17.697 14.919-45.247-2.783-61.418zM130.381 234.247l10.719-32.134.904-.99 20.316 18.556-.904.99-31.035 13.578zm184.24-181.304L182.553 197.53l-20.316-18.556L294.305 34.386c2.583-2.828 6.118-4.386 9.954-4.386 3.365 0 6.588 1.252 9.082 3.53l.419.383c5.484 5.009 5.87 13.546.861 19.03z"
+                            data-original="#000000" />
+                          <path
+                            d="M303.85 138.388c-8.284 0-15 6.716-15 15v127.347c0 21.034-17.113 38.147-38.147 38.147H68.904c-21.035 0-38.147-17.113-38.147-38.147V100.413c0-21.034 17.113-38.147 38.147-38.147h131.587c8.284 0 15-6.716 15-15s-6.716-15-15-15H68.904C31.327 32.266.757 62.837.757 100.413v180.321c0 37.576 30.571 68.147 68.147 68.147h181.798c37.576 0 68.147-30.571 68.147-68.147V153.388c.001-8.284-6.715-15-14.999-15z"
+                            data-original="#000000" />
+                        </svg>
+                      </button>
+                      <button class="mr-4" title="Delete">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 fill-red-500 hover:fill-red-700" viewBox="0 0 24 24">
+                          <path
+                            d="M19 7a1 1 0 0 0-1 1v11.191A1.92 1.92 0 0 1 15.99 21H8.01A1.92 1.92 0 0 1 6 19.191V8a1 1 0 0 0-2 0v11.191A3.918 3.918 0 0 0 8.01 23h7.98A3.918 3.918 0 0 0 20 19.191V8a1 1 0 0 0-1-1Zm1-3h-4V2a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v2H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2ZM10 4V3h4v1Z"
+                            data-original="#000000" />
+                          <path d="M11 17v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Zm4 0v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Z"
+                            data-original="#000000" />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+      
+                  <tr class="hover:bg-gray-50">
+                    <td class="p-4 text-[15px] text-gray-800">
+                     MCA04025
+                    </td>
+                    <td class="p-4 text-[15px] text-gray-800">
+                      Umang
+                    </td>
+                    <td class="p-4 text-[15px] text-gray-800">
+                     assment1.jpg
+                    </td>
+                    <td class="p-4 text-[15px] text-gray-800">
+                      2022-05-15
+                    </td>
+                    <td class="p-4">
+                      <button class="mr-4" title="Edit">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 fill-blue-500 hover:fill-blue-700"
+                          viewBox="0 0 348.882 348.882">
+                          <path
+                            d="m333.988 11.758-.42-.383A43.363 43.363 0 0 0 304.258 0a43.579 43.579 0 0 0-32.104 14.153L116.803 184.231a14.993 14.993 0 0 0-3.154 5.37l-18.267 54.762c-2.112 6.331-1.052 13.333 2.835 18.729 3.918 5.438 10.23 8.685 16.886 8.685h.001c2.879 0 5.693-.592 8.362-1.76l52.89-23.138a14.985 14.985 0 0 0 5.063-3.626L336.771 73.176c16.166-17.697 14.919-45.247-2.783-61.418zM130.381 234.247l10.719-32.134.904-.99 20.316 18.556-.904.99-31.035 13.578zm184.24-181.304L182.553 197.53l-20.316-18.556L294.305 34.386c2.583-2.828 6.118-4.386 9.954-4.386 3.365 0 6.588 1.252 9.082 3.53l.419.383c5.484 5.009 5.87 13.546.861 19.03z"
+                            data-original="#000000" />
+                          <path
+                            d="M303.85 138.388c-8.284 0-15 6.716-15 15v127.347c0 21.034-17.113 38.147-38.147 38.147H68.904c-21.035 0-38.147-17.113-38.147-38.147V100.413c0-21.034 17.113-38.147 38.147-38.147h131.587c8.284 0 15-6.716 15-15s-6.716-15-15-15H68.904C31.327 32.266.757 62.837.757 100.413v180.321c0 37.576 30.571 68.147 68.147 68.147h181.798c37.576 0 68.147-30.571 68.147-68.147V153.388c.001-8.284-6.715-15-14.999-15z"
+                            data-original="#000000" />
+                        </svg>
+                      </button>
+                      <button class="mr-4" title="Delete">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 fill-red-500 hover:fill-red-700" viewBox="0 0 24 24">
+                          <path
+                            d="M19 7a1 1 0 0 0-1 1v11.191A1.92 1.92 0 0 1 15.99 21H8.01A1.92 1.92 0 0 1 6 19.191V8a1 1 0 0 0-2 0v11.191A3.918 3.918 0 0 0 8.01 23h7.98A3.918 3.918 0 0 0 20 19.191V8a1 1 0 0 0-1-1Zm1-3h-4V2a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v2H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2ZM10 4V3h4v1Z"
+                            data-original="#000000" />
+                          <path d="M11 17v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Zm4 0v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Z"
+                            data-original="#000000" />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+      
+                  <tr class="hover:bg-gray-50">
+                    <td class="p-4 text-[15px] text-gray-800">
+                     MCA04025
+                    </td>
+                    <td class="p-4 text-[15px] text-gray-800">
+                     Dhurv
+                    </td>
+                    <td class="p-4 text-[15px] text-gray-800">
+                     assment1.jpg
+                    </td>
+                    <td class="p-4 text-[15px] text-gray-800">
+                      2022-05-15
+                    </td>
+                    <td class="p-4">
+                      <button class="mr-4" title="Edit">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 fill-blue-500 hover:fill-blue-700"
+                          viewBox="0 0 348.882 348.882">
+                          <path
+                            d="m333.988 11.758-.42-.383A43.363 43.363 0 0 0 304.258 0a43.579 43.579 0 0 0-32.104 14.153L116.803 184.231a14.993 14.993 0 0 0-3.154 5.37l-18.267 54.762c-2.112 6.331-1.052 13.333 2.835 18.729 3.918 5.438 10.23 8.685 16.886 8.685h.001c2.879 0 5.693-.592 8.362-1.76l52.89-23.138a14.985 14.985 0 0 0 5.063-3.626L336.771 73.176c16.166-17.697 14.919-45.247-2.783-61.418zM130.381 234.247l10.719-32.134.904-.99 20.316 18.556-.904.99-31.035 13.578zm184.24-181.304L182.553 197.53l-20.316-18.556L294.305 34.386c2.583-2.828 6.118-4.386 9.954-4.386 3.365 0 6.588 1.252 9.082 3.53l.419.383c5.484 5.009 5.87 13.546.861 19.03z"
+                            data-original="#000000" />
+                          <path
+                            d="M303.85 138.388c-8.284 0-15 6.716-15 15v127.347c0 21.034-17.113 38.147-38.147 38.147H68.904c-21.035 0-38.147-17.113-38.147-38.147V100.413c0-21.034 17.113-38.147 38.147-38.147h131.587c8.284 0 15-6.716 15-15s-6.716-15-15-15H68.904C31.327 32.266.757 62.837.757 100.413v180.321c0 37.576 30.571 68.147 68.147 68.147h181.798c37.576 0 68.147-30.571 68.147-68.147V153.388c.001-8.284-6.715-15-14.999-15z"
+                            data-original="#000000" />
+                        </svg>
+                      </button>
+                      <button class="mr-4" title="Delete">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 fill-red-500 hover:fill-red-700" viewBox="0 0 24 24">
+                          <path
+                            d="M19 7a1 1 0 0 0-1 1v11.191A1.92 1.92 0 0 1 15.99 21H8.01A1.92 1.92 0 0 1 6 19.191V8a1 1 0 0 0-2 0v11.191A3.918 3.918 0 0 0 8.01 23h7.98A3.918 3.918 0 0 0 20 19.191V8a1 1 0 0 0-1-1Zm1-3h-4V2a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v2H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2ZM10 4V3h4v1Z"
+                            data-original="#000000" />
+                          <path d="M11 17v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Zm4 0v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Z"
+                            data-original="#000000" />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+      
+                  <tr class="hover:bg-gray-50">
+                    <td class="p-4 text-[15px] text-gray-800">
+                     MCA04025
+                    </td>
+                    <td class="p-4 text-[15px] text-gray-800">
+                     Dhavl
+                    </td>
+                    <td class="p-4 text-[15px] text-gray-800">
+                     assment1.jpg
+                    </td>
+                    <td class="p-4 text-[15px] text-gray-800">
+                      2022-05-15
+                    </td>
+                    <td class="p-4">
+                      <button class="mr-4" title="Edit">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 fill-blue-500 hover:fill-blue-700"
+                          viewBox="0 0 348.882 348.882">
+                          <path
+                            d="m333.988 11.758-.42-.383A43.363 43.363 0 0 0 304.258 0a43.579 43.579 0 0 0-32.104 14.153L116.803 184.231a14.993 14.993 0 0 0-3.154 5.37l-18.267 54.762c-2.112 6.331-1.052 13.333 2.835 18.729 3.918 5.438 10.23 8.685 16.886 8.685h.001c2.879 0 5.693-.592 8.362-1.76l52.89-23.138a14.985 14.985 0 0 0 5.063-3.626L336.771 73.176c16.166-17.697 14.919-45.247-2.783-61.418zM130.381 234.247l10.719-32.134.904-.99 20.316 18.556-.904.99-31.035 13.578zm184.24-181.304L182.553 197.53l-20.316-18.556L294.305 34.386c2.583-2.828 6.118-4.386 9.954-4.386 3.365 0 6.588 1.252 9.082 3.53l.419.383c5.484 5.009 5.87 13.546.861 19.03z"
+                            data-original="#000000" />
+                          <path
+                            d="M303.85 138.388c-8.284 0-15 6.716-15 15v127.347c0 21.034-17.113 38.147-38.147 38.147H68.904c-21.035 0-38.147-17.113-38.147-38.147V100.413c0-21.034 17.113-38.147 38.147-38.147h131.587c8.284 0 15-6.716 15-15s-6.716-15-15-15H68.904C31.327 32.266.757 62.837.757 100.413v180.321c0 37.576 30.571 68.147 68.147 68.147h181.798c37.576 0 68.147-30.571 68.147-68.147V153.388c.001-8.284-6.715-15-14.999-15z"
+                            data-original="#000000" />
+                        </svg>
+                      </button>
+                      <button class="mr-4" title="Delete">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 fill-red-500 hover:fill-red-700" viewBox="0 0 24 24">
+                          <path
+                            d="M19 7a1 1 0 0 0-1 1v11.191A1.92 1.92 0 0 1 15.99 21H8.01A1.92 1.92 0 0 1 6 19.191V8a1 1 0 0 0-2 0v11.191A3.918 3.918 0 0 0 8.01 23h7.98A3.918 3.918 0 0 0 20 19.191V8a1 1 0 0 0-1-1Zm1-3h-4V2a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v2H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2ZM10 4V3h4v1Z"
+                            data-original="#000000" />
+                          <path d="M11 17v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Zm4 0v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Z"
+                            data-original="#000000" />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+    </main>
+  </body>
+
+
+
+  <script>
+    document.querySelectorAll('.group').forEach(group => {
+        group.addEventListener('click', () => {
+            const subMenu = group.nextElementSibling;
+            subMenu.classList.toggle('hidden');
+        });
+    });
+</script>
+
+
+</html>
