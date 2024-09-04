@@ -19,8 +19,13 @@
       margin-left: 16rem;
       /* Width of the sidebar */
       padding: 1rem;
-      margin-top: 5rem;
+      margin-top: 3rem;
       /* Height of the header */
+    }
+
+    .chart-container {
+      position: relative;
+      height: 247px;
     }
   </style>
 </head>
@@ -37,183 +42,183 @@
       <img src="profile-icon.png" alt="Profile Icon" class="w-8 h-8 rounded-full object-cover">
     </div>
   </header>
-  
-  
-    <!-- Sidebar -->
-    <nav class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10">
-      SCMS
-      <ul class="mt-8">
+
+
+  <!-- Sidebar -->
+  <nav class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10">
+    SCMS
+    <ul class="mt-8">
+      <li>
+        <a href="index.html"
+          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span>Dashboard</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Documents Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Documents</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
+      </div>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
         <li>
-          <a href="index.html"
+          <a href=""
             class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <span>Dashboard</span>
+            <span>Time Table</span>
+          </a>
+        </li>
+        <li>
+          <a href="doc.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Materials</span>
           </a>
         </li>
       </ul>
-  
-      <!-- Documents Section -->
-      <div class="mt-6">
-        <div class="flex cursor-pointer group" aria-expanded="false">
-          <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Documents</h6>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-            viewBox="0 0 451.847 451.847">
-            <path
-              d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-              data-original="#000000" />
-          </svg>
-        </div>
-        <ul class="space-y-1 mt-2 pl-4 hidden">
-          <li>
-            <a href=""
-              class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-              <span>Time Table</span>
-            </a>
-          </li>
-          <li>
-            <a href="doc.html"
-              class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-              <span>Materials</span>
-            </a>
-          </li>
-        </ul>
+    </div>
+
+    <!-- Students Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Students</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
       </div>
-  
-      <!-- Students Section -->
-      <div class="mt-6">
-        <div class="flex cursor-pointer group" aria-expanded="false">
-          <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Students</h6>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-            viewBox="0 0 451.847 451.847">
-            <path
-              d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-              data-original="#000000" />
-          </svg>
-        </div>
-        <ul class="space-y-1 mt-2 pl-4 hidden">
-          <li>
-            <a href="add_student.html"
-              class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-              <span>Attendance</span>
-            </a>
-          </li>
-          <li>
-            <a href="students.html"
-              class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-              <span>All Students</span>
-            </a>
-          </li>
-        </ul>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href="add_student.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Attendance</span>
+          </a>
+        </li>
+        <li>
+          <a href="students.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>All Students</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Assignment Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Assignments</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
       </div>
-  
-      <!-- Assignment Section -->
-      <div class="mt-6">
-        <div class="flex cursor-pointer group" aria-expanded="false">
-          <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Assignments</h6>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-            viewBox="0 0 451.847 451.847">
-            <path
-              d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-              data-original="#000000" />
-          </svg>
-        </div>
-        <ul class="space-y-1 mt-2 pl-4 hidden">
-          <li>
-            <a href="add_assignment.html"
-              class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-              <span>Add Assignment</span>
-            </a>
-          </li>
-          <li>
-            <a href="assignments.html"
-              class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-              <span>Status</span>
-            </a>
-          </li>
-        </ul>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href="add_assignment.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Add Assignment</span>
+          </a>
+        </li>
+        <li>
+          <a href="assignments.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Status</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Quiz Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Quiz</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
       </div>
-  
-      <!-- Quiz Section -->
-      <div class="mt-6">
-        <div class="flex cursor-pointer group" aria-expanded="false">
-          <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Quiz</h6>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-            viewBox="0 0 451.847 451.847">
-            <path
-              d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-              data-original="#000000" />
-          </svg>
-        </div>
-        <ul class="space-y-1 mt-2 pl-4 hidden">
-          <li>
-            <a href="add_quiz.html"
-              class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-              <span>Add Quiz</span>
-            </a>
-          </li>
-          <li>
-            <a href="quizzes.html"
-              class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-              <span>Quizzes List</span>
-            </a>
-          </li>
-        </ul>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href="add_quiz.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Add Quiz</span>
+          </a>
+        </li>
+        <li>
+          <a href="quizzes.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Quizzes List</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Notices Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Notices</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
       </div>
-  
-      <!-- Notices Section -->
-      <div class="mt-6">
-        <div class="flex cursor-pointer group" aria-expanded="false">
-          <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Notices</h6>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-            viewBox="0 0 451.847 451.847">
-            <path
-              d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-              data-original="#000000" />
-          </svg>
-        </div>
-        <ul class="space-y-1 mt-2 pl-4 hidden">
-          <li>
-            <a href="add_notice.html"
-              class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-              <span>Add Notice</span>
-            </a>
-          </li>
-          <li>
-            <a href="notices.html"
-              class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-              <span>All Notices</span>
-            </a>
-          </li>
-        </ul>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href="add_notice.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Add Notice</span>
+          </a>
+        </li>
+        <li>
+          <a href="notices.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>All Notices</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Actions Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Actions</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
       </div>
-  
-      <!-- Actions Section -->
-      <div class="mt-6">
-        <div class="flex cursor-pointer group" aria-expanded="false">
-          <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Actions</h6>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-            viewBox="0 0 451.847 451.847">
-            <path
-              d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-              data-original="#000000" />
-          </svg>
-        </div>
-        <ul class="space-y-1 mt-2 pl-4 hidden">
-          <li>
-            <a href=""
-              class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-              <span>Profile</span>
-            </a>
-          </li>
-          <li>
-            <a href=""
-              class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-              <span>Logout</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href=""
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href=""
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
 
   <!-- Dashboard Overview -->
   <div class="p-6 bg-white rounded-lg shadow-md">
@@ -234,95 +239,116 @@
     </div>
   </div>
 
-<div class="flex flex-1">
-    <!-- Ratio of Students (Pie Chart) -->
-    <div class="p-6 bg-white rounded-lg shadow-md mt-6">
-      <h2 class="text-xl font-bold mb-4">Student Ratio</h2>
-      <div class="relative h-80">
-        <canvas id="studentRatioChart"></canvas>
+  <!-- charts and graph -->
+  <div class="p-6 bg-white rounded-lg shadow-md mt-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <h2 class="text-xl font-semibold text-gray-700 p-2 border-b">Student Distribution</h2>
+        <div class="chart-container p-3">
+          <canvas id="studentsChart"></canvas>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <h2 class="text-xl font-semibold text-gray-700 p-2 border-b">Weekly Attendance</h2>
+        <div class="chart-container p-3">
+          <canvas id="attendanceChart"></canvas>
+        </div>
       </div>
     </div>
-  
-    <!-- Attendance (Graph) -->
-    <div class="p-6 bg-white rounded-lg shadow-md mt-6">
-      <h2 class="text-xl font-bold mb-4">Attendance</h2>
-      <div class="relative h-80">
-        <canvas id="attendanceChart"></canvas>
-      </div>
-    </div>
-</div>
+  </div>
 
-
-
+  <!-- quick link -->
   <div class="p-6 bg-white rounded-lg shadow-md mt-6">
     <h2 class="text-xl font-bold mb-4">Quick Links</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <a href="add_assignment.html" class="bg-blue-500 text-white p-4 rounded-lg shadow-md text-center">Add Assignment</a>
-      <a href="add_quiz.html" class="bg-green-500 text-white p-4 rounded-lg shadow-md text-center">Add Quiz</a>
-      <a href="add_notice.html" class="bg-yellow-500 text-white p-4 rounded-lg shadow-md text-center">Add Notice</a>
+      <a href="add_assignment.html" class="bg-blue-500 text-white p-2 rounded-lg shadow-md text-center">Add
+        Assignment</a>
+      <a href="add_quiz.html" class="bg-green-500 text-white p-2 rounded-lg shadow-md text-center">Add Quiz</a>
+      <a href="add_notice.html" class="bg-yellow-500 text-white p-2 rounded-lg shadow-md text-center">Add Notice</a>
     </div>
   </div>
-  
-
-  <div class="p-6 bg-white rounded-lg shadow-md mt-6">
-    <h2 class="text-xl font-bold mb-4">Classroom Calendar</h2>
-    <iframe src="https://calendar.google.com/calendar/embed?src=your-calendar-id&ctz=America%2FNew_York" class="w-full h-80" frameborder="0"></iframe>
-  </div>
-  
 
   <script>
-    // Pie Chart for Student Ratio
-    const ctxRatio = document.getElementById('studentRatioChart').getContext('2d');
-    const studentRatioChart = new Chart(ctxRatio, {
-      type: 'pie',
-      data: {
-        labels: ['Boys', 'Girls'],
-        datasets: [{
-          label: 'Student Ratio',
-          data: [60, 40], // Example data: 60% boys, 40% girls
-          backgroundColor: ['#4e79a7', '#f28e2b'],
-        }]
-      },
+
+    // Students Graph Data
+    const studentsData = {
+      labels: ['Boys', 'Girls'],
+      datasets: [{
+        label: 'Students',
+        data: [1234, 1134],
+        backgroundColor: ['#6366F1', '#FFD700'],
+        hoverBackgroundColor: ['#4F46E5', '#FBBF24']
+      }]
+    };
+
+    // Attendance Chart Data
+    const attendanceData = {
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+      datasets: [{
+        label: 'Present',
+        data: [55, 67, 78, 52, 61],
+        backgroundColor: '#FBBF24',
+        hoverBackgroundColor: '#F59E0B'
+      }, {
+        label: 'Absent',
+        data: [12, 8, 5, 15, 9],
+        backgroundColor: '#6366F1',
+        hoverBackgroundColor: '#4F46E5'
+      }]
+    };
+
+    // Students Graph
+    const studentsCtx = document.getElementById('studentsChart').getContext('2d');
+    new Chart(studentsCtx, {
+      type: 'doughnut',
+      data: studentsData,
       options: {
         responsive: true,
         plugins: {
           legend: {
-            position: 'top',
+            position: 'bottom',
+            labels: {
+              font: {
+                size: 14
+              }
+            }
           },
           tooltip: {
             callbacks: {
               label: function (context) {
                 let label = context.label || '';
                 if (context.parsed !== null) {
-                  label += ': ' + context.parsed.toFixed(2) + '%';
+                  label += ': ' + context.parsed + ' students';
                 }
                 return label;
               }
             }
           }
+        },
+        animation: {
+          animateScale: true,
+          animateRotate: true,
+          duration: 2000,
+          easing: 'easeInOut'
         }
       }
     });
 
-    // Bar Chart for Attendance
-    const ctxAttendance = document.getElementById('attendanceChart').getContext('2d');
-    const attendanceChart = new Chart(ctxAttendance, {
+    // Attendance Chart
+    const attendanceCtx = document.getElementById('attendanceChart').getContext('2d');
+    new Chart(attendanceCtx, {
       type: 'bar',
-      data: {
-        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-        datasets: [{
-          label: 'Attendance',
-          data: [75, 80, 70, 85], // Example data: attendance percentages
-          backgroundColor: '#7f8c8d',
-          borderColor: '#34495e',
-          borderWidth: 1
-        }]
-      },
+      data: attendanceData,
       options: {
         responsive: true,
         plugins: {
           legend: {
-            position: 'top',
+            position: 'bottom',
+            labels: {
+              font: {
+                size: 14
+              }
+            }
           },
           tooltip: {
             callbacks: {
@@ -337,13 +363,27 @@
           }
         },
         scales: {
-          x: {
-            stacked: true
-          },
           y: {
-            stacked: true,
-            beginAtZero: true
+            beginAtZero: true,
+            max: 100,
+            ticks: {
+              stepSize: 10
+            },
+            grid: {
+              borderColor: '#E5E7EB',
+              borderWidth: 1
+            }
+          },
+          x: {
+            grid: {
+              borderColor: '#E5E7EB',
+              borderWidth: 1
+            }
           }
+        },
+        animation: {
+          duration: 2000,
+          easing: 'easeInOut'
         }
       }
     });
