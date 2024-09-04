@@ -17,10 +17,8 @@
 
     .main-content {
       margin-left: 16rem;
-      /* Width of the sidebar */
       padding: 1rem;
       margin-top: 5rem;
-      /* Height of the header */
     }
   </style>
 </head>
@@ -39,7 +37,8 @@
 
 
 <!-- Sidebar -->
-<nav class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10">
+<nav
+  class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10 hidden lg:block">
   SCMS
   <ul class="mt-8">
     <li>
@@ -215,14 +214,12 @@
 
 
 <body class="main-content">
-  <button id="openUploadModal"
-    class="px-4 py-2 rounded-lg text-white text-sm border-none outline-none tracking-wide bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
+  <button id="openUploadModal" class="px-4 py-2 rounded-lg text-white text-sm bg-blue-600 hover:bg-blue-700">
     Open Upload Modal
   </button>
 
-  <div
-    class="fixed inset-0 p-4 flex flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto font-[sans-serif]"
-    id="uploadModal" style="display: none;">
+  <div id="uploadModal" style="display: none"
+    class="fixed inset-0 p-4 flex justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto">
     <div class="w-full max-w-lg bg-white shadow-lg rounded-lg p-6 relative">
       <div class="flex items-center pb-3 border-b border-gray-200">
         <div class="flex-1">
@@ -285,16 +282,19 @@
       </div>
     </div>
   </div>
+  
 </body>
 
 
 <script>
   document.querySelectorAll('.group').forEach(group => {
-    group.addEventListener('click', () => {
-      const subMenu = group.nextElementSibling;
-      subMenu.classList.toggle('hidden');
+    group.addEventListener('click', function () {
+      const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+      this.setAttribute('aria-expanded', !expanded);
+      this.nextElementSibling.classList.toggle('hidden');
     });
   });
 </script>
+
 
 </html>

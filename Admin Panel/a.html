@@ -4,168 +4,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Attendance Graph and Chart</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-        }
-
-        .container {
-            max-width: 1200px;
-        }
-
-        .chart-container {
-            position: relative;
-            height: 400px;
-        }
-    </style>
+    <title>Material Upload</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-200">
+<body class="bg-gray-100 p-6">
 
-    <div class="container mx-auto px-4 py-8">
-        <h1 class="text-4xl font-bold text-center text-gray-800 mb-10">Student Attendance</h1>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <h2 class="text-xl font-semibold text-gray-700 p-4 border-b">Student Distribution</h2>
-                <div class="chart-container p-4">
-                    <canvas id="studentsChart"></canvas>
-                </div>
+    <div class="max-w-2xl mx-auto bg-white p-6 shadow-md rounded-md">
+        <h2 class="text-2xl font-bold mb-4">Upload Material</h2>
+        <form id="uploadForm" class="space-y-4">
+            <!-- Subject Selection -->
+            <div>
+                <label for="subject" class="block text-sm font-medium mb-1">Subject</label>
+                <select id="subject" class="w-full border-gray-300 rounded-md shadow-sm">
+                    <option value="">Select Subject</option>
+                    <option value="Math">Math</option>
+                    <option value="Science">Science</option>
+                    <option value="History">History</option>
+                    <!-- Add more subjects as needed -->
+                </select>
             </div>
 
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <h2 class="text-xl font-semibold text-gray-700 p-4 border-b">Weekly Attendance</h2>
-                <div class="chart-container p-4">
-                    <canvas id="attendanceChart"></canvas>
-                </div>
+            <!-- Semester Selection -->
+            <div>
+                <label for="semester" class="block text-sm font-medium mb-1">Semester</label>
+                <select id="semester" class="w-full border-gray-300 rounded-md shadow-sm">
+                    <option value="">Select Semester</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <!-- Add more semesters as needed -->
+                </select>
             </div>
+
+            <!-- Division Selection -->
+            <div>
+                <label for="division" class="block text-sm font-medium mb-1">Division</label>
+                <select id="division" class="w-full border-gray-300 rounded-md shadow-sm">
+                    <option value="">Select Division</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <!-- Add more divisions as needed -->
+                </select>
+            </div>
+
+            <!-- Material Name Input -->
+            <div>
+                <label for="materialName" class="block text-sm font-medium mb-1">Material Name</label>
+                <input type="text" id="materialName" class="w-full border-gray-300 rounded-md shadow-sm"
+                    placeholder="Enter material name">
+            </div>
+
+            <!-- File Upload Input -->
+            <div>
+                <label for="fileUpload" class="block text-sm font-medium mb-1">Upload File</label>
+                <input type="file" id="fileUpload" class="w-full border-gray-300 rounded-md shadow-sm">
+            </div>
+
+            <!-- Upload Button -->
+            <button type="button" onclick="uploadMaterial()" class="bg-blue-500 text-white px-4 py-2 rounded-md">Upload
+                Material</button>
+        </form>
+
+        <!-- Display Uploaded Materials in a Table -->
+        <div id="uploadedMaterials" class="mt-6">
+            <h3 class="text-lg font-semibold mb-2">Uploaded Materials</h3>
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 border-b">Subject</th>
+                        <th class="py-2 px-4 border-b">Semester</th>
+                        <th class="py-2 px-4 border-b">Division</th>
+                        <th class="py-2 px-4 border-b">Material Name</th>
+                        <th class="py-2 px-4 border-b">File Name</th>
+                    </tr>
+                </thead>
+                <tbody id="materialsTableBody" class="text-sm divide-y divide-gray-200"></tbody>
+            </table>
         </div>
     </div>
 
     <script>
-        // Students Graph Data
-        const studentsData = {
-            labels: ['Boys', 'Girls'],
-            datasets: [{
-                label: 'Students',
-                data: [1234, 1134],
-                backgroundColor: ['#6366F1', '#FFD700'],
-                hoverBackgroundColor: ['#4F46E5', '#FBBF24']
-            }]
-        };
+        // app.js
 
-        // Attendance Chart Data
-        const attendanceData = {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-            datasets: [{
-                label: 'Present',
-                data: [55, 67, 78, 52, 61],
-                backgroundColor: '#FBBF24',
-                hoverBackgroundColor: '#F59E0B'
-            }, {
-                label: 'Absent',
-                data: [12, 8, 5, 15, 9],
-                backgroundColor: '#6366F1',
-                hoverBackgroundColor: '#4F46E5'
-            }]
-        };
+        function uploadMaterial() {
+            const subject = document.getElementById('subject').value;
+            const semester = document.getElementById('semester').value;
+            const division = document.getElementById('division').value;
+            const materialName = document.getElementById('materialName').value;
+            const fileUpload = document.getElementById('fileUpload').files[0];
 
-        // Students Graph
-        const studentsCtx = document.getElementById('studentsChart').getContext('2d');
-        new Chart(studentsCtx, {
-            type: 'doughnut',
-            data: studentsData,
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            font: {
-                                size: 14
-                            }
-                        }
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function (context) {
-                                let label = context.label || '';
-                                if (context.parsed !== null) {
-                                    label += ': ' + context.parsed + ' students';
-                                }
-                                return label;
-                            }
-                        }
-                    }
-                },
-                animation: {
-                    animateScale: true,
-                    animateRotate: true,
-                    duration: 2000,
-                    easing: 'easeInOutElastic'
-                }
-            }
-        });
+            // // Check if all fields are filled
+            // if (!subject || !semester || !division || !materialName || !fileUpload) {
+            //     alert('Please fill in all fields and select a file.');
+            //     return;
+            // }
 
-        // Attendance Chart
-        const attendanceCtx = document.getElementById('attendanceChart').getContext('2d');
-        new Chart(attendanceCtx, {
-            type: 'bar',
-            data: attendanceData,
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                        labels: {
-                            font: {
-                                size: 14
-                            }
-                        }
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function (context) {
-                                let label = context.dataset.label || '';
-                                if (context.parsed.y !== null) {
-                                    label += ': ' + context.parsed.y + '%';
-                                }
-                                return label;
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 100,
-                        ticks: {
-                            stepSize: 10
-                        },
-                        grid: {
-                            borderColor: '#E5E7EB',
-                            borderWidth: 1
-                        }
-                    },
-                    x: {
-                        grid: {
-                            borderColor: '#E5E7EB',
-                            borderWidth: 1
-                        }
-                    }
-                },
-                animation: {
-                    duration: 2000,
-                    easing: 'easeInOutBounce'
-                }
-            }
-        });
+            // Get the table body element
+            const materialsTableBody = document.getElementById('materialsTableBody');
+
+            // Create a new table row and cells
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+        <td class="py-2 px-4 border-b">${subject}</td>
+        <td class="py-2 px-4 border-b">${semester}</td>
+        <td class="py-2 px-4 border-b">${division}</td>
+        <td class="py-2 px-4 border-b">${materialName}</td>
+        <td class="py-2 px-4 border-b">${fileUpload.name}</td>
+    `;
+
+            // Append the new row to the table body
+            materialsTableBody.appendChild(newRow);
+
+            // Clear the form fields
+            document.getElementById('uploadForm').reset();
+        }
+
     </script>
 </body>
 
