@@ -18,31 +18,31 @@
 </head>
 
 <body>
-<!-- Header Section -->
-<header class="flex justify-between items-center py-4 border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
-  <div class="flex items-center w-full max-w-4xl mx-auto px-4">
-    <!-- Search bar -->
-    <input type="search" placeholder="Search"
-      class="w-full py-2 pl-10 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600">
-  </div>
-  <div class="flex items-center ml-4">
-    <!-- Profile icon -->
-    <img src="profile-icon.png" alt="Profile Icon" class="w-8 h-8 rounded-full object-cover">
-  </div>
-</header>
+  <!-- Header Section -->
+  <header class="flex justify-between items-center py-4 border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
+    <div class="flex items-center w-full max-w-4xl mx-auto px-4">
+      <!-- Search bar -->
+      <input type="search" placeholder="Search"
+        class="w-full py-2 pl-10 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600">
+    </div>
+    <div class="flex items-center ml-4">
+      <!-- Profile icon -->
+      <img src="profile-icon.png" alt="Profile Icon" class="w-8 h-8 rounded-full object-cover">
+    </div>
+  </header>
 
-<!-- Sidebar -->
-<nav
-  class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10 hidden lg:block">
-  SCMS
-  <ul class="mt-8">
-    <li>
-      <a href="index.html"
-        class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-        <span>Dashboard</span>
-      </a>
-    </li>
-  </ul>
+ 
+  <!-- Sidebar -->
+  <nav class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10">
+    SCMS
+    <ul class="mt-8">
+      <li>
+        <a href="index.html"
+          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span>Dashboard</span>
+        </a>
+      </li>
+    </ul>
 
   <!-- Documents Section -->
   <div class="mt-6">
@@ -208,11 +208,9 @@
 </nav>
 
 
-<!-- Main Content -->
-<main class="main-content">
-  <div class="flex flex-col items-center space-y-4">
-    <!-- Dropdowns Container -->
-    <div class="flex space-x-4">
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="flex justify-center space-x-4">
       <!-- Dropdown 1 -->
       <div class="relative font-[sans-serif] w-max">
         <button type="button" id="dropdownToggle1"
