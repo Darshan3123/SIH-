@@ -1,4 +1,3 @@
-
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://necolas.github.io/normalize.css/8.0.1/normalize.css"></script>
 
@@ -17,312 +16,324 @@
 </style>
 </head>
 
-<body>
-<!-- Header Section -->
-<header class="flex justify-between items-center py-4 border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
-  <div class="flex items-center w-full max-w-4xl mx-auto px-4">
-    <!-- Search bar -->
-    <input type="search" placeholder="Search"
-      class="w-full py-2 pl-10 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600">
-  </div>
-  <div class="flex items-center ml-4">
-    <!-- Profile icon -->
-    <img src="profile-icon.png" alt="Profile Icon" class="w-8 h-8 rounded-full object-cover">
-  </div>
-</header>
-
-<!-- Sidebar -->
-<nav
-  class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10 hidden lg:block">
-  SCMS
-  <ul class="mt-8">
-    <li>
-      <a href="index.html"
-        class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-        <span>Dashboard</span>
-      </a>
-    </li>
-  </ul>
-
-  <!-- Documents Section -->
-  <div class="mt-6">
-    <div class="flex cursor-pointer group" aria-expanded="false">
-      <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Documents</h6>
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-        viewBox="0 0 451.847 451.847">
-        <path
-          d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-          data-original="#000000" />
-      </svg>
+<body class="main-content">
+  <!-- Header Section -->
+  <header class="flex justify-between items-center py-4 border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
+    <div class="flex items-center w-full max-w-4xl mx-auto px-4">
+      <!-- Search bar -->
+      <input type="search" placeholder="Search"
+        class="w-full py-2 pl-10 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600">
     </div>
-    <ul class="space-y-1 mt-2 pl-4 hidden">
+    <div class="flex items-center ml-4">
+      <!-- Profile icon -->
+      <img src="profile-icon.png" alt="Profile Icon" class="w-8 h-8 rounded-full object-cover">
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <nav
+    class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10 hidden lg:block">
+    SCMS
+    <ul class="mt-8">
       <li>
-        <a href=""
+        <a href="index.html"
           class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-          <span>Time Table</span>
-        </a>
-      </li>
-      <li>
-        <a href="doc.html"
-          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-          <span>Materials</span>
+          <span>Dashboard</span>
         </a>
       </li>
     </ul>
-  </div>
 
-  <!-- Students Section -->
-  <div class="mt-6">
-    <div class="flex cursor-pointer group" aria-expanded="false">
-      <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Students</h6>
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-        viewBox="0 0 451.847 451.847">
-        <path
-          d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-          data-original="#000000" />
-      </svg>
+    <!-- Documents Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Documents</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
+      </div>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href=""
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Time Table</span>
+          </a>
+        </li>
+        <li>
+          <a href="doc.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Materials</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <ul class="space-y-1 mt-2 pl-4 hidden">
-      <li>
-        <a href="add_student.html"
-          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-          <span>Attendance</span>
-        </a>
-      </li>
-      <li>
-        <a href="students.html"
-          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-          <span>All Students</span>
-        </a>
-      </li>
-    </ul>
-  </div>
 
-  <!-- Assignment Section -->
-  <div class="mt-6">
-    <div class="flex cursor-pointer group" aria-expanded="false">
-      <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Assignments</h6>
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-        viewBox="0 0 451.847 451.847">
-        <path
-          d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-          data-original="#000000" />
-      </svg>
+    <!-- Students Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Students</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
+      </div>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href="add_student.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Attendance</span>
+          </a>
+        </li>
+        <li>
+          <a href="students.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>All Students</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <ul class="space-y-1 mt-2 pl-4 hidden">
-      <li>
-        <a href="add_assignment.html"
-          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-          <span>Add Assignment</span>
-        </a>
-      </li>
-      <li>
-        <a href="assignments.html"
-          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-          <span>Status</span>
-        </a>
-      </li>
-    </ul>
-  </div>
 
-  <!-- Quiz Section -->
-  <div class="mt-6">
-    <div class="flex cursor-pointer group" aria-expanded="false">
-      <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Quiz</h6>
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-        viewBox="0 0 451.847 451.847">
-        <path
-          d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-          data-original="#000000" />
-      </svg>
+    <!-- Assignment Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Assignments</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
+      </div>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href="add_assignment.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Add Assignment</span>
+          </a>
+        </li>
+        <li>
+          <a href="assignments.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Status</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <ul class="space-y-1 mt-2 pl-4 hidden">
-      <li>
-        <a href="add_quiz.html"
-          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-          <span>Add Quiz</span>
-        </a>
-      </li>
-      <li>
-        <a href="quizzes.html"
-          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-          <span>Quizzes List</span>
-        </a>
-      </li>
-    </ul>
-  </div>
 
-  <!-- Notices Section -->
-  <div class="mt-6">
-    <div class="flex cursor-pointer group" aria-expanded="false">
-      <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Notices</h6>
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-        viewBox="0 0 451.847 451.847">
-        <path
-          d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-          data-original="#000000" />
-      </svg>
+    <!-- Quiz Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Quiz</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
+      </div>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href="add_quiz.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Add Quiz</span>
+          </a>
+        </li>
+        <li>
+          <a href="quizzes.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Quizzes List</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <ul class="space-y-1 mt-2 pl-4 hidden">
-      <li>
-        <a href="add_notice.html"
-          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-          <span>Add Notice</span>
-        </a>
-      </li>
-      <li>
-        <a href="notices.html"
-          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-          <span>All Notices</span>
-        </a>
-      </li>
-    </ul>
-  </div>
 
-  <!-- Actions Section -->
-  <div class="mt-6">
-    <div class="flex cursor-pointer group" aria-expanded="false">
-      <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Actions</h6>
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-        viewBox="0 0 451.847 451.847">
-        <path
-          d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-          data-original="#000000" />
-      </svg>
+    <!-- Notices Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Notices</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
+      </div>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href="add_notice.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Add Notice</span>
+          </a>
+        </li>
+        <li>
+          <a href="notices.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>All Notices</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <ul class="space-y-1 mt-2 pl-4 hidden">
-      <li>
-        <a href=""
-          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-          <span>Profile</span>
-        </a>
-      </li>
-      <li>
-        <a href=""
-          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-          <span>Logout</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-</nav>
 
+    <!-- Actions Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group" aria-expanded="false">
+        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Actions</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
+          viewBox="0 0 451.847 451.847">
+          <path
+            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+            data-original="#000000" />
+        </svg>
+      </div>
+      <ul class="space-y-1 mt-2 pl-4 hidden">
+        <li>
+          <a href=""
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href=""
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <span>Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-<!-- Main Content -->
-<main class="main-content">
-  <div class="flex flex-col items-center space-y-4">
-    <!-- Dropdowns Container -->
-    <div class="flex space-x-4">
-      <!-- Dropdown 1 -->
-      <div class="relative font-[sans-serif] w-max">
-        <button type="button" id="dropdownToggle1"
-          class="px-5 py-2.5 rounded text-white text-sm font-semibold border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
-          Assignment List
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-white inline ml-3" viewBox="0 0 24 24">
-            <path fill-rule="evenodd"
-              d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
-              clip-rule="evenodd" />
-          </svg>
-        </button>
-        <ul id="dropdownMenu1" class='absolute hidden shadow-lg bg-white py-2 z-[1000] min-w-full w-max rounded max-h-96 overflow-auto'>
-          <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>unit 1</li>
-          <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>unit 2</li>
-          <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>java script</li>
-          <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>react js </li>
-        </ul>
+  <!-- Main Content -->
+  <main class="">
+    <div class="flex flex-col items-center space-y-4">
+      <!-- Dropdowns Container -->
+      <div class="flex space-x-4">
+        <!-- Dropdown 1 -->
+        <div class="relative font-[sans-serif] w-max">
+          <button type="button" id="dropdownToggle1"
+            class="px-5 py-2.5 rounded text-white text-sm font-semibold border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
+            Assignment List
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-white inline ml-3" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <ul id="dropdownMenu1"
+            class='absolute hidden shadow-lg bg-white py-2 z-[1000] min-w-full w-max rounded max-h-96 overflow-auto'>
+            <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>unit 1</li>
+            <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>unit 2</li>
+            <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>java script</li>
+            <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>react js </li>
+          </ul>
+        </div>
+
+        <!-- Dropdown 2 -->
+        <div class="relative font-[sans-serif] w-max">
+          <button type="button" id="dropdownToggle2"
+            class="px-5 py-2.5 rounded text-white text-sm font-semibold border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
+            Semester
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-white inline ml-3" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <ul id="dropdownMenu2"
+            class='absolute hidden shadow-lg bg-white py-2 z-[1000] min-w-full w-max rounded max-h-96 overflow-auto'>
+            <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>semester 1</li>
+            <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>semester 2</li>
+            <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>semester 3</li>
+            <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>semester 4</li>
+          </ul>
+        </div>
+
+        <!-- Dropdown 3 -->
+        <div class="relative font-[sans-serif] w-max">
+          <button type="button" id="dropdownToggle3"
+            class="px-5 py-2.5 rounded text-white text-sm font-semibold border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
+            Division
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-white inline ml-3" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <ul id="dropdownMenu3"
+            class='absolute hidden shadow-lg bg-white py-2 z-[1000] min-w-full w-max rounded max-h-96 overflow-auto'>
+            <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>division A</li>
+            <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>division B</li>
+            <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>division C</li>
+          </ul>
+        </div>
       </div>
 
-      <!-- Dropdown 2 -->
-      <div class="relative font-[sans-serif] w-max">
-        <button type="button" id="dropdownToggle2"
-          class="px-5 py-2.5 rounded text-white text-sm font-semibold border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
-          Semester 
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-white inline ml-3" viewBox="0 0 24 24">
-            <path fill-rule="evenodd"
-              d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
-              clip-rule="evenodd" />
-          </svg>
-        </button>
-        <ul id="dropdownMenu2" class='absolute hidden shadow-lg bg-white py-2 z-[1000] min-w-full w-max rounded max-h-96 overflow-auto'>
-          <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>semester 1</li>
-          <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>semester 2</li>
-          <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>semester 3</li>
-          <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>semester 4</li>
-        </ul>
-      </div>
-
-      <!-- Dropdown 3 -->
-      <div class="relative font-[sans-serif] w-max">
-        <button type="button" id="dropdownToggle3"
-          class="px-5 py-2.5 rounded text-white text-sm font-semibold border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
-          Division
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-white inline ml-3" viewBox="0 0 24 24">
-            <path fill-rule="evenodd"
-              d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
-              clip-rule="evenodd" />
-          </svg>
-        </button>
-        <ul id="dropdownMenu3" class='absolute hidden shadow-lg bg-white py-2 z-[1000] min-w-full w-max rounded max-h-96 overflow-auto'>
-          <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>division A</li>
-          <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>division B</li>
-          <li class='py-2.5 px-5 hover:bg-blue-50 text-black text-sm cursor-pointer'>division C</li>
-        </ul>
-      </div>
+      <!-- View Button -->
+      <button
+        class="flex items-center px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <!-- SVG Eye Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M15 12c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zM21.001 12c0 3.313-6.001 6-9 6s-9-2.687-9-6 6-6 9-6 9 2.687 9 6z" />
+        </svg>
+        View
+      </button>
     </div>
-
-    <!-- View Button -->
-    <button class="flex items-center px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
-      <!-- SVG Eye Icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zM21.001 12c0 3.313-6.001 6-9 6s-9-2.687-9-6 6-6 9-6 9 2.687 9 6z" />
-      </svg>
-      View
-    </button>
-  </div>
-</main>
+  </main>
 
 
-<!-- JavaScript for Dropdown Menu Handling -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Get all dropdown toggle buttons and menus
-    const dropdownToggles = document.querySelectorAll("[id^=dropdownToggle]");
-    const dropdownMenus = document.querySelectorAll("[id^=dropdownMenu]");
+  <!-- JavaScript for Dropdown Menu Handling -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get all dropdown toggle buttons and menus
+      const dropdownToggles = document.querySelectorAll("[id^=dropdownToggle]");
+      const dropdownMenus = document.querySelectorAll("[id^=dropdownMenu]");
 
-    dropdownToggles.forEach(toggle => {
-      toggle.addEventListener("click", (event) => {
-        // Get the related dropdown menu
-        const menuId = toggle.id.replace("dropdownToggle", "dropdownMenu");
-        const menu = document.getElementById(menuId);
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener("click", (event) => {
+          // Get the related dropdown menu
+          const menuId = toggle.id.replace("dropdownToggle", "dropdownMenu");
+          const menu = document.getElementById(menuId);
 
-        // Toggle the clicked menu and hide others
-        dropdownMenus.forEach(m => {
-          if (m !== menu) {
-            m.classList.add("hidden");
-          }
+          // Toggle the clicked menu and hide others
+          dropdownMenus.forEach(m => {
+            if (m !== menu) {
+              m.classList.add("hidden");
+            }
+          });
+          menu.classList.toggle("hidden");
+          event.stopPropagation(); // Prevent event from bubbling up
         });
-        menu.classList.toggle("hidden");
-        event.stopPropagation(); // Prevent event from bubbling up
       });
-    });
 
-    // Hide all dropdowns when clicking outside
-    document.addEventListener("click", () => {
+      // Hide all dropdowns when clicking outside
+      document.addEventListener("click", () => {
+        dropdownMenus.forEach(menu => {
+          menu.classList.add("hidden");
+        });
+      });
+
+      // Prevent hiding when clicking inside a dropdown menu
       dropdownMenus.forEach(menu => {
-        menu.classList.add("hidden");
+        menu.addEventListener("click", (event) => {
+          event.stopPropagation();
+        });
       });
     });
-
-    // Prevent hiding when clicking inside a dropdown menu
-    dropdownMenus.forEach(menu => {
-      menu.addEventListener("click", (event) => {
-        event.stopPropagation();
+    document.querySelectorAll('.group').forEach(group => {
+      group.addEventListener('click', () => {
+        const subMenu = group.nextElementSibling;
+        subMenu.classList.toggle('hidden');
       });
     });
-  });
-</script>
+  </script>
 
 </body>
+
 </html>
 
-make it this  function all drop down buttion 
+make it this function all drop down buttion
