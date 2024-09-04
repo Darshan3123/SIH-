@@ -21,7 +21,8 @@
     </style>
 </head>
 
-<body class="main-content bg-gray-100">
+<body class="main-content">
+
     <header class="flex justify-between items-center py-4   border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
         <div class="flex items-center w-full max-w-4xl mx-auto px-4">
             <!-- Search bar -->
@@ -215,76 +216,139 @@
         </div>
     </nav>
 
+    <!-- Filter Section -->
+    <div class="flex justify-between items-center py-4">
+        <div class="flex gap-4">
+            <!-- Search bar -->
+            <input type="text" id="search" placeholder="Search by subject"
+                class="py-2 pl-4 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600">
 
- <!-- Main Content -->
- <main class="pt-20">
-    <h1 class="text-2xl font-bold mb-4">Teacher Timetable</h1>
-
-    <!-- Dynamic Buttons -->
-    <div class="mb-4">
-        <button id="add-slot" class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add Time Slot</button>
-        <button id="export-btn" class="bg-green-500 text-white px-4 py-2 rounded-md">Export to PDF</button>
-        <button id="save-btn" class="bg-red-500 text-white px-4 py-2 rounded-md">Save Changes</button>
+            <!-- Filter by Day -->
+            <select id="filter-day"
+                class="py-2 px-4 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg">
+                <option value="">All Days</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+            </select>
+        </div>
+        <!-- Action Buttons -->
+        <div class="flex gap-4">
+            <button id="add-slot" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Add New
+                Slot</button>
+            <button id="save-timetable" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Save
+                Timetable</button>
+        </div>
     </div>
 
-    <!-- Timetable Table -->
-    <div class="overflow-x-auto">
-        <table id="timetable" class="min-w-full bg-white border border-gray-200">
-            <thead>
-                <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
-                    <th class="py-3 px-6 text-left">Time</th>
-                    <th class="py-3 px-6 text-left">Monday</th>
-                    <th class="py-3 px-6 text-left">Tuesday</th>
-                    <th class="py-3 px-6 text-left">Wednesday</th>
-                    <th class="py-3 px-6 text-left">Thursday</th>
-                    <th class="py-3 px-6 text-left">Friday</th>
-                </tr>
-            </thead>
-            <tbody id="table-body" class="text-gray-600 text-sm font-light">
-                <!-- Example Row -->
-                <tr class="border-b border-gray-200 hover:bg-gray-100">
-                    <td class="py-3 px-6 text-left whitespace-nowrap">8:00 - 9:00</td>
-                    <td class="py-3 px-6 text-left subject-cell" contenteditable="true" style="background-color: #FFEB3B;">Math</td>
-                    <td class="py-3 px-6 text-left subject-cell" contenteditable="true" style="background-color: #8BC34A;">Science</td>
-                    <td class="py-3 px-6 text-left subject-cell" contenteditable="true" style="background-color: #03A9F4;">English</td>
-                    <td class="py-3 px-6 text-left subject-cell" contenteditable="true" style="background-color: #FF5722;">History</td>
-                    <td class="py-3 px-6 text-left subject-cell" contenteditable="true" style="background-color: #9C27B0;">Geography</td>
-                </tr>
-                <!-- Additional rows here -->
-            </tbody>
-        </table>
-    </div>
-</main>
+    <!-- Timetable Content -->
+    <table id="timetable" class="w-full text-left border-collapse mt-4">
+        <thead>
+            <tr class="border-b">
+                <th class="p-4">Day</th>
+                <th class="p-4">Time</th>
+                <th class="p-4">Subject</th>
+                <th class="p-4">Teacher</th>
+                <th class="p-4">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-day="Monday" data-subject="Math">
+                <td contenteditable="true" class="p-4">Monday</td>
+                <td contenteditable="true" class="p-4">9:00 - 10:00</td>
+                <td contenteditable="true" class="p-4">Math</td>
+                <td contenteditable="true" class="p-4">John Doe</td>
+                <td class="p-4">
+                    <button onclick="deleteRow(this)" class="text-red-500">Delete</button>
+                </td>
+            </tr>
+            <tr data-day="Tuesday" data-subject="Science">
+                <td contenteditable="true" class="p-4">Tuesday</td>
+                <td contenteditable="true" class="p-4">10:00 - 11:00</td>
+                <td contenteditable="true" class="p-4">Science</td>
+                <td contenteditable="true" class="p-4">Jane Smith</td>
+                <td class="p-4">
+                    <button onclick="deleteRow(this)" class="text-red-500">Delete</button>
+                </td>
+            </tr>
+            <!-- More rows can be added here -->
+        </tbody>
+    </table>
 
-<script>
-    // Add new time slot functionality
-    document.getElementById('add-slot').addEventListener('click', function () {
-        const tableBody = document.getElementById('table-body');
-        const newRow = document.createElement('tr');
-        newRow.classList.add('border-b', 'border-gray-200', 'hover:bg-gray-100');
-        newRow.innerHTML = `
-            <td class="py-3 px-6 text-left whitespace-nowrap" contenteditable="true">New Time Slot</td>
-            <td class="py-3 px-6 text-left subject-cell" contenteditable="true"></td>
-            <td class="py-3 px-6 text-left subject-cell" contenteditable="true"></td>
-            <td class="py-3 px-6 text-left subject-cell" contenteditable="true"></td>
-            <td class="py-3 px-6 text-left subject-cell" contenteditable="true"></td>
-            <td class="py-3 px-6 text-left subject-cell" contenteditable="true"></td>
-        `;
-        tableBody.appendChild(newRow);
-    });
+    <script>
+        const searchInput = document.getElementById('search');
+        const filterDay = document.getElementById('filter-day');
+        const timetableRows = document.querySelectorAll('#timetable tbody tr');
+        const addSlotButton = document.getElementById('add-slot');
+        const saveButton = document.getElementById('save-timetable');
+        const timetableBody = document.querySelector('#timetable tbody');
 
-    // Export timetable to PDF
-    document.getElementById('export-btn').addEventListener('click', function () {
-        const element = document.getElementById('timetable');
-        html2pdf().from(element).save('timetable.pdf');
-    });
+        // Filter function
+        function filterTimetable() {
+            const searchValue = searchInput.value.toLowerCase();
+            const selectedDay = filterDay.value;
 
-    // Save changes functionality (For demo purposes - implement server-side save in real use)
-    document.getElementById('save-btn').addEventListener('click', function () {
-        alert('Changes have been saved!');
-        // Add logic to send data to the server
-    });
-</script> 
+            timetableRows.forEach(row => {
+                const subject = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+                const day = row.querySelector('td:first-child').textContent;
+
+                const matchesSearch = subject.includes(searchValue);
+                const matchesDay = !selectedDay || day === selectedDay;
+
+                if (matchesSearch && matchesDay) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', filterTimetable);
+        filterDay.addEventListener('change', filterTimetable);
+
+        // Add new slot
+        addSlotButton.addEventListener('click', () => {
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td contenteditable="true" class="p-4">Day</td>
+                <td contenteditable="true" class="p-4">Time</td>
+                <td contenteditable="true" class="p-4">Subject</td>
+                <td contenteditable="true" class="p-4">Teacher</td>
+                <td class="p-4">
+                    <button onclick="deleteRow(this)" class="text-red-500">Delete</button>
+                </td>
+            `;
+            timetableBody.appendChild(newRow);
+        });
+
+        // Delete row
+        function deleteRow(button) {
+            button.closest('tr').remove();
+        }
+
+        // Save timetable function
+        saveButton.addEventListener('click', () => {
+            const rowsData = Array.from(timetableBody.rows).map(row => {
+                return {
+                    day: row.cells[0].textContent.trim(),
+                    time: row.cells[1].textContent.trim(),
+                    subject: row.cells[2].textContent.trim(),
+                    teacher: row.cells[3].textContent.trim()
+                };
+            });
+            console.log("Saved Timetable Data: ", rowsData);
+            alert("Timetable saved successfully!");
+        });
+
+        document.querySelectorAll('.group').forEach(group => {
+            group.addEventListener('click', () => {
+                const subMenu = group.nextElementSibling;
+                subMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
 </body>
 
 </html>
