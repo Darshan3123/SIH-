@@ -216,37 +216,75 @@
     </nav>
 
 
-    <!-- Main Content -->
-    <main class="pt-20">
-        <h1 class="text-2xl font-bold mb-4">Teacher Timetable</h1>
+ <!-- Main Content -->
+ <main class="pt-20">
+    <h1 class="text-2xl font-bold mb-4">Teacher Timetable</h1>
 
-        <div class="overflow-x-auto">
-            <table class="min-w-full bg-white border border-gray-200">
-                <thead>
-                    <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
-                        <th class="py-3 px-6 text-left">Time</th>
-                        <th class="py-3 px-6 text-left">Monday</th>
-                        <th class="py-3 px-6 text-left">Tuesday</th>
-                        <th class="py-3 px-6 text-left">Wednesday</th>
-                        <th class="py-3 px-6 text-left">Thursday</th>
-                        <th class="py-3 px-6 text-left">Friday</th>
-                    </tr>
-                </thead>
-                <tbody class="text-gray-600 text-sm font-light">
-                    <!-- Example Row -->
-                    <tr class="border-b border-gray-200 hover:bg-gray-100">
-                        <td class="py-3 px-6 text-left whitespace-nowrap">8:00 - 9:00</td>
-                        <td class="py-3 px-6 text-left">Math</td>
-                        <td class="py-3 px-6 text-left">Science</td>
-                        <td class="py-3 px-6 text-left">English</td>
-                        <td class="py-3 px-6 text-left">History</td>
-                        <td class="py-3 px-6 text-left">Geography</td>
-                    </tr>
-                    <!-- Additional rows here -->
-                </tbody>
-            </table>
-        </div>
-    </main>
+    <!-- Dynamic Buttons -->
+    <div class="mb-4">
+        <button id="add-slot" class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">Add Time Slot</button>
+        <button id="export-btn" class="bg-green-500 text-white px-4 py-2 rounded-md">Export to PDF</button>
+        <button id="save-btn" class="bg-red-500 text-white px-4 py-2 rounded-md">Save Changes</button>
+    </div>
+
+    <!-- Timetable Table -->
+    <div class="overflow-x-auto">
+        <table id="timetable" class="min-w-full bg-white border border-gray-200">
+            <thead>
+                <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                    <th class="py-3 px-6 text-left">Time</th>
+                    <th class="py-3 px-6 text-left">Monday</th>
+                    <th class="py-3 px-6 text-left">Tuesday</th>
+                    <th class="py-3 px-6 text-left">Wednesday</th>
+                    <th class="py-3 px-6 text-left">Thursday</th>
+                    <th class="py-3 px-6 text-left">Friday</th>
+                </tr>
+            </thead>
+            <tbody id="table-body" class="text-gray-600 text-sm font-light">
+                <!-- Example Row -->
+                <tr class="border-b border-gray-200 hover:bg-gray-100">
+                    <td class="py-3 px-6 text-left whitespace-nowrap">8:00 - 9:00</td>
+                    <td class="py-3 px-6 text-left subject-cell" contenteditable="true" style="background-color: #FFEB3B;">Math</td>
+                    <td class="py-3 px-6 text-left subject-cell" contenteditable="true" style="background-color: #8BC34A;">Science</td>
+                    <td class="py-3 px-6 text-left subject-cell" contenteditable="true" style="background-color: #03A9F4;">English</td>
+                    <td class="py-3 px-6 text-left subject-cell" contenteditable="true" style="background-color: #FF5722;">History</td>
+                    <td class="py-3 px-6 text-left subject-cell" contenteditable="true" style="background-color: #9C27B0;">Geography</td>
+                </tr>
+                <!-- Additional rows here -->
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<script>
+    // Add new time slot functionality
+    document.getElementById('add-slot').addEventListener('click', function () {
+        const tableBody = document.getElementById('table-body');
+        const newRow = document.createElement('tr');
+        newRow.classList.add('border-b', 'border-gray-200', 'hover:bg-gray-100');
+        newRow.innerHTML = `
+            <td class="py-3 px-6 text-left whitespace-nowrap" contenteditable="true">New Time Slot</td>
+            <td class="py-3 px-6 text-left subject-cell" contenteditable="true"></td>
+            <td class="py-3 px-6 text-left subject-cell" contenteditable="true"></td>
+            <td class="py-3 px-6 text-left subject-cell" contenteditable="true"></td>
+            <td class="py-3 px-6 text-left subject-cell" contenteditable="true"></td>
+            <td class="py-3 px-6 text-left subject-cell" contenteditable="true"></td>
+        `;
+        tableBody.appendChild(newRow);
+    });
+
+    // Export timetable to PDF
+    document.getElementById('export-btn').addEventListener('click', function () {
+        const element = document.getElementById('timetable');
+        html2pdf().from(element).save('timetable.pdf');
+    });
+
+    // Save changes functionality (For demo purposes - implement server-side save in real use)
+    document.getElementById('save-btn').addEventListener('click', function () {
+        alert('Changes have been saved!');
+        // Add logic to send data to the server
+    });
+</script> 
 </body>
 
 </html>
