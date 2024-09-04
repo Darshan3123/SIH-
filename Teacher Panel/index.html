@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teacher Panel</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://necolas.github.io/normalize.css/8.0.1/normalize.css"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
@@ -29,17 +30,21 @@
 </head>
 
 <body class="main-content">
-  <header class="flex justify-between items-center py-4   border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
-    <div class="flex items-center w-full max-w-4xl mx-auto px-4">
-      <!-- Search bar -->
-      <input type="search" placeholder="Search"
-        class="w-full py-2 pl-10 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600">
+  <header
+    class="flex justify-between items-center py-4 pr-4 shadow-md border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
+    <div class="flex-1 flex justify-center items-center">
+      <!-- Admin Panel text and icon -->
+      <div class="flex items-center space-x-2">
+        <i class="fas fa-chalkboard-teacher text-xl"></i> <!-- Admin icon -->
+        <span class="text-2xl font-bold underline">Teacher's Panel</span>
+      </div>
     </div>
-    <div class="flex items-center ml-4">
+    <div>
       <!-- Profile icon -->
-      <img src="profile-icon.png" alt="Profile Icon" class="w-8 h-8 rounded-full object-cover">
+      <img src="https://readymadeui.com/profile_2.webp" class="w-10 h-10 rounded-full" />
     </div>
   </header>
+
 
   <!-- Sidebar -->
   <nav class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10">
