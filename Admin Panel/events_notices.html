@@ -218,9 +218,12 @@
         </div>
     </div>
 
-    <script>
-        // JavaScript for handling form submission, editing, and deleting
-        document.getElementById('addEventNoticeForm').addEventListener('submit', function (e) {
+ 
+</body>
+
+<script>
+    // JavaScript for handling form submission, editing, and deleting
+    document.getElementById('addEventNoticeForm').addEventListener('submit', function (e) {
             e.preventDefault();
             // Add your logic for adding an event notice here
         });
@@ -236,10 +239,8 @@
                 // Add your logic for deleting a notice here
             });
         });
-    </script>
-</body>
 
-<script>
+
     document.querySelectorAll('.group').forEach(group => {
         group.addEventListener('click', () => {
             const subMenu = group.nextElementSibling;

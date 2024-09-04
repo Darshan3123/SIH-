@@ -17,15 +17,8 @@
 
         .main-content {
             margin-left: 16rem;
-            /* Width of the sidebar */
             padding: 1rem;
             margin-top: 3rem;
-            /* Height of the header */
-        }
-
-        .chart-container {
-            position: relative;
-            height: 247px;
         }
     </style>
 </head>
@@ -223,6 +216,58 @@
             </ul>
         </div>
     </nav>
+
+
+
+    <main>
+        <body>
+            <div class="bg-gray-200 p-4 rounded-md shadow-md">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold">Add Exam</h2>
+                    <button class="text-gray-500 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <form>
+                    <div class="mb-4">
+                        <label for="course" class="block text-gray-700 text-sm font-bold mb-2">Select Course</label>
+                        <select id="course" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="">Select Course</option>
+                            <option value="Course 1">Course 1</option>
+                            <option value="Course 2">Course 2</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="time" class="block text-gray-700 text-sm font-bold mb-2">Exam Time Limit</label>
+                        <select id="time" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="">Select time</option>
+                            <option value="30 minutes">30 minutes</option>
+                            <option value="60 minutes">60 minutes</option>
+                            <option value="90 minutes">90 minutes</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="questions" class="block text-gray-700 text-sm font-bold mb-2">No. of Question/s</label>
+                        <input type="number" id="questions" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Input number of questions in exam">
+                    </div>
+                    <div class="mb-4">
+                        <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Exam Title</label>
+                        <input type="text" id="title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Input Exam Title">
+                    </div>
+                    <div class="mb-4">
+                        <label for="subject" class="block text-gray-700 text-sm font-bold mb-2">Subject</label>
+                        <textarea id="subject" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Input Subject"></textarea>
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="button" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Close</button>
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-2">Add Now</button>
+                    </div>
+                </form>
+            </div>
+        </body>
+    </main>
 
     <script>
         document.querySelectorAll('.group').forEach(group => {
