@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Panel</title>
+    <title>Teacher Timetable</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://necolas.github.io/normalize.css/8.0.1/normalize.css"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             margin: 0;
@@ -17,20 +15,13 @@
 
         .main-content {
             margin-left: 16rem;
-            /* Width of the sidebar */
             padding: 1rem;
             margin-top: 3rem;
-            /* Height of the header */
-        }
-
-        .chart-container {
-            position: relative;
-            height: 247px;
         }
     </style>
 </head>
 
-<body class="main-content">
+<body class="main-content bg-gray-100">
     <header class="flex justify-between items-center py-4   border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
         <div class="flex items-center w-full max-w-4xl mx-auto px-4">
             <!-- Search bar -->
@@ -224,14 +215,38 @@
         </div>
     </nav>
 
-    <script>
-        document.querySelectorAll('.group').forEach(group => {
-            group.addEventListener('click', () => {
-                const subMenu = group.nextElementSibling;
-                subMenu.classList.toggle('hidden');
-            });
-        });
-    </script>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        <h1 class="text-2xl font-bold mb-4">Teacher Timetable</h1>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white border border-gray-200">
+                <thead>
+                    <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                        <th class="py-3 px-6 text-left">Time</th>
+                        <th class="py-3 px-6 text-left">Monday</th>
+                        <th class="py-3 px-6 text-left">Tuesday</th>
+                        <th class="py-3 px-6 text-left">Wednesday</th>
+                        <th class="py-3 px-6 text-left">Thursday</th>
+                        <th class="py-3 px-6 text-left">Friday</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-600 text-sm font-light">
+                    <!-- Example Row -->
+                    <tr class="border-b border-gray-200 hover:bg-gray-100">
+                        <td class="py-3 px-6 text-left whitespace-nowrap">8:00 - 9:00</td>
+                        <td class="py-3 px-6 text-left">Math</td>
+                        <td class="py-3 px-6 text-left">Science</td>
+                        <td class="py-3 px-6 text-left">English</td>
+                        <td class="py-3 px-6 text-left">History</td>
+                        <td class="py-3 px-6 text-left">Geography</td>
+                    </tr>
+                    <!-- Additional rows here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
 </body>
 
 </html>
