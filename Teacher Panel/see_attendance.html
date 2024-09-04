@@ -18,7 +18,7 @@
         .main-content {
             margin-left: 16rem;
             padding: 1rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
     </style>
 </head>
@@ -217,6 +217,148 @@
         </div>
     </nav>
 
+    <!-- Main Content -->
+    <main class="">
+        <h1 class="text-2xl font-semibold mb-4">Take Attendance</h1>
+
+        <div class="mx-auto">
+            <!-- Dropdowns for Semester and Division -->
+            <div class="flex gap-4 mb-6">
+                <div>
+                    <label for="semester" class="block text-sm font-medium text-gray-700">Select Semester:</label>
+                    <select id="semester"
+                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-600">
+                        <option value="">-- Select Semester --</option>
+                        <option value="Semester 1">Semester 1</option>
+                        <option value="Semester 2">Semester 2</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <div>
+                    <label for="division" class="block text-sm font-medium text-gray-700">Select Division:</label>
+                    <select id="division"
+                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-600">
+                        <option value="">-- Select Division --</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+            </div>
+
+            <!-- Attendance Table -->
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Student
+                            ID</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Status
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <!-- Dummy Data -->
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">S001</td>
+                        <td class="px-6 py-4 whitespace-nowrap">John Doe</td>
+                        <td id="attendance-status-S001" class="px-6 py-4 whitespace-nowrap">Absent</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <button onclick="markAttendance('S001', 'Present')"
+                                class="bg-blue-500 text-white px-4 py-2 rounded">Mark Present</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">S002</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Jane Smith</td>
+                        <td id="attendance-status-S002" class="px-6 py-4 whitespace-nowrap">Absent</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <button onclick="markAttendance('S002', 'Present')"
+                                class="bg-blue-500 text-white px-4 py-2 rounded">Mark Present</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">S003</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Michael Johnson</td>
+                        <td id="attendance-status-S003" class="px-6 py-4 whitespace-nowrap">Absent</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <button onclick="markAttendance('S003', 'Present')"
+                                class="bg-blue-500 text-white px-4 py-2 rounded">Mark Present</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">S004</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Emily Davis</td>
+                        <td id="attendance-status-S004" class="px-6 py-4 whitespace-nowrap">Absent</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <button onclick="markAttendance('S004', 'Present')"
+                                class="bg-blue-500 text-white px-4 py-2 rounded">Mark Present</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">S005</td>
+                        <td class="px-6 py-4 whitespace-nowrap">William Brown</td>
+                        <td id="attendance-status-S005" class="px-6 py-4 whitespace-nowrap">Absent</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <button onclick="markAttendance('S005', 'Present')"
+                                class="bg-blue-500 text-white px-4 py-2 rounded">Mark Present</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">S006</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Olivia Jones</td>
+                        <td id="attendance-status-S006" class="px-6 py-4 whitespace-nowrap">Absent</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <button onclick="markAttendance('S006', 'Present')"
+                                class="bg-blue-500 text-white px-4 py-2 rounded">Mark Present</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">S007</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Liam Miller</td>
+                        <td id="attendance-status-S007" class="px-6 py-4 whitespace-nowrap">Absent</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <button onclick="markAttendance('S007', 'Present')"
+                                class="bg-blue-500 text-white px-4 py-2 rounded">Mark Present</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">S008</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Sophia Wilson</td>
+                        <td id="attendance-status-S008" class="px-6 py-4 whitespace-nowrap">Absent</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <button onclick="markAttendance('S008', 'Present')"
+                                class="bg-blue-500 text-white px-4 py-2 rounded">Mark Present</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">S009</td>
+                        <td class="px-6 py-4 whitespace-nowrap">James Anderson</td>
+                        <td id="attendance-status-S009" class="px-6 py-4 whitespace-nowrap">Absent</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <button onclick="markAttendance('S009', 'Present')"
+                                class="bg-blue-500 text-white px-4 py-2 rounded">Mark Present</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">S010</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Isabella Thomas</td>
+                        <td id="attendance-status-S010" class="px-6 py-4 whitespace-nowrap">Absent</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <button onclick="markAttendance('S010', 'Present')"
+                                class="bg-blue-500 text-white px-4 py-2 rounded">Mark Present</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </main>
+
     <script>
         document.querySelectorAll('.group').forEach(group => {
             group.addEventListener('click', () => {
@@ -224,6 +366,10 @@
                 subMenu.classList.toggle('hidden');
             });
         });
+
+        function markAttendance(studentId, status) {
+            document.getElementById(`attendance-status-${studentId}`).textContent = status;
+        }
     </script>
 </body>
 
