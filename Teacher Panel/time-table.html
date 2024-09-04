@@ -2,71 +2,79 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Timetable</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Timetable</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
 
-        .main-content {
-            margin-left: 16rem;
-            padding: 1rem;
-            margin-top: 3rem;
-        }
-    </style>
+    .main-content {
+      margin-left: 16rem;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 
 <body class="main-content">
 
-    <header class="flex justify-between items-center py-4   border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
-        <div class="flex items-center w-full max-w-4xl mx-auto px-4">
-            <!-- Search bar -->
-            <input type="search" placeholder="Search"
-                class="w-full py-2 pl-10 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600">
-        </div>
-        <div class="flex items-center ml-4">
-            <!-- Profile icon -->
-            <img src="profile-icon.png" alt="Profile Icon" class="w-8 h-8 rounded-full object-cover">
-        </div>
-    </header>
- <!-- Sidebar -->
- <nav class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10">
-    SCMS
-    <ul class="mt-8">
-      <li>
-        <a href="index.html"
-          class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-          <span>Dashboard</span>
+  <header
+    class="flex justify-between items-center py-4 pr-4 shadow-md border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
+    <div class="flex-1 flex justify-center items-center">
+      <!-- Admin Panel text and icon -->
+      <div class="flex items-center space-x-2">
+        <i class="fas fa-chalkboard-teacher text-xl"></i> <!-- Admin icon -->
+        <span class="text-2xl font-bold underline">Teacher's Panel</span>
+      </div>
+    </div>
+    <div>
+      <!-- Profile icon -->
+      <img src="https://readymadeui.com/profile_2.webp" class="w-10 h-10 rounded-full" />
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <nav class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10">
+    <!-- Logo -->
+    <div class="flex items-center justify-center mb-6">
+      <img src="../SCMS-logo.png" alt="Logo" class="w-32 h-auto" />
+    </div>
+
+    <!-- Dashboard Section -->
+    <div class="mt-6">
+      <div class="flex cursor-pointer group">
+        <a href="index.html" class="flex cursor-pointer">
+          <i class="fas fa-home w-5 h-5 mr-2"></i>
+          <h6 class="text-sm font-bold px-4 flex-1 hover:text-black">Dashboard</h6>
         </a>
-      </li>
-    </ul>
+      </div>
+    </div>
 
     <!-- Documents Section -->
     <div class="mt-6">
       <div class="flex cursor-pointer group" aria-expanded="false">
+        <i class="fas fa-file-alt w-5 h-5 mr-2"></i>
         <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Documents</h6>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-          viewBox="0 0 451.847 451.847">
-          <path
-            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-            data-original="#000000" />
-        </svg>
+        <i class="fas fa-chevron-down"></i>
       </div>
       <ul class="space-y-1 mt-2 pl-4 hidden">
         <li>
           <a href="time-table.html"
             class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <i class="fas fa-calendar-alt w-4 h-4 mr-2"></i>
             <span>Time Table</span>
           </a>
         </li>
         <li>
           <a href="doc.html"
             class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <i class="fas fa-folder-open w-4 h-4 mr-2"></i>
             <span>Materials</span>
           </a>
         </li>
@@ -76,30 +84,29 @@
     <!-- Students Section -->
     <div class="mt-6">
       <div class="flex cursor-pointer group" aria-expanded="false">
+        <i class="fas fa-user-graduate w-5 h-5 mr-2"></i>
         <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Students</h6>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-          viewBox="0 0 451.847 451.847">
-          <path
-            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-            data-original="#000000" />
-        </svg>
+        <i class="fas fa-chevron-down"></i>
       </div>
       <ul class="space-y-1 mt-2 pl-4 hidden">
         <li>
           <a href="take_attendance.html"
             class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <i class="fas fa-check-square w-4 h-4 mr-2"></i>
             <span>Take Attendance</span>
           </a>
         </li>
         <li>
           <a href="see_attendance.html"
             class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <i class="fas fa-list-ol w-4 h-4 mr-2"></i>
             <span>See Attendance</span>
           </a>
         </li>
         <li>
           <a href="students.html"
             class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <i class="fas fa-users w-4 h-4 mr-2"></i>
             <span>All Students</span>
           </a>
         </li>
@@ -109,24 +116,22 @@
     <!-- Assignment Section -->
     <div class="mt-6">
       <div class="flex cursor-pointer group" aria-expanded="false">
+        <i class="fas fa-tasks w-5 h-5 mr-2"></i>
         <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Assignments</h6>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-          viewBox="0 0 451.847 451.847">
-          <path
-            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-            data-original="#000000" />
-        </svg>
+        <i class="fas fa-chevron-down"></i>
       </div>
       <ul class="space-y-1 mt-2 pl-4 hidden">
         <li>
           <a href="add_assignment.html"
             class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <i class="fas fa-plus-circle w-4 h-4 mr-2"></i>
             <span>Add Assignment</span>
           </a>
         </li>
         <li>
           <a href="assignments.html"
             class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <i class="fas fa-tasks w-4 h-4 mr-2"></i>
             <span>Status</span>
           </a>
         </li>
@@ -136,24 +141,22 @@
     <!-- Quiz Section -->
     <div class="mt-6">
       <div class="flex cursor-pointer group" aria-expanded="false">
+        <i class="fas fa-question-circle w-5 h-5 mr-2"></i>
         <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Quiz</h6>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-          viewBox="0 0 451.847 451.847">
-          <path
-            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-            data-original="#000000" />
-        </svg>
+        <i class="fas fa-chevron-down"></i>
       </div>
       <ul class="space-y-1 mt-2 pl-4 hidden">
         <li>
-          <a href="./quizze/add_quiz.html "
+          <a href="./quizze/add_quiz.html"
             class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <i class="fas fa-plus-square w-4 h-4 mr-2"></i>
             <span>Add Quiz</span>
           </a>
         </li>
         <li>
-          <a href="quizzes.html"
+          <a href="./quizze/quizzes.html"
             class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <i class="fas fa-list w-4 h-4 mr-2"></i>
             <span>Quizzes List</span>
           </a>
         </li>
@@ -163,24 +166,22 @@
     <!-- Notices Section -->
     <div class="mt-6">
       <div class="flex cursor-pointer group" aria-expanded="false">
+        <i class="fas fa-bullhorn w-5 h-5 mr-2"></i>
         <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Notices</h6>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-          viewBox="0 0 451.847 451.847">
-          <path
-            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-            data-original="#000000" />
-        </svg>
+        <i class="fas fa-chevron-down"></i>
       </div>
       <ul class="space-y-1 mt-2 pl-4 hidden">
         <li>
           <a href="add_notice.html"
             class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <i class="fas fa-plus-circle w-4 h-4 mr-2"></i>
             <span>Add Notice</span>
           </a>
         </li>
         <li>
           <a href="notices.html"
             class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <i class="fas fa-list-alt w-4 h-4 mr-2"></i>
             <span>All Notices</span>
           </a>
         </li>
@@ -190,127 +191,142 @@
     <!-- Actions Section -->
     <div class="mt-6">
       <div class="flex cursor-pointer group" aria-expanded="false">
+        <i class="fas fa-cogs w-5 h-5 mr-2"></i>
         <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Actions</h6>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-          viewBox="0 0 451.847 451.847">
-          <path
-            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-            data-original="#000000" />
-        </svg>
+        <i class="fas fa-chevron-down"></i>
       </div>
       <ul class="space-y-1 mt-2 pl-4 hidden">
         <li>
           <a href="profile.html"
             class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <i class="fas fa-user w-4 h-4 mr-2"></i>
             <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="settings.html"
+            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <i class="fas fa-cog w-4 h-4 mr-2"></i>
+            <span>Settings</span>
           </a>
         </li>
         <li>
           <a href="logout.html"
             class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+            <i class="fas fa-sign-out-alt w-4 h-4 mr-2"></i>
             <span>Logout</span>
           </a>
         </li>
       </ul>
     </div>
   </nav>
-
+  <main class="mt-6">
     <!-- Filter Section -->
     <div class="flex justify-between items-center py-4">
-        <div class="flex gap-4">
-            <!-- Search bar -->
-            <input type="text" id="search" placeholder="Search by subject"
-                class="py-2 pl-4 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600">
+      <div class="flex gap-4">
+        <!-- Search bar -->
+        <div class="relative">
+          <input type="text" id="search" placeholder="Search by subject"
+            class="py-2 pl-10 pr-4 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600">
+          <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+        </div>
 
-            <!-- Filter by Day -->
-            <select id="filter-day"
-                class="py-2 px-4 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg">
-                <option value="">All Days</option>
-                <option value="Monday">Monday</option>
-                <option value="Tuesday">Tuesday</option>
-                <option value="Wednesday">Wednesday</option>
-                <option value="Thursday">Thursday</option>
-                <option value="Friday">Friday</option>
-            </select>
+        <!-- Filter by Day -->
+        <div class="relative">
+          <select id="filter-day"
+            class="py-2 px-4 pl-10 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg">
+            <option value="">All Days</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+          </select>
+          <i class="fas fa-calendar-day absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
         </div>
-        <!-- Action Buttons -->
-        <div class="flex gap-4">
-            <button id="add-slot" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Add New
-                Slot</button>
-            <button id="save-timetable" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Save
-                Timetable</button>
-        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex gap-4">
+        <button id="add-slot" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+          <i class="fas fa-plus-circle mr-2"></i>Add New Slot
+        </button>
+        <button id="save-timetable" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+          <i class="fas fa-save mr-2"></i>Save Timetable
+        </button>
+      </div>
     </div>
 
     <!-- Timetable Content -->
     <table id="timetable" class="w-full text-left border-collapse mt-4">
-        <thead>
-            <tr class="border-b">
-                <th class="p-4">Day</th>
-                <th class="p-4">Time</th>
-                <th class="p-4">Subject</th>
-                <th class="p-4">Teacher</th>
-                <th class="p-4">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr data-day="Monday" data-subject="Math">
-                <td contenteditable="true" class="p-4">Monday</td>
-                <td contenteditable="true" class="p-4">9:00 - 10:00</td>
-                <td contenteditable="true" class="p-4">Math</td>
-                <td contenteditable="true" class="p-4">John Doe</td>
-                <td class="p-4">
-                    <button onclick="deleteRow(this)" class="text-red-500">Delete</button>
-                </td>
-            </tr>
-            <tr data-day="Tuesday" data-subject="Science">
-                <td contenteditable="true" class="p-4">Tuesday</td>
-                <td contenteditable="true" class="p-4">10:00 - 11:00</td>
-                <td contenteditable="true" class="p-4">Science</td>
-                <td contenteditable="true" class="p-4">Jane Smith</td>
-                <td class="p-4">
-                    <button onclick="deleteRow(this)" class="text-red-500">Delete</button>
-                </td>
-            </tr>
-            <!-- More rows can be added here -->
-        </tbody>
+      <thead>
+        <tr class="border-b">
+          <th class="p-4"><i class="fas fa-calendar-alt mr-2"></i>Day</th>
+          <th class="p-4"><i class="fas fa-clock mr-2"></i>Time</th>
+          <th class="p-4"><i class="fas fa-book mr-2"></i>Subject</th>
+          <th class="p-4"><i class="fas fa-chalkboard-teacher mr-2"></i>Teacher</th>
+          <th class="p-4"><i class="fas fa-cogs mr-2"></i>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-day="Monday" data-subject="Math">
+          <td contenteditable="true" class="p-4">Monday</td>
+          <td contenteditable="true" class="p-4">9:00 - 10:00</td>
+          <td contenteditable="true" class="p-4">Math</td>
+          <td contenteditable="true" class="p-4">John Doe</td>
+          <td class="p-4">
+            <button onclick="deleteRow(this)" class="text-red-500"><i class="fas fa-trash-alt"></i> Delete</button>
+          </td>
+        </tr>
+        <tr data-day="Tuesday" data-subject="Science">
+          <td contenteditable="true" class="p-4">Tuesday</td>
+          <td contenteditable="true" class="p-4">10:00 - 11:00</td>
+          <td contenteditable="true" class="p-4">Science</td>
+          <td contenteditable="true" class="p-4">Jane Smith</td>
+          <td class="p-4">
+            <button onclick="deleteRow(this)" class="text-red-500"><i class="fas fa-trash-alt"></i> Delete</button>
+          </td>
+        </tr>
+        <!-- More rows can be added here -->
+      </tbody>
     </table>
+  </main>
 
-    <script>
-        const searchInput = document.getElementById('search');
-        const filterDay = document.getElementById('filter-day');
-        const timetableRows = document.querySelectorAll('#timetable tbody tr');
-        const addSlotButton = document.getElementById('add-slot');
-        const saveButton = document.getElementById('save-timetable');
-        const timetableBody = document.querySelector('#timetable tbody');
+  <script>
+    const searchInput = document.getElementById('search');
+    const filterDay = document.getElementById('filter-day');
+    const timetableRows = document.querySelectorAll('#timetable tbody tr');
+    const addSlotButton = document.getElementById('add-slot');
+    const saveButton = document.getElementById('save-timetable');
+    const timetableBody = document.querySelector('#timetable tbody');
 
-        // Filter function
-        function filterTimetable() {
-            const searchValue = searchInput.value.toLowerCase();
-            const selectedDay = filterDay.value;
+    // Filter function
+    function filterTimetable() {
+      const searchValue = searchInput.value.toLowerCase();
+      const selectedDay = filterDay.value;
 
-            timetableRows.forEach(row => {
-                const subject = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
-                const day = row.querySelector('td:first-child').textContent;
+      timetableRows.forEach(row => {
+        const subject = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+        const day = row.querySelector('td:first-child').textContent;
 
-                const matchesSearch = subject.includes(searchValue);
-                const matchesDay = !selectedDay || day === selectedDay;
+        const matchesSearch = subject.includes(searchValue);
+        const matchesDay = !selectedDay || day === selectedDay;
 
-                if (matchesSearch && matchesDay) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
+        if (matchesSearch && matchesDay) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
         }
+      });
+    }
 
-        searchInput.addEventListener('input', filterTimetable);
-        filterDay.addEventListener('change', filterTimetable);
+    searchInput.addEventListener('input', filterTimetable);
+    filterDay.addEventListener('change', filterTimetable);
 
-        // Add new slot
-        addSlotButton.addEventListener('click', () => {
-            const newRow = document.createElement('tr');
-            newRow.innerHTML = `
+    // Add new slot
+    addSlotButton.addEventListener('click', () => {
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
                 <td contenteditable="true" class="p-4">Day</td>
                 <td contenteditable="true" class="p-4">Time</td>
                 <td contenteditable="true" class="p-4">Subject</td>
@@ -319,35 +335,35 @@
                     <button onclick="deleteRow(this)" class="text-red-500">Delete</button>
                 </td>
             `;
-            timetableBody.appendChild(newRow);
-        });
+      timetableBody.appendChild(newRow);
+    });
 
-        // Delete row
-        function deleteRow(button) {
-            button.closest('tr').remove();
-        }
+    // Delete row
+    function deleteRow(button) {
+      button.closest('tr').remove();
+    }
 
-        // Save timetable function
-        saveButton.addEventListener('click', () => {
-            const rowsData = Array.from(timetableBody.rows).map(row => {
-                return {
-                    day: row.cells[0].textContent.trim(),
-                    time: row.cells[1].textContent.trim(),
-                    subject: row.cells[2].textContent.trim(),
-                    teacher: row.cells[3].textContent.trim()
-                };
-            });
-            console.log("Saved Timetable Data: ", rowsData);
-            alert("Timetable saved successfully!");
-        });
+    // Save timetable function
+    saveButton.addEventListener('click', () => {
+      const rowsData = Array.from(timetableBody.rows).map(row => {
+        return {
+          day: row.cells[0].textContent.trim(),
+          time: row.cells[1].textContent.trim(),
+          subject: row.cells[2].textContent.trim(),
+          teacher: row.cells[3].textContent.trim()
+        };
+      });
+      console.log("Saved Timetable Data: ", rowsData);
+      alert("Timetable saved successfully!");
+    });
 
-        document.querySelectorAll('.group').forEach(group => {
-            group.addEventListener('click', () => {
-                const subMenu = group.nextElementSibling;
-                subMenu.classList.toggle('hidden');
-            });
-        });
-    </script>
+    document.querySelectorAll('.group').forEach(group => {
+      group.addEventListener('click', () => {
+        const subMenu = group.nextElementSibling;
+        subMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
 </body>
 
 </html>
