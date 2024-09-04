@@ -27,13 +27,15 @@ document.addEventListener('DOMContentLoaded', function () {
       errorContainer.textContent = '';
     }
 
-    function addDataRow(fileName, semester, subject, division) {
+    function addDataRow(fileName, semester, subject, division,description) {
       const row = document.createElement('tr');
       row.innerHTML = `
         <td>${fileName}</td>
         <td>${semester}</td>
         <td>${subject}</td>
         <td>${division}</td>
+        <td>${description}</td>
+        
       `;
       dataTable.querySelector('tbody').appendChild(row);
     }
@@ -82,9 +84,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const semester = document.getElementById('semester').value;
         const subject = document.getElementById('subject').value;
         const division = document.getElementById('division').value;
-
+        const description = document.getElementById('description').value;
+        
         Array.from(chooseFileInput.files).forEach(file => {
-          addDataRow(file.name, semester, subject, division);
+          addDataRow(file.name, semester, subject, division,description);
         });
 
         dataTableContainer.style.display = 'block';
