@@ -6,80 +6,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events Notices</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 </head>
-<header class="flex justify-between items-center py-4 border-b border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
-    <div class="flex items-center w-full max-w-4xl mx-auto px-4">
-        <!-- Search bar -->
-        <input type="search" placeholder="Search"
-            class="w-full py-2 pl-10 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600">
+
+<header
+    class="flex justify-between items-center py-4 pr-4 shadow-md border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
+    <div class="flex-1 flex justify-center items-center">
+        <!-- Admin Panel text and icon -->
+        <div class="flex items-center space-x-2">
+            <i class="fas fa-user-shield text-xl"></i> <!-- Admin icon -->
+            <span class="text-2xl font-bold underline">Admin Panel</span>
+        </div>
     </div>
-    <div class="flex items-center ml-4">
+    <div>
         <!-- Profile icon -->
-        <img src="profile-icon.png" alt="Profile Icon" class="w-8 h-8 rounded-full object-cover">
+        <img src="https://readymadeui.com/profile_2.webp" class="w-10 h-10 rounded-full" />
     </div>
 </header>
 
-<nav class="bg-[#fcfcfc] shadow-lg fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10">
-    SCMS
-    <ul class="mt-8">
-        <li>
-            <a href="index.html"
-                class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-                <span>Dashboard</span>
-            </a>
-        </li>
+<nav class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10">
+    <!-- Logo -->
+    <div class="flex items-center justify-center mb-6">
+        <img src="../SCMS-logo.png" alt="Logo" class="w-32 h-auto" />
+    </div>
 
-    </ul>
+  <!-- Dashboard Section -->
+  <div class="mt-6">
+    <div class="flex cursor-pointer group">
+      <a href="index.html" class="flex cursor-pointer">
+        <i class="fas fa-home w-5 h-5 mr-2"></i>
+        <h6 class="text-sm font-bold px-4 flex-1 hover:text-black">Dashboard</h6>
+      </a>
+    </div>
+  </div>
 
+    <!-- Teachers Section -->
     <div class="mt-6">
         <div class="flex cursor-pointer group">
+            <i class="fas fa-chalkboard-teacher w-5 h-5 mr-2"></i>
             <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Teachers</h6>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-                viewBox="0 0 451.847 451.847">
-                <path
-                    d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-                    data-original="#000000" />
-            </svg>
+            <i class="fas fa-chevron-down w-3 fill-gray-600 group-hover:fill-black"></i>
         </div>
-
         <ul class="space-y-1 mt-2 pl-4 hidden">
             <li>
                 <a href="add_teacher.html"
                     class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+                    <i class="fas fa-user-plus w-4 h-4 mr-2"></i> <!-- Add Teacher icon -->
                     <span>Add Teacher</span>
                 </a>
             </li>
             <li>
                 <a href="teachers.html"
                     class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+                    <i class="fas fa-users w-4 h-4 mr-2"></i> <!-- All Teachers icon -->
                     <span>All Teachers</span>
                 </a>
             </li>
         </ul>
     </div>
 
+    <!-- Students Section -->
     <div class="mt-6">
         <div class="flex cursor-pointer group">
+            <i class="fas fa-user-graduate w-5 h-5 mr-2"></i>
             <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Students</h6>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-                viewBox="0 0 451.847 451.847">
-                <path
-                    d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-                    data-original="#000000" />
-            </svg>
+            <i class="fas fa-chevron-down w-3 fill-gray-600 group-hover:fill-black"></i>
         </div>
-
         <ul class="space-y-1 mt-2 pl-4 hidden">
             <li>
                 <a href="add_student.html"
                     class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+                    <i class="fas fa-user-plus w-4 h-4 mr-2"></i> <!-- Add Student icon -->
                     <span>Add Student</span>
                 </a>
             </li>
             <li>
                 <a href="students.html"
                     class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+                    <i class="fas fa-users w-4 h-4 mr-2"></i> <!-- All Students icon -->
                     <span>All Students</span>
                 </a>
             </li>
@@ -89,85 +93,72 @@
     <!-- Notices Section -->
     <div class="mt-6">
         <div class="flex cursor-pointer group">
+            <i class="fas fa-bullhorn w-5 h-5 mr-2"></i>
             <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Notices</h6>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"
-                viewBox="0 0 451.847 451.847">
-                <path
-                    d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-                    data-original="#000000" />
-            </svg>
+            <i class="fas fa-chevron-down w-3 fill-gray-600 group-hover:fill-black"></i>
         </div>
-
         <ul class="space-y-1 mt-2 pl-4 hidden">
             <li>
                 <a href="fees_notices.html"
                     class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+                    <i class="fas fa-money-bill-alt w-4 h-4 mr-2"></i> <!-- Fees Related icon -->
                     <span>Fees Related</span>
                 </a>
             </li>
             <li>
                 <a href="events_notices.html"
                     class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+                    <i class="fas fa-calendar-alt w-4 h-4 mr-2"></i> <!-- Events icon -->
                     <span>Events</span>
                 </a>
             </li>
         </ul>
     </div>
 
+    <!-- Documents Section -->
     <div class="mt-6">
         <div class="flex cursor-pointer group">
+            <i class="fas fa-file-alt w-5 h-5 mr-2"></i>
             <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Documents</h6>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black -rotate-90"
-                viewBox="0 0 451.847 451.847">
-                <path
-                    d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-                    data-original="#000000" />
-            </svg>
+            <i class="fas fa-chevron-down w-3 fill-gray-600 group-hover:fill-black"></i>
         </div>
-
         <ul class="space-y-1 mt-2 pl-4 hidden">
-            <!-- <li>
-          <a href="javascript:void(0)"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <span>Time-Tables</span>
-          </a>
-        </li> -->
             <li>
-                <a href="javascript:void(0)"
+                <a href=""
                     class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+                    <i class="fas fa-folder-open w-4 h-4 mr-2"></i> <!-- Student docs icon -->
                     <span>Student docs</span>
                 </a>
             </li>
         </ul>
     </div>
 
+    <!-- Actions Section -->
     <div class="mt-6">
         <div class="flex cursor-pointer group">
+            <i class="fas fa-tasks w-5 h-5 mr-2"></i>
             <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Actions</h6>
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black -rotate-90"
-          viewBox="0 0 451.847 451.847">
-          <path
-            d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
-            data-original="#000000" />
-        </svg> -->
+            <i class="fas fa-chevron-down w-3 fill-gray-600 group-hover:fill-black"></i>
         </div>
-
-        <ul class="space-y-1 mt-2 pl-4">
+        <ul class="space-y-1 mt-2 pl-4 hidden">
             <li>
-                <a href=""
+                <a href="profile.html"
                     class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+                    <i class="fas fa-user w-4 h-4 mr-2"></i> <!-- Profile icon -->
                     <span>Profile</span>
                 </a>
             </li>
             <li>
-                <a href=""
+                <a href="logout.html"
                     class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+                    <i class="fas fa-sign-out-alt w-4 h-4 mr-2"></i> <!-- Logout icon -->
                     <span>Logout</span>
                 </a>
             </li>
         </ul>
     </div>
 </nav>
+
 
 <body class="bg-gray-100 min-h-screen">
     <div class="ml-64 p-8">
