@@ -86,7 +86,7 @@ const closeChatbot = document.getElementById("close-chatbot");
 
 // Toggle the chatbot popup
 chatbotIcon.addEventListener("click", function() {
-  chatbotPopup.classList.toggle("hidden");
+  chatbotPopup.classList.remove("hidden");
 });
 
 // Close the chatbot when clicking on the close icon
