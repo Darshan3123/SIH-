@@ -225,64 +225,92 @@
     </div>
   </nav>
 
-  <main>
+  <body class="bg-gray-100 min-h-screen main-content">
     <div class="">
+        <h1 class="text-3xl font-bold mb-6">Fees Related Notices</h1>
 
-      <h1 class="text-3xl font-bold mb-6">Events Notices</h1>
+        <!-- Add Notice Form -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold mb-4">Add New Notice</h2>
+            <form id="addNoticeForm" class="space-y-4">
+                <div>
+                    <label for="noticeType" class="block text-sm font-medium text-gray-700">Type of Notice</label>
+                    <select id="noticeType" name="noticeType"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="" disabled selected>Select type</option>
+                        <option value="fees">Fees Related</option>
+                        <option value="events">Events</option>
+                        <option value="exams">Exams</option>
+                        <option value="general">General</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="noticeTitle" class="block text-sm font-medium text-gray-700">Title</label>
+                    <input type="text" id="noticeTitle" name="noticeTitle"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                        placeholder="Notice Title">
+                </div>
+                <div>
+                    <label for="noticeContent" class="block text-sm font-medium text-gray-700">Content</label>
+                    <textarea id="noticeContent" name="noticeContent"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                        placeholder="Notice Content"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit"
+                        class="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">Add
+                        Notice</button>
+                </div>
+            </form>
+        </div>
 
-      <!-- Add Notice Form -->
-      <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-        <h2 class="text-xl font-semibold mb-4">Add New Notice</h2>
-        <form id="addEventNoticeForm" class="space-y-4">
-          <div>
-            <label for="eventTitle" class="block text-sm font-medium text-gray-700">Title</label>
-            <input type="text" id="eventTitle" name="eventTitle"
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-              placeholder="Event Title">
-          </div>
-          <div>
-            <label for="eventContent" class="block text-sm font-medium text-gray-700">Content</label>
-            <textarea id="eventContent" name="eventContent"
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-              placeholder="Event Content"></textarea>
-          </div>
-          <div class="text-center">
-            <button type="submit"
-              class="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
-              Add Notice
-            </button>
-          </div>
-        </form>
-      </div>
+        <!-- Notices List -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4">Existing Notices</h2>
+            <ul id="noticesList" class="space-y-4">
+                <!-- Notice Item -->
+                <li class="flex justify-between items-start p-4 border-b border-gray-200">
+                    <div>
+                        <h3 class="text-lg font-semibold">Notice Title: Upcoming Fee Deadline</h3>
+                        <p class="text-gray-700">Please note that the deadline for fee submission is September 30th,
+                            2024.</p>
+                        <p class="text-gray-500">Date: September 5th, 2024</p>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">Edit</button>
+                        <button class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600">Delete</button>
+                    </div>
+                </li>
 
-      <!-- Notices List -->
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <h2 class="text-xl font-semibold mb-4">Existing Notices</h2>
-        <ul id="eventNoticesList" class="space-y-4">
-          <!-- Notice Item -->
-          <li class="flex justify-between items-start p-4 border-b border-gray-200">
-            <div>
-              <h3 class="text-lg font-semibold">Event Title</h3>
-              <p class="text-gray-700">This is a placeholder for the event content.</p>
-              <p class="text-gray-500">Date: September 2024</p>
-            </div>
-            <div class="flex space-x-2">
-              <button class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 flex items-center space-x-1">
-                <i class="fas fa-edit"></i>
-                <span>Edit</span>
-              </button>
-              <button class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 flex items-center space-x-1">
-                <i class="fas fa-trash-alt"></i>
-                <span>Delete</span>
-              </button>
-            </div>
-          </li>
-          <!-- More notice items can be added here -->
-        </ul>
-      </div>
+                <li class="flex justify-between items-start p-4 border-b border-gray-200">
+                    <div>
+                        <h3 class="text-lg font-semibold">Notice Title: Cultural Event Announcement</h3>
+                        <p class="text-gray-700">Join us for the annual cultural event on October 15th, 2024.</p>
+                        <p class="text-gray-500">Date: September 2nd, 2024</p>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">Edit</button>
+                        <button class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600">Delete</button>
+                    </div>
+                </li>
 
+                <li class="flex justify-between items-start p-4 border-b border-gray-200">
+                    <div>
+                        <h3 class="text-lg font-semibold">Notice Title: General Meeting for Parents</h3>
+                        <p class="text-gray-700">A general meeting for all parents will be held on September 20th, 2024.
+                        </p>
+                        <p class="text-gray-500">Date: August 30th, 2024</p>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">Edit</button>
+                        <button class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600">Delete</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
-  </main>
+
+</body>
 
   <script>
     document.querySelectorAll('.group').forEach(group => {
