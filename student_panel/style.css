@@ -551,7 +551,7 @@ footer p {
 
 /* Hidden state for popup */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .chatbot-header {
