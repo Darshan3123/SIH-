@@ -214,9 +214,129 @@
         </li>
       </ul>
     </div>
+
+    <div class="mt-6"></div>
+      <div class="flex cursor-pointer group">
+        <a href="../index.html" class="flex cursor-pointer">
+          <i class="fa-solid fa-house w-5 h-5 mr-2"></i>
+          <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Back to Home</h6>
+        </a>
+      </div>
+    </div>
   </nav>
 
-  <main class="mt-6"></main>
+  <div class="main-content">
+    <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Student Card 1 -->
+      <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer hover:shadow-lg transition-shadow"
+        onclick="showModal('student1')">
+        <img src="https://via.placeholder.com/150" alt="Student" class="w-32 h-32 mx-auto rounded-full mb-4">
+        <h2 class="text-lg font-semibold text-center">John Doe</h2>
+        <p class="text-center text-gray-600">Class: 10</p>
+        <p class="text-center text-gray-600">Roll No: 23</p>
+      </div>
+  
+      <!-- Student Card 2 -->
+      <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer hover:shadow-lg transition-shadow"
+        onclick="showModal('student2')">
+        <img src="https://via.placeholder.com/150" alt="Student" class="w-32 h-32 mx-auto rounded-full mb-4">
+        <h2 class="text-lg font-semibold text-center">Jane Smith</h2>
+        <p class="text-center text-gray-600">Class: 9</p>
+        <p class="text-center text-gray-600">Roll No: 12</p>
+      </div>
+    </main>
+  
+    <!-- Modal for Student 1 Info -->
+    <div id="student1" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center flex">
+      <div class="bg-white rounded-lg shadow-2xl p-8 w-full max-w-lg mx-auto transform transition-transform scale-95">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-semibold">John Doe's Details</h3>
+          <button onclick="closeModal('student1')" class="text-gray-400 hover:text-gray-600">
+            <i class="fas fa-times text-red-500"></i>
+          </button>
+        </div>
+        <div class="mb-4 border-t border-gray-200 pt-4">
+          <h4 class="font-bold">Enrollment No:</h4>
+          <p>123456</p>
+  
+          <h4 class="font-bold mt-4">Parent Info:</h4>
+          <p><strong>Father:</strong> Mark Doe</p>
+          <p><strong>Mother:</strong> Jane Doe</p>
+          <p><strong>Contact:</strong> +123 456 7890</p>
+          <p><strong>Email:</strong> johndoe@example.com</p>
+  
+          <h4 class="font-bold mt-4">Assignments Submitted:</h4>
+          <ul class="list-disc pl-6">
+            <li>Math Assignment 1</li>
+            <li>Science Project Report</li>
+          </ul>
+  
+          <h4 class="font-bold mt-4">Quizzes Attempted:</h4>
+          <ul class="list-disc pl-6">
+            <li>Math Quiz 1</li>
+            <li>Science Quiz 2</li>
+          </ul>
+  
+          <h4 class="font-bold mt-4">Documents:</h4>
+          <ul class="list-disc pl-6">
+            <li><a href="document1.pdf" class="text-blue-500 hover:underline">ID Proof</a></li>
+            <li><a href="document2.pdf" class="text-blue-500 hover:underline">Address Proof</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Modal for Student 2 Info -->
+    <div id="student2" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center flex">
+      <div class="bg-white rounded-lg shadow-2xl p-8 w-full max-w-lg mx-auto transform transition-transform scale-95">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-semibold">Jane Smith's Details</h3>
+          <button onclick="closeModal('student2')" class="text-gray-400 hover:text-gray-600">
+            <i class="fas fa-times text-red-500"></i>
+          </button>
+        </div>
+        <div class="mb-4 border-t border-gray-200 pt-4">
+          <h4 class="font-bold">Enrollment No:</h4>
+          <p>654321</p>
+  
+          <h4 class="font-bold mt-4">Parent Info:</h4>
+          <p><strong>Father:</strong> Michael Smith</p>
+          <p><strong>Mother:</strong> Sarah Smith</p>
+          <p><strong>Contact:</strong> +987 654 3210</p>
+          <p><strong>Email:</strong> janesmith@example.com</p>
+  
+          <h4 class="font-bold mt-4">Assignments Submitted:</h4>
+          <ul class="list-disc pl-6">
+            <li>English Essay</li>
+            <li>History Assignment</li>
+          </ul>
+  
+          <h4 class="font-bold mt-4">Quizzes Attempted:</h4>
+          <ul class="list-disc pl-6">
+            <li>English Quiz 1</li>
+            <li>History Quiz 2</li>
+          </ul>
+  
+          <h4 class="font-bold mt-4">Documents:</h4>
+          <ul class="list-disc pl-6">
+            <li><a href="document1.pdf" class="text-blue-500 hover:underline">ID Proof</a></li>
+            <li><a href="document2.pdf" class="text-blue-500 hover:underline">Address Proof</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <script>
+      function showModal(id) {
+        document.getElementById(id).classList.remove('hidden');
+      }
+  
+      function closeModal(id) {
+        document.getElementById(id).classList.add('hidden');
+      }
+    </script>
+  </div>
+  
 
   <script>
     document.querySelectorAll('.group').forEach(group => {
