@@ -1,0 +1,139 @@
+<main class="mt-6">
+    <!-- Filter Section -->
+    <div class="flex justify-between items-center py-4">
+        <div class="flex gap-4">
+            <!-- Search bar -->
+            <div class="relative">
+                <input type="text" id="search" placeholder="Search by subject"
+                    class="py-2 pl-10 pr-4 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600">
+                <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+            </div>
+
+            <!-- Filter by Day -->
+            <div class="relative">
+                <select id="filter-day"
+                    class="py-2 px-4 pl-10 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg">
+                    <option value="">All Days</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                </select>
+                <i class="fas fa-calendar-day absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex gap-4">
+            <button id="add-slot" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+                <i class="fas fa-plus-circle mr-2"></i>Add New Slot
+            </button>
+            <button id="save-timetable" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                <i class="fas fa-save mr-2"></i>Save Timetable
+            </button>
+        </div>
+    </div>
+
+    <!-- Timetable Content -->
+    <table id="timetable" class="w-full text-left border-collapse mt-4">
+        <thead>
+            <tr class="border-b">
+                <th class="p-4"><i class="fas fa-calendar-alt mr-2"></i>Day</th>
+                <th class="p-4"><i class="fas fa-clock mr-2"></i>Time</th>
+                <th class="p-4"><i class="fas fa-book mr-2"></i>Subject</th>
+                <th class="p-4"><i class="fas fa-chalkboard-teacher mr-2"></i>Teacher</th>
+                <th class="p-4"><i class="fas fa-cogs mr-2"></i>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-day="Monday" data-subject="Math">
+                <td contenteditable="true" class="p-4">Monday</td>
+                <td contenteditable="true" class="p-4">9:00 - 10:00</td>
+                <td contenteditable="true" class="p-4">Math</td>
+                <td contenteditable="true" class="p-4">John Doe</td>
+                <td class="p-4">
+                    <button onclick="deleteRow(this)" class="text-red-500"><i class="fas fa-trash-alt"></i>
+                        Delete</button>
+                </td>
+            </tr>
+            <tr data-day="Tuesday" data-subject="Science">
+                <td contenteditable="true" class="p-4">Tuesday</td>
+                <td contenteditable="true" class="p-4">10:00 - 11:00</td>
+                <td contenteditable="true" class="p-4">Science</td>
+                <td contenteditable="true" class="p-4">Jane Smith</td>
+                <td class="p-4">
+                    <button onclick="deleteRow(this)" class="text-red-500"><i class="fas fa-trash-alt"></i>
+                        Delete</button>
+                </td>
+            </tr>
+            <!-- More rows can be added here -->
+        </tbody>
+    </table>
+</main>
+
+<script>
+    const searchInput = document.getElementById('search');
+    const filterDay = document.getElementById('filter-day');
+    const timetableRows = document.querySelectorAll('#timetable tbody tr');
+    const addSlotButton = document.getElementById('add-slot');
+    const saveButton = document.getElementById('save-timetable');
+    const timetableBody = document.querySelector('#timetable tbody');
+
+    // Filter function
+    function filterTimetable() {
+        const searchValue = searchInput.value.toLowerCase();
+        const selectedDay = filterDay.value;
+
+        timetableRows.forEach(row => {
+            const subject = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+            const day = row.querySelector('td:first-child').textContent;
+
+            const matchesSearch = subject.includes(searchValue);
+            const matchesDay = !selectedDay || day === selectedDay;
+
+            if (matchesSearch && matchesDay) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    searchInput.addEventListener('input', filterTimetable);
+    filterDay.addEventListener('change', filterTimetable);
+
+    // Add new slot
+    addSlotButton.addEventListener('click', () => {
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+                <td contenteditable="true" class="p-4">Day</td>
+                <td contenteditable="true" class="p-4">Time</td>
+                <td contenteditable="true" class="p-4">Subject</td>
+                <td contenteditable="true" class="p-4">Teacher</td>
+                <td class="p-4">
+                    <button onclick="deleteRow(this)" class="text-red-500">Delete</button>
+                </td>
+            `;
+        timetableBody.appendChild(newRow);
+    });
+
+    // Delete row
+    function deleteRow(button) {
+        button.closest('tr').remove();
+    }
+
+    // Save timetable function
+    saveButton.addEventListener('click', () => {
+        const rowsData = Array.from(timetableBody.rows).map(row => {
+            return {
+                day: row.cells[0].textContent.trim(),
+                time: row.cells[1].textContent.trim(),
+                subject: row.cells[2].textContent.trim(),
+                teacher: row.cells[3].textContent.trim()
+            };
+        });
+        console.log("Saved Timetable Data: ", rowsData);
+        alert("Timetable saved successfully!");
+    });
+</script>

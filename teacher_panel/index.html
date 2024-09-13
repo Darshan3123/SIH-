@@ -4,415 +4,226 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teacher Panel</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Teacher's Panel</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-    }
-
-    .main-content {
-      margin-left: 16rem;
-      padding: 1rem;
-      margin-top: 3rem;
-    }
-
-    .chart-container {
-      position: relative;
-      height: 247px;
-    }
-  </style>
 </head>
 
-<body class="main-content">
-  <header
-    class="flex justify-between items-center py-4 pr-4 shadow-md border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
-    <div class="flex-1 flex justify-center items-center">
-      <!-- Admin Panel text and icon -->
-      <div class="flex items-center space-x-2">
-        <i class="fas fa-chalkboard-teacher text-xl"></i> <!-- Admin icon -->
-        <span class="text-2xl font-bold underline">Teacher's Panel</span>
-      </div>
-    </div>
-    <div>
-      <!-- Profile icon -->
-      <img src="https://readymadeui.com/profile_2.webp" class="w-10 h-10 rounded-full" />
-    </div>
-  </header>
-
+<body class="bg-gray-100">
   <!-- Sidebar -->
-  <nav class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10">
-    <!-- Logo -->
-    <div class="flex items-center justify-center mb-6">
-      <img src="../SCMS-logo.png" alt="Logo" class="w-32 h-auto" />
-    </div>
+  <div class="flex h-screen overflow-hidden">
+    <!-- Sidebar toggle button -->
+    <button id="toggleSidebar"
+      class="lg:hidden fixed top-4 left-4 z-50 p-2 text-white bg-blue-500 rounded-md focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
 
-    <!-- Dashboard Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group">
-        <a href="index.html" class="flex cursor-pointer">
-          <i class="fas fa-home w-5 h-5 mr-2"></i>
-          <h6 class="text-sm font-bold px-4 flex-1 hover:text-black">Dashboard</h6>
-        </a>
-      </div>
-    </div>
-
-    <!-- Documents Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-folder w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Documents</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="time-table.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-calendar-alt w-4 h-4 mr-2"></i>
-            <span>Time Table</span>
-          </a>
-        </li>
-        <li>
-          <a href="doc.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-folder-open w-4 h-4 mr-2"></i>
-            <span>Materials</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Students Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-user-graduate w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Students</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="take_attendance.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-check-square w-4 h-4 mr-2"></i>
-            <span>Take Attendance</span>
-          </a>
-        </li>
-        <li>
-          <a href="see_attendance.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-list-ol w-4 h-4 mr-2"></i>
-            <span>See Attendance</span>
-          </a>
-        </li>
-        <li>
-          <a href="students.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-users w-4 h-4 mr-2"></i>
-            <span>All Students</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Assignment Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-tasks w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Assignments</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="add_assignment.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-plus-circle w-4 h-4 mr-2"></i>
-            <span>Add Assignment</span>
-          </a>
-        </li>
-        <li>
-          <a href="assignments.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-tasks w-4 h-4 mr-2"></i>
-            <span>Status</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Quiz Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-question-circle w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Quiz</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="./quizze/add_quiz.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-plus-square w-4 h-4 mr-2"></i>
-            <span>Add Quiz</span>
-          </a>
-        </li>
-        <li>
-          <a href="./quizze/quizzes.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-list w-4 h-4 mr-2"></i>
-            <span>Quizzes List</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Notices Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-bullhorn w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Notices</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="add_notice.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-plus-circle w-4 h-4 mr-2"></i>
-            <span>Add Notice</span>
-          </a>
-        </li>
-          
-      </ul>
-    </div>
-
-    <!-- Actions Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-cogs w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Actions</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="profile.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-user w-4 h-4 mr-2"></i>
-            <span>Profile</span>
-          </a>
-        </li>
-        <li>
-          <a href="settings.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-cog w-4 h-4 mr-2"></i>
-            <span>Settings</span>
-          </a>
-        </li>
-        <li>
-          <a href="logout.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-sign-out-alt w-4 h-4 mr-2"></i>
-            <span>Logout</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="mt-6"></div>
-      <div class="flex cursor-pointer group">
-        <a href="../index.html" class="flex cursor-pointer">
-          <i class="fa-solid fa-house w-5 h-5 mr-2"></i>
-          <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Back to Home</h6>
-        </a>
-      </div>
-    </div>
-  </nav>
-
-
-  <!-- Dashboard Overview -->
-  <div class="p-6 bg-white rounded-lg shadow-md mt-6">
-    <!-- <h2 class="text-xl font-bold mb-4"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</h2> -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-blue-100 p-4 rounded-lg shadow-md">
-        <h3 class="text-lg font-semibold"><i class="fas fa-calendar-alt mr-2"></i>Upcoming Classes</h3>
-        <p>No upcoming classes today.</p>
-      </div>
-      <div class="bg-green-100 p-4 rounded-lg shadow-md">
-        <h3 class="text-lg font-semibold"><i class="fas fa-tasks mr-2"></i>Recent Assignments</h3>
-        <p>Math Assignment - Due on 2024-09-10</p>
-      </div>
-      <div class="bg-yellow-100 p-4 rounded-lg shadow-md">
-        <h3 class="text-lg font-semibold"><i class="fas fa-bullhorn mr-2"></i>Notices</h3>
-        <p>No new notices.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Charts and Graphs -->
-  <div class="p-6 bg-white rounded-lg shadow-md mt-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <h2 class="text-xl font-semibold text-gray-700 p-2 border-b"><i class="fas fa-chart-pie mr-2"></i>Student
-          Distribution</h2>
-        <div class="chart-container p-3">
-          <canvas id="studentsChart"></canvas>
+    <!-- Sidebar Content -->
+    <aside id="sidebar"
+      class="fixed lg:relative bg-white w-64 h-full transition-transform transform -translate-x-full lg:translate-x-0 z-40 shadow-lg overflow-y-auto">
+      <div class="flex flex-col h-full">
+        <div class="flex items-center justify-center py-5">
+          <img src="../SCMS-logo.png" alt="Logo" class="w-40 h-auto" />
         </div>
+
+        <nav class="flex-1 px-4 py-6 space-y-1">
+          <a href="./index.html" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md"><i
+              class="fas fa-home mr-3"></i>Dashboard</a>
+
+          <!-- Documents Section -->
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-chalkboard-teacher mr-3"></i>Documents
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./time-table.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-user-plus w-4 h-4 mr-3"></i>
+                <span>Time Table</span>
+              </a>
+              <a href="./doc.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-folder-open w-4 h-4 mr-3"></i>
+                <span>Materials</span></a>
+            </div>
+          </details>
+
+          <!-- Students Section -->
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-user-graduate mr-3"></i>Students
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./take_attendance.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-check-square w-4 h-4 mr-3"></i>
+                <span>Take Attendance</span>
+              </a>
+              <a href="./see_attendance.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-list-ol w-4 h-4 mr-3"></i>
+                <span>See Attendance</span></a>
+              <a href="./students.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-users w-4 h-4 mr-3"></i>
+                <span>All Students</span></a>
+            </div>
+          </details>
+
+          <!-- Assignment Section -->
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-tasks-alt mr-3"></i>Assignments
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./add_assignment.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-plus-circle w-4 h-4 mr-3"></i>
+                <span>Add Assignment</span>
+              </a>
+              <a href="./assignments.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-tasks w-4 h-4 mr-3"></i>
+                <span>Status</span>
+              </a>
+            </div>
+          </details>
+
+          <!-- Quiz Section -->
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-question-circle mr-3"></i>Quiz
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./add_assignment.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-plus-square w-4 h-4 mr-3"></i>
+                <span>Add Quiz</span>
+              </a>
+              <a href="./assignments.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-list w-4 h-4 mr-3"></i>
+                <span>Quiz List</span>
+              </a>
+            </div>
+          </details>
+
+          <a href="./add_notice.html" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md">
+            <i class="fas fa-bullhorn mr-3"></i>Notices
+          </a>
+
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-cogs mr-3"></i>Actions
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./profile.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-user w-4 h-4 mr-3"></i>
+                <span>Profile</span>
+              </a>
+              <a href="./logout.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-sign-out-alt w-4 h-4 mr-3"></i>
+                <span>Logout</span></a>
+            </div>
+          </details>
+
+          <a href="../index.html" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md">
+            <i class="fa-solid fa-circle-left mr-3"></i>
+            Back To Home
+          </a>
+        </nav>
       </div>
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <h2 class="text-xl font-semibold text-gray-700 p-2 border-b"><i class="fas fa-chart-line mr-2"></i>Weekly
-          Attendance</h2>
-        <div class="chart-container p-3">
-          <canvas id="attendanceChart"></canvas>
+    </aside>
+
+    <!-- Main content -->
+    <div class="flex-1 flex flex-col overflow-y-auto h-screen">
+      <!-- Navbar -->
+      <header class="flex items-center justify-between p-4 bg-white shadow-md sticky top-0">
+        <div class="flex-1 text-center">
+          <span class="text-2xl font-bold underline">Teacher's Panel</span>
         </div>
-      </div>
+        <div class="flex items-center">
+          <img src="https://readymadeui.com/profile_2.webp" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <main class="p-4 space-y-8">
+        <!-- Dashboard Overview -->
+
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-blue-100 p-4 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-2 flex items-center">
+              <i class="fas fa-calendar-alt mr-2 text-blue-600"></i>Upcoming Class
+            </h2>
+            <p class="text-gray-600">No upcoming classes today.</p>
+          </div>
+
+          <div class="bg-green-100 p-4 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-2 flex items-center">
+              <i class="fas fa-tasks-alt mr-2 text-green-600"></i>Recent Assignments
+            </h2>
+            <p class="text-gray-600">JAVA Assignment - Due on 2024-09-10</p>
+          </div>
+
+          <div class="bg-yellow-100 p-4 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-2 flex items-center">
+              <i class="fas fa-bullhorn mr-2 text-yellow-600"></i>Notices
+            </h2>
+            <p class="text-gray-600">No new notices.</p>
+          </div>
+
+        </section>
+
+        <!-- Charts and Graphs -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <!-- Student Distribution Chart -->
+          <div class="bg-white p-4 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4"><i class="fas fa-chart-pie mr-2"></i> Distribution</h2>
+            <div class="flex justify-center">
+              <canvas id="studentsChart" class="w-1/2 h-60"></canvas>
+            </div>
+          </div>
+          <!-- Attendance Graph -->
+          <div class="bg-white p-4 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4"><i class="fas fa-chart-bar mr-2"></i>Attendance Graph</h2>
+            <div class="flex justify-center">
+              <canvas id="attendanceChart" class="w-1/2 h-60"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Links -->
+        <section class="bg-white p-4 rounded-lg shadow-md">
+          <h2 class="text-xl font-semibold mb-4"> <i class="fas fa-link mr-2"></i>Quick Links</h2>
+          <div class="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="add_assignment.html"
+              class="bg-blue-500 text-white p-4 flex items-center justify-between hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 rounded-lg shadow-md">
+              <span class="text-lg font-semibold">
+                <i class="fas fa-plus-circle mr-2"></i>Add Assignment
+              </span>
+              <i class="fas fa-arrow-right text-3xl"></i>
+            </a>
+            <a href="add_assignment.html"
+              class="bg-green-500 text-white p-4 flex items-center justify-between hover:bg-green-700 transition-all duration-200 transform hover:scale-105 rounded-lg shadow-md">
+              <span class="text-lg font-semibold">
+                <i class="fas fa-plus-circle mr-2"></i>Add Quiz
+              </span>
+              <i class="fas fa-arrow-right text-3xl"></i>
+            </a>
+            <a href="add_assignment.html"
+              class="bg-yellow-500 text-white p-4 flex items-center justify-between hover:bg-yellow-700 transition-all duration-200 transform hover:scale-105 rounded-lg shadow-md">
+              <span class="text-lg font-semibold">
+                <i class="fas fa-eye mr-2"></i>Add Quiz
+              </span>
+              <i class="fas fa-arrow-right text-3xl"></i>
+            </a>
+          </div>
+        </section>
+
+      </main>
     </div>
   </div>
+  <script src="script.js"></script>
 
-  <!-- Quick Links -->
-  <div class="p-6 bg-white rounded-lg shadow-md mt-6">
-    <h2 class="text-xl font-bold mb-4"><i class="fas fa-link mr-2"></i>Quick Links</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <a href="add_assignment.html" class="bg-blue-500 text-white p-2 rounded-lg shadow-md text-center">
-        <i class="fas fa-plus-circle mr-2"></i>Add Assignment
-      </a>
-      <a href="add_quiz.html" class="bg-green-500 text-white p-2 rounded-lg shadow-md text-center">
-        <i class="fas fa-plus-square mr-2"></i>Add Quiz
-      </a>
-      <a href="add_notice.html" class="bg-yellow-500 text-white p-2 rounded-lg shadow-md text-center">
-        <i class="fas fa-plus mr-2"></i>Add Notice
-      </a>
-    </div>
-  </div>
-
-
-  <script>
-    // Students Graph Data
-    const studentsData = {
-      labels: ['Boys', 'Girls'],
-      datasets: [{
-        label: 'Students',
-        data: [1234, 1134],
-        backgroundColor: ['#6366F1', '#FFD700'],
-        hoverBackgroundColor: ['#4F46E5', '#FBBF24']
-      }]
-    };
-
-    // Attendance Chart Data
-    const attendanceData = {
-      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-      datasets: [{
-        label: 'Present',
-        data: [55, 67, 78, 52, 61],
-        backgroundColor: '#FBBF24',
-        hoverBackgroundColor: '#F59E0B'
-      }, {
-        label: 'Absent',
-        data: [12, 8, 5, 15, 9],
-        backgroundColor: '#6366F1',
-        hoverBackgroundColor: '#4F46E5'
-      }]
-    };
-
-    // Students Graph
-    const studentsCtx = document.getElementById('studentsChart').getContext('2d');
-    new Chart(studentsCtx, {
-      type: 'doughnut',
-      data: studentsData,
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'bottom',
-            labels: {
-              font: {
-                size: 14
-              }
-            }
-          },
-          tooltip: {
-            callbacks: {
-              label: function (context) {
-                let label = context.label || '';
-                if (context.parsed !== null) {
-                  label += ': ' + context.parsed + ' students';
-                }
-                return label;
-              }
-            }
-          }
-        },
-        animation: {
-          animateScale: true,
-          animateRotate: true,
-          duration: 2000,
-          easing: 'easeInOut'
-        }
-      }
-    });
-
-    // Attendance Chart
-    const attendanceCtx = document.getElementById('attendanceChart').getContext('2d');
-    new Chart(attendanceCtx, {
-      type: 'bar',
-      data: attendanceData,
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'bottom',
-            labels: {
-              font: {
-                size: 14
-              }
-            }
-          },
-          tooltip: {
-            callbacks: {
-              label: function (context) {
-                let label = context.dataset.label || '';
-                if (context.parsed.y !== null) {
-                  label += ': ' + context.parsed.y + '%';
-                }
-                return label;
-              }
-            }
-          }
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-            max: 100,
-            ticks: {
-              stepSize: 10
-            },
-            grid: {
-              borderColor: '#E5E7EB',
-              borderWidth: 1
-            }
-          },
-          x: {
-            grid: {
-              borderColor: '#E5E7EB',
-              borderWidth: 1
-            }
-          }
-        },
-        animation: {
-          duration: 2000,
-          easing: 'easeInOut'
-        }
-      }
-    });
-
-    document.querySelectorAll('.group').forEach(group => {
-      group.addEventListener('click', () => {
-        const subMenu = group.nextElementSibling;
-        subMenu.classList.toggle('hidden');
-      });
-    });
-  </script>
 </body>
 
 </html>
