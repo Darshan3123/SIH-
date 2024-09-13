@@ -126,7 +126,7 @@
             </header>
 
             <!-- Main content area -->
-            <main class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <main class="p-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
                 <!-- Student Cards -->
                 <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer hover:shadow-lg transition-shadow"
                     onclick="showModal('student1')">
@@ -144,6 +144,42 @@
                     <h2 class="text-lg font-semibold text-center">Jane Smith</h2>
                     <p class="text-center text-gray-600">Class: 9</p>
                     <p class="text-center text-gray-600">Roll No: 12</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer hover:shadow-lg transition-shadow"
+                    onclick="showModal('student3')">
+                    <img src="https://via.placeholder.com/150" alt="Student"
+                        class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h2 class="text-lg font-semibold text-center">David Johnson</h2>
+                    <p class="text-center text-gray-600">Class: 8</p>
+                    <p class="text-center text-gray-600">Roll No: 11</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer hover:shadow-lg transition-shadow"
+                    onclick="showModal('student4')">
+                    <img src="https://via.placeholder.com/150" alt="Student"
+                        class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h2 class="text-lg font-semibold text-center">Michael Lee</h2>
+                    <p class="text-center text-gray-600">Class: 7</p>
+                    <p class="text-center text-gray-600">Roll No: 10</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer hover:shadow-lg transition-shadow"
+                    onclick="showModal('student5')">
+                    <img src="https://via.placeholder.com/150" alt="Student"
+                        class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h2 class="text-lg font-semibold text-center">Sarah Williams</h2>
+                    <p class="text-center text-gray-600">Class: 6</p>
+                    <p class="text-center text-gray-600">Roll No: 9</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer hover:shadow-lg transition-shadow"
+                    onclick="showModal('student6')">
+                    <img src="https://via.placeholder.com/150" alt="Student"
+                        class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h2 class="text-lg font-semibold text-center">Emily Brown</h2>
+                    <p class="text-center text-gray-600">Class: 5</p>
+                    <p class="text-center text-gray-600">Roll No: 8</p>
                 </div>
             </main>
 
@@ -198,8 +234,112 @@
                 </div>
             </div>
 
-        </div>
+            <!-- Similar modal for Student 3 -->
+            <div id="student3"
+                class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center z-50">
+                <div
+                    class="bg-white rounded-lg shadow-2xl p-8 w-full max-w-lg mx-auto transform transition-transform scale-95">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold">David Johnson's Location & Parent Info</h3>
+                        <button onclick="closeModal('student3')" class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-times text-red-500"></i>
+                        </button>
+                    </div>
+                    <div class="mb-4 border-t border-gray-20    
+                    pt-4">
+                        <h4 class="font-bold">Current Location:</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 789 Elm Street, City</p>
+                        <img src="../map.jpg" alt="Location" class="w-full h-48 mt-2 bg-gray-200 rounded">
 
+                        <div class="border-t border-gray-200 pt-4"></div>
+                        <h4 class="font-bold">Parent Info:</h4>
+                        <p><strong>Father:</strong> Jane Doe</p>
+                        <p><strong>Mother:</strong> Mark Doe</p>
+                        <p><strong>Contact:</strong> +098 765 4321</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Similar modal for Student 3 -->
+            <div id="student4"
+                class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center z-50">
+                <div
+                    class="bg-white rounded-lg shadow-2xl p-8 w-full max-w-lg mx-auto transform transition-transform scale-95">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold">Michael Lee's Location & Parent Info</h3>
+                        <button onclick="closeModal('student4')" class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-times text-red-500"></i>
+                        </button>
+                    </div>
+                    <div class="mb-4 border-t border-gray-20    
+                    pt-4">
+                        <h4 class="font-bold">Current Location:</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 789 Elm Street, City</p>
+                        <img src="../map.jpg" alt="Location" class="w-full h-48 mt-2 bg-gray-200 rounded">
+
+                        <div class="border-t border-gray-200 pt-4"></div>
+                        <h4 class="font-bold">Parent Info:</h4>
+                        <p><strong>Father:</strong> Jane Doe</p>
+                        <p><strong>Mother:</strong> Mark Doe</p>
+                        <p><strong>Contact:</strong> +098 765 4321</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Similar modal for Student 4 -->
+            <div id="student5"
+                class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center z-50">
+                <div
+                    class="bg-white rounded-lg shadow-2xl p-8 w-full max-w-lg mx-auto transform transition-transform scale-95">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold">Sarah Williams's Location & Parent Info</h3>
+                        <button onclick="closeModal('student5')" class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-times text-red-500"></i>
+                        </button>
+                    </div>
+                    <div class="mb-4 border-t border-gray-20    
+                 pt-4">
+                        <h4 class="font-bold">Current Location:</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 789 Elm Street, City</p>
+                        <img src="../map.jpg" alt="Location" class="w-full h-48 mt-2 bg-gray-200 rounded">
+
+                        <div class="border-t border-gray-200 pt-4"></div>
+                        <h4 class="font-bold">Parent Info:</h4>
+                        <p><strong>Father:</strong> Jane Doe</p>
+                        <p><strong>Mother:</strong> Mark Doe</p>
+                        <p><strong>Contact:</strong> +098 765 4321</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Similar modal for Student 4 -->
+            <div id="student6"
+                class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center z-50">
+                <div
+                    class="bg-white rounded-lg shadow-2xl p-8 w-full max-w-lg mx-auto transform transition-transform scale-95">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold">Emily Brown's Location & Parent Info</h3>
+                        <button onclick="closeModal('student6')" class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-times text-red-500"></i>
+                        </button>
+                    </div>
+                    <div class="mb-4 border-t border-gray-20    
+                 pt-4">
+                        <h4 class="font-bold">Current Location:</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 789 Elm Street, City</p>
+                        <img src="../map.jpg" alt="Location" class="w-full h-48 mt-2 bg-gray-200 rounded">
+
+                        <div class="border-t border-gray-200 pt-4"></div>
+                        <h4 class="font-bold">Parent Info:</h4>
+                        <p><strong>Father:</strong> Jane Doe</p>
+                        <p><strong>Mother:</strong> Mark Doe</p>
+                        <p><strong>Contact:</strong> +098 765 4321</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         <script>
             function showModal(id) {
                 document.getElementById(id).classList.remove("hidden");
