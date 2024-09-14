@@ -42,7 +42,7 @@
                 <i class="fas fa-user-plus w-4 h-4 mr-3"></i>
                 <span>Time Table</span>
               </a>
-              <a href="./doc.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+              <a href="./material_upload.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
                 <i class="fas fa-folder-open w-4 h-4 mr-3"></i>
                 <span>Materials</span></a>
             </div>
@@ -145,9 +145,155 @@
       </header>
 
 
+      <main class="mt-6 px-4 md:px-8 lg:px-12">
+        <!-- Filter Section -->
+        <div class="flex flex-col md:flex-row justify-between items-center py-4 space-y-4 md:space-y-0">
+          <div class="flex gap-4">
+            <!-- Search bar -->
+            <div class="relative">
+              <input type="text" id="search" placeholder="Search by subject"
+                class="py-2 pl-10 pr-4 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600 w-full md:w-auto">
+              <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+            </div>
+
+            <!-- Filter by Day -->
+            <div class="relative">
+              <select id="filter-day"
+                class="py-2 px-4 pl-10 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600 w-full md:w-auto">
+                <option value="">All Days</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+              </select>
+              <i class="fas fa-calendar-day absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex gap-4">
+            <button id="add-slot"
+              class="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:ring-2 focus:ring-green-600 transition-all">
+              <i class="fas fa-plus-circle mr-2"></i>Add New Slot
+            </button>
+            <button id="save-timetable"
+              class="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-600 transition-all">
+              <i class="fas fa-save mr-2"></i>Save Timetable
+            </button>
+          </div>
+        </div>
+
+        <!-- Timetable Content -->
+        <div class="overflow-x-auto">
+          <table id="timetable" class="min-w-full text-left border-collapse mt-4 bg-white shadow-md rounded-lg">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="p-4 font-medium text-gray-700">Day</th>
+                <th class="p-4 font-medium text-gray-700">Time</th>
+                <th class="p-4 font-medium text-gray-700">Subject</th>
+                <th class="p-4 font-medium text-gray-700">Class</th>
+                <th class="p-4 font-medium text-gray-700">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="timetable-body">
+              <tr data-day="Monday" data-subject="PYTHON" class="border-t hover:bg-gray-50">
+                <td contenteditable="true" class="p-4">Monday</td>
+                <td contenteditable="true" class="p-4">9:00 - 10:00</td>
+                <td contenteditable="true" class="p-4">PYTHON</td>
+                <td contenteditable="true" class="p-4">CR-1</td>
+                <td class="p-4">
+                  <button onclick="deleteRow(this)" class="text-red-500 hover:text-red-700 transition-all">
+                    <i class="fas fa-trash-alt"></i> Delete
+                  </button>
+                </td>
+              </tr>
+              <tr data-day="Tuesday" data-subject="JAVA" class="border-t hover:bg-gray-50">
+                <td contenteditable="true" class="p-4">Tuesday</td>
+                <td contenteditable="true" class="p-4">10:00 - 11:00</td>
+                <td contenteditable="true" class="p-4">JAVA</td>
+                <td contenteditable="true" class="p-4">LAB-2</td>
+                <td class="p-4">
+                  <button onclick="deleteRow(this)" class="text-red-500 hover:text-red-700 transition-all">
+                    <i class="fas fa-trash-alt"></i> Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+
     </div>
   </div>
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
+  <script>
+    const searchInput = document.getElementById('search');
+    const filterDay = document.getElementById('filter-day');
+    const timetableRows = document.querySelectorAll('#timetable tbody tr');
+    const addSlotButton = document.getElementById('add-slot');
+    const saveButton = document.getElementById('save-timetable');
+    const timetableBody = document.querySelector('#timetable-body');
+
+    // Filter function
+    function filterTimetable() {
+      const searchValue = searchInput.value.toLowerCase();
+      const selectedDay = filterDay.value;
+
+      timetableRows.forEach(row => {
+        const subject = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+        const day = row.querySelector('td:first-child').textContent;
+
+        const matchesSearch = subject.includes(searchValue);
+        const matchesDay = !selectedDay || day === selectedDay;
+
+        if (matchesSearch && matchesDay) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    searchInput.addEventListener('input', filterTimetable);
+    filterDay.addEventListener('change', filterTimetable);
+
+    // Add new slot
+    addSlotButton.addEventListener('click', () => {
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+      <td contenteditable="true" class="p-4">Day</td>
+      <td contenteditable="true" class="p-4">Time</td>
+      <td contenteditable="true" class="p-4">Subject</td>
+      <td contenteditable="true" class="p-4">Class</td>
+      <td class="p-4">
+          <button onclick="deleteRow(this)" class="text-red-500 hover:text-red-700 transition-all">
+            <i class="fas fa-trash-alt"></i> Delete
+          </button>
+      </td>
+  `;
+      timetableBody.appendChild(newRow);
+    });
+
+    // Delete row
+    function deleteRow(button) {
+      button.closest('tr').remove();
+    }
+
+    // Save timetable function
+    saveButton.addEventListener('click', () => {
+      const rowsData = Array.from(timetableBody.rows).map(row => {
+        return {
+          day: row.cells[0].textContent.trim(),
+          time: row.cells[1].textContent.trim(),
+          subject: row.cells[2].textContent.trim(),
+          class: row.cells[3].textContent.trim()
+        };
+      });
+      console.log("Saved Timetable Data: ", rowsData);
+      alert("Timetable saved successfully!");
+    });
+  </script>
 
 </body>
 
