@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
       row.innerHTML = `
         <td>${fileName}</td>
         <td>${semester}</td>
-        <td>${subject}</td>
         <td>${division}</td>
+        <td>${subject}</td>
         <td>${description}</td>
         
       `;

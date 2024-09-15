@@ -4,307 +4,232 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teacher Panel</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <title>Teacher's Panel</title>
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-    }
-
-    .main-content {
-      margin-left: 16rem;
-      padding: 1rem;
-      margin-top: 4rem;
-    }
-  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 </head>
 
-<body class="main-content">
-  <header
-    class="flex justify-between items-center py-4 pr-4 shadow-md border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
-    <div class="flex-1 flex justify-center items-center">
-      <!-- Admin Panel text and icon -->
-      <div class="flex items-center space-x-2">
-        <i class="fas fa-chalkboard-teacher text-xl"></i> <!-- Admin icon -->
-        <span class="text-2xl font-bold underline">Teacher's Panel</span>
-      </div>
-    </div>
-    <div>
-      <!-- Profile icon -->
-      <img src="https://readymadeui.com/profile_2.webp" class="w-10 h-10 rounded-full" />
-    </div>
-  </header>
-
+<body class="bg-gray-100">
   <!-- Sidebar -->
-  <nav class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10">
-    <!-- Logo -->
-    <div class="flex items-center justify-center mb-6">
-      <img src="../SCMS-logo.png" alt="Logo" class="w-32 h-auto" />
-    </div>
+  <div class="flex h-screen overflow-hidden">
+    <!-- Sidebar toggle button -->
+    <button id="toggleSidebar"
+      class="lg:hidden fixed top-4 left-4 z-50 p-2 text-white bg-blue-500 rounded-md focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
 
-    <!-- Dashboard Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group">
-        <a href="index.html" class="flex cursor-pointer">
-          <i class="fas fa-home w-5 h-5 mr-2"></i>
-          <h6 class="text-sm font-bold px-4 flex-1 hover:text-black">Dashboard</h6>
-        </a>
+    <!-- Sidebar Content -->
+    <aside id="sidebar"
+      class="fixed lg:relative bg-white w-64 h-full transition-transform transform -translate-x-full lg:translate-x-0 z-40 shadow-lg overflow-y-auto">
+      <div class="flex flex-col h-full">
+        <div class="flex items-center justify-center py-5">
+          <img src="../SCMS-logo.png" alt="Logo" class="w-40 h-auto" />
+        </div>
+
+        <nav class="flex-1 px-4 py-6 space-y-1">
+          <a href="./index.html" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md"><i
+              class="fas fa-home mr-3"></i>Dashboard</a>
+
+          <!-- Documents Section -->
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-chalkboard-teacher mr-3"></i>Documents
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./time-table.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-user-plus w-4 h-4 mr-3"></i>
+                <span>Time Table</span>
+              </a>
+              <a href="./material_upload.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-folder-open w-4 h-4 mr-3"></i>
+                <span>Materials</span></a>
+            </div>
+          </details>
+
+          <!-- Students Section -->
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-user-graduate mr-3"></i>Students
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./take_attendance.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-check-square w-4 h-4 mr-3"></i>
+                <span>Take Attendance</span>
+              </a>
+              <a href="./see_attendance.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-list-ol w-4 h-4 mr-3"></i>
+                <span>See Attendance</span></a>
+              <a href="./students.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-users w-4 h-4 mr-3"></i>
+                <span>All Students</span></a>
+            </div>
+          </details>
+
+          <!-- Assignment Section -->
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-tasks-alt mr-3"></i>Assignments
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./add_assignment.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-plus-circle w-4 h-4 mr-3"></i>
+                <span>Add Assignment</span>
+              </a>
+              <a href="./assignments.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-tasks w-4 h-4 mr-3"></i>
+                <span>Status</span>
+              </a>
+            </div>
+          </details>
+
+          <!-- Quiz Section -->
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-question-circle mr-3"></i>Quiz
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./add_assignment.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-plus-square w-4 h-4 mr-3"></i>
+                <span>Add Quiz</span>
+              </a>
+              <a href="./assignments.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-list w-4 h-4 mr-3"></i>
+                <span>Quiz List</span>
+              </a>
+            </div>
+          </details>
+
+          <a href="./add_notice.html" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md">
+            <i class="fas fa-bullhorn mr-3"></i>Notices
+          </a>
+
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-cogs mr-3"></i>Actions
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./profile.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-user w-4 h-4 mr-3"></i>
+                <span>Profile</span>
+              </a>
+              <a href="./logout.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-sign-out-alt w-4 h-4 mr-3"></i>
+                <span>Logout</span></a>
+            </div>
+          </details>
+
+          <a href="../index.html" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md">
+            <i class="fa-solid fa-circle-left mr-3"></i>
+            Back To Home
+          </a>
+        </nav>
       </div>
+    </aside>
+
+    <!-- Main content -->
+    <div class="flex-1 flex flex-col overflow-y-auto h-screen">
+      <!-- Navbar -->
+      <header class="flex items-center justify-between p-4 bg-white shadow-md sticky top-0">
+        <div class="flex-1 text-center">
+          <span class="text-2xl font-bold underline">Teacher's Panel</span>
+        </div>
+        <div class="flex items-center">
+          <img src="https://readymadeui.com/profile_2.webp" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <main class="p-4 space-y-8">
+        <h1 class="text-2xl font-semibold mb-6 text-center lg:text-left">Take Attendance</h1>
+
+        <!-- Dropdowns for Semester and Division -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 max-w-2xl mx-auto">
+          <div>
+            <label for="semester" class="block text-sm font-medium text-gray-700">Select Semester:</label>
+            <select id="semester"
+              class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-600">
+              <option value="">-- Select Semester --</option>
+              <option value="Semester 1">Semester 1</option>
+              <option value="Semester 2">Semester 2</option>
+              <!-- Add more options as needed -->
+            </select>
+          </div>
+          <div>
+            <label for="division" class="block text-sm font-medium text-gray-700">Select Division:</label>
+            <select id="division"
+              class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-600">
+              <option value="">-- Select Division --</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <!-- Add more options as needed -->
+            </select>
+          </div>
+        </div>
+
+        <!-- Attendance Table -->
+        <div class="overflow-x-auto max-w-full mx-auto">
+          <table class="min-w-full divide-y divide-gray-200 shadow-md rounded-lg">
+
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Student
+                  ID</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action
+                </th>
+              </tr>
+            </thead>
+
+            <tbody class="bg-white divide-y divide-gray-200">
+
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap">S001</td>
+                <td class="px-6 py-4 whitespace-nowrap">John Doe</td>
+                <td id="attendance-status-S001" class="px-6 py-4 whitespace-nowrap">Absent</td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <button onclick="markAttendance('S001', 'Present')"
+                    class="bg-blue-500 text-white px-4 py-2 rounded flex items-center justify-center">
+                    <i class="fas fa-check-circle mr-2"></i> Mark Present
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap">S002</td>
+                <td class="px-6 py-4 whitespace-nowrap">Jane Smith</td>
+                <td id="attendance-status-S002" class="px-6 py-4 whitespace-nowrap">Absent</td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <button onclick="markAttendance('S002', 'Present')"
+                    class="bg-blue-500 text-white px-4 py-2 rounded flex items-center justify-center">
+                    <i class="fas fa-check-circle mr-2"></i> Mark Present
+                  </button>
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+        </div>
+
+      </main>
+
     </div>
-
-    <!-- Documents Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-file-alt w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Documents</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="time-table.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-calendar-alt w-4 h-4 mr-2"></i>
-            <span>Time Table</span>
-          </a>
-        </li>
-        <li>
-          <a href="material_upload.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-folder-open w-4 h-4 mr-2"></i>
-            <span>Materials</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Students Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-user-graduate w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Students</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="take_attendance.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-check-square w-4 h-4 mr-2"></i>
-            <span>Take Attendance</span>
-          </a>
-        </li>
-        <li>
-          <a href="see_attendance.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-list-ol w-4 h-4 mr-2"></i>
-            <span>See Attendance</span>
-          </a>
-        </li>
-        <li>
-          <a href="students.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-users w-4 h-4 mr-2"></i>
-            <span>All Students</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Assignment Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-tasks w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Assignments</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="add_assignment.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-plus-circle w-4 h-4 mr-2"></i>
-            <span>Add Assignment</span>
-          </a>
-        </li>
-        <li>
-          <a href="assignments.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-tasks w-4 h-4 mr-2"></i>
-            <span>Status</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Quiz Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-question-circle w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Quiz</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="./quizze/add_quiz.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-plus-square w-4 h-4 mr-2"></i>
-            <span>Add Quiz</span>
-          </a>
-        </li>
-        <li>
-          <a href="./quizze/quizzes.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-list w-4 h-4 mr-2"></i>
-            <span>Quizzes List</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Notices Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-bullhorn w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Notices</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="add_notice.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-plus-circle w-4 h-4 mr-2"></i>
-            <span>Add Notice</span>
-          </a>
-        </li>
-         
-      </ul>
-    </div>
-
-    <!-- Actions Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-cogs w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Actions</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="profile.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-user w-4 h-4 mr-2"></i>
-            <span>Profile</span>
-          </a>
-        </li>
-        <li>
-          <a href="settings.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-cog w-4 h-4 mr-2"></i>
-            <span>Settings</span>
-          </a>
-        </li>
-        <li>
-          <a href="logout.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-sign-out-alt w-4 h-4 mr-2"></i>
-            <span>Logout</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="mt-6"></div>
-      <div class="flex cursor-pointer group">
-        <a href="../index.html" class="flex cursor-pointer">
-          <i class="fa-solid fa-house w-5 h-5 mr-2"></i>
-          <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Back to Home</h6>
-        </a>
-      </div>
-    </div>
-  </nav>
-
-<!-- Main Content -->
-<main class="mt-6">
-  <h1 class="text-2xl font-semibold mb-4">Take Attendance</h1>
-
-  <div class="mx-auto">
-    <!-- Dropdowns for Semester and Division -->
-    <div class="flex gap-4 mb-6">
-      <div>
-        <label for="semester" class="block text-sm font-medium text-gray-700">Select Semester:</label>
-        <select id="semester"
-          class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-600">
-          <option value="">-- Select Semester --</option>
-          <option value="Semester 1">Semester 1</option>
-          <option value="Semester 2">Semester 2</option>
-          <!-- Add more options as needed -->
-        </select>
-      </div>
-      <div>
-        <label for="division" class="block text-sm font-medium text-gray-700">Select Division:</label>
-        <select id="division"
-          class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-600">
-          <option value="">-- Select Division --</option>
-          <option value="A">A</option>
-          <option value="B">B</option>
-          <!-- Add more options as needed -->
-        </select>
-      </div>
-    </div>
-
-    <!-- Attendance Table -->
-    <table class="min-w-full divide-y divide-gray-200 shadow-md rounded-lg overflow-hidden">
-      <thead class="bg-gray-50">
-        <tr>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Student ID</th>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
-        </tr>
-      </thead>
-      <tbody class="bg-white divide-y divide-gray-200">
-        <!-- Dummy Data -->
-        <tr>
-          <td class="px-6 py-4 whitespace-nowrap">S001</td>
-          <td class="px-6 py-4 whitespace-nowrap">John Doe</td>
-          <td id="attendance-status-S001" class="px-6 py-4 whitespace-nowrap">Absent</td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <button onclick="markAttendance('S001', 'Present')" class="bg-blue-500 text-white px-4 py-2 rounded flex items-center justify-center">
-              <i class="fas fa-check-circle mr-2"></i> Mark Present
-            </button>
-          </td>
-        </tr>
-        <!-- Repeat similar structure for other students -->
-        <tr>
-          <td class="px-6 py-4 whitespace-nowrap">S002</td>
-          <td class="px-6 py-4 whitespace-nowrap">Jane Smith</td>
-          <td id="attendance-status-S002" class="px-6 py-4 whitespace-nowrap">Absent</td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <button onclick="markAttendance('S002', 'Present')" class="bg-blue-500 text-white px-4 py-2 rounded flex items-center justify-center">
-              <i class="fas fa-check-circle mr-2"></i> Mark Present
-            </button>
-          </td>
-        </tr>
-        <!-- Additional student rows follow the same pattern -->
-      </tbody>
-    </table>
   </div>
-</main>
-
-
+  <script src="./script.js"></script>
   <script>
-    document.querySelectorAll('.group').forEach(group => {
-      group.addEventListener('click', () => {
-        const subMenu = group.nextElementSibling;
-        subMenu.classList.toggle('hidden');
-      });
-    });
-
     function markAttendance(studentId, status) {
       document.getElementById(`attendance-status-${studentId}`).textContent = status;
     }
   </script>
+
 </body>
 
 </html>

@@ -2,26 +2,13 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="upload.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <title>Material Upload</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-    }
-
-    .main-content {
-      margin-left: 16rem;
-      padding: 1rem;
-      margin-top: 5rem;
-    }
-
     #uploadModal {
       display: none;
     }
@@ -47,324 +34,256 @@
       background-color: #f4f4f4;
     }
   </style>
-
 </head>
 
-<body class="main-content">
-  <header
-    class="flex justify-between items-center py-4 pr-4 shadow-md border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
-    <div class="flex-1 flex justify-center items-center">
-      <!-- Admin Panel text and icon -->
-      <div class="flex items-center space-x-2">
-        <i class="fas fa-chalkboard-teacher text-xl"></i> <!-- Admin icon -->
-        <span class="text-2xl font-bold underline">Teacher's Panel</span>
-      </div>
-    </div>
-    <div>
-      <!-- Profile icon -->
-      <img src="https://readymadeui.com/profile_2.webp" class="w-10 h-10 rounded-full" />
-    </div>
-  </header>
-
+<body class="bg-gray-100">
   <!-- Sidebar -->
-  <nav class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10">
-    <!-- Logo -->
-    <div class="flex items-center justify-center mb-6">
-      <img src="../SCMS-logo.png" alt="Logo" class="w-32 h-auto" />
-    </div>
-
-    <!-- Dashboard Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group">
-        <a href="index.html" class="flex cursor-pointer">
-          <i class="fas fa-home w-5 h-5 mr-2"></i>
-          <h6 class="text-sm font-bold px-4 flex-1 hover:text-black">Dashboard</h6>
-        </a>
-      </div>
-    </div>
-
-    <!-- Documents Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-file-alt w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Documents</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="time-table.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-calendar-alt w-4 h-4 mr-2"></i>
-            <span>Time Table</span>
-          </a>
-        </li>
-        <li>
-          <a href="material_upload.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-folder-open w-4 h-4 mr-2"></i>
-            <span>Materials</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Students Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-user-graduate w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Students</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="take_attendance.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-check-square w-4 h-4 mr-2"></i>
-            <span>Take Attendance</span>
-          </a>
-        </li>
-        <li>
-          <a href="see_attendance.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-list-ol w-4 h-4 mr-2"></i>
-            <span>See Attendance</span>
-          </a>
-        </li>
-        <li>
-          <a href="students.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-users w-4 h-4 mr-2"></i>
-            <span>All Students</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Assignment Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-tasks w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Assignments</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="add_assignment.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-plus-circle w-4 h-4 mr-2"></i>
-            <span>Add Assignment</span>
-          </a>
-        </li>
-        <li>
-          <a href="assignments.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-tasks w-4 h-4 mr-2"></i>
-            <span>Status</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Quiz Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-question-circle w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Quiz</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="./quizze/add_quiz.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-plus-square w-4 h-4 mr-2"></i>
-            <span>Add Quiz</span>
-          </a>
-        </li>
-        <li>
-          <a href="./quizze/quizzes.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-list w-4 h-4 mr-2"></i>
-            <span>Quizzes List</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Notices Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-bullhorn w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Notices</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="add_notice.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-plus-circle w-4 h-4 mr-2"></i>
-            <span>Add Notice</span>
-          </a>
-        </li>
-         
-      </ul>
-    </div>
-
-    <!-- Actions Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-cogs w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Actions</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="profile.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-user w-4 h-4 mr-2"></i>
-            <span>Profile</span>
-          </a>
-        </li>
-        <li>
-          <a href="settings.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-cog w-4 h-4 mr-2"></i>
-            <span>Settings</span>
-          </a>
-        </li>
-        <li>
-          <a href="logout.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-sign-out-alt w-4 h-4 mr-2"></i>
-            <span>Logout</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="mt-6"></div>
-      <div class="flex cursor-pointer group">
-        <a href="../index.html" class="flex cursor-pointer">
-          <i class="fa-solid fa-house w-5 h-5 mr-2"></i>
-          <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Back to Home</h6>
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <main class="">
-    <button id="openUploadModal"
-      class="w-full px-4 py-2 rounded-lg text-white text-sm bg-blue-600 hover:bg-blue-700 flex items-center justify-center">
-      <i class="fas fa-plus mr-2"></i>
-      Add Assignment
+  <div class="flex h-screen overflow-hidden">
+    <!-- Sidebar toggle button -->
+    <button id="toggleSidebar"
+      class="lg:hidden fixed top-4 left-4 z-50 p-2 text-white bg-blue-500 rounded-md focus:outline-none">
+      <i class="fas fa-bars"></i>
     </button>
 
-    <div id="uploadModal"
-      class="fixed inset-0 p-4 flex justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto">
-      <div class="w-full max-w-lg bg-white shadow-lg rounded-lg p-6 relative">
-        <div class="flex items-center pb-3 border-b border-gray-200">
-          <div class="flex-1">
-            <h3 class="text-gray-800 text-xl font-bold">Upload Assignment</h3>
-            <p class="text-gray-600 text-xs mt-1">Upload file to Assignment</p>
-          </div>
-          <i class="fas fa-times w-3 ml-2 cursor-pointer text-gray-400 hover:text-red-500" id="closeModal"></i>
+    <!-- Sidebar Content -->
+    <aside id="sidebar"
+      class="fixed lg:relative bg-white w-64 h-full transition-transform transform -translate-x-full lg:translate-x-0 z-40 shadow-lg overflow-y-auto">
+      <div class="flex flex-col h-full">
+        <div class="flex items-center justify-center py-5">
+          <img src="../SCMS-logo.png" alt="Logo" class="w-40 h-auto" />
         </div>
 
-        <form id="uploadForm" class="flex flex-col">
-          <!-- Dropdowns for selection -->
-          <label for="semester" class="text-gray-600 text-sm font-bold mb-2">Semester</label>
-          <select id="semester" name="semester" class="mb-4 border-gray-300 rounded-lg">
-            <option value="">Select Semester</option>
-            <option value="sem1">Semester 1</option>
-            <option value="sem2">Semester 2</option>
-            <!-- Add more options as needed -->
-          </select>
+        <nav class="flex-1 px-4 py-6 space-y-1">
+          <a href="./index.html" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md"><i
+              class="fas fa-home mr-3"></i>Dashboard</a>
 
-          <label for="subject" class="text-gray-600 text-sm font-bold mb-2">Subject</label>
-          <select id="subject" name="subject" class="mb-4 border-gray-300 rounded-lg">
-            <option value="">Select Subject</option>
-            <option value="subject1">Subject 1</option>
-            <option value="subject2">Subject 2</option>
-            <!-- Add more options as needed -->
-          </select>
-
-          <label for="division" class="text-gray-600 text-sm font-bold mb-2">Division</label>
-          <select id="division" name="division" class="mb-4 border-gray-300 rounded-lg">
-            <option value="">Select Division</option>
-            <option value="div1">Division 1</option>
-            <option value="div2">Division 2</option>
-            <!-- Add more options as needed -->
-          </select>
-
-          <!-- Description -->
-          <label for="description" class="text-gray-600 text-sm font-bold mb-2">Description</label>
-          <input type="text" id="description" name="description" class="mb-4 border-gray-300 rounded-lg p-2"
-            placeholder="Enter a description" />
-
-          <!-- File upload area -->
-          <div class="rounded-lg border-2 border-gray-200 border-dashed mt-6">
-            <div class="p-4 min-h-[180px] flex flex-col items-center justify-center text-center cursor-pointer"
-              id="fileDropArea">
-              <i class="fas fa-upload fa-3x mb-4 text-gray-600"></i>
-              <h4 class="text-sm text-gray-600">Drag & Drop or <label for="chooseFile"
-                  class="text-blue-600 cursor-pointer">Choose file</label> to upload</h4>
-              <input id="chooseFile" type="file" name="file" multiple class="hidden" />
+          <!-- Documents Section -->
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-chalkboard-teacher mr-3"></i>Documents
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./time-table.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-user-plus w-4 h-4 mr-3"></i>
+                <span>Time Table</span>
+              </a>
+              <a href="./doc.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-folder-open w-4 h-4 mr-3"></i>
+                <span>Materials</span></a>
             </div>
-          </div>
+          </details>
 
-          <!-- Progress container -->
-          <div class="flex-col bg-gray-50 p-4 rounded-lg mt-4 hidden" id="progressContainer">
-            <div class="flex">
-              <p class="text-xs text-gray-600 flex-1" id="fileName"></p>
-              <i id="cancelUpload" class="fas fa-times-circle w-5 cursor-pointer text-gray-600 hover:text-red-600"></i>
+          <!-- Students Section -->
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-user-graduate mr-3"></i>Students
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./take_attendance.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-check-square w-4 h-4 mr-3"></i>
+                <span>Take Attendance</span>
+              </a>
+              <a href="./see_attendance.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-list-ol w-4 h-4 mr-3"></i>
+                <span>See Attendance</span></a>
+              <a href="./students.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-users w-4 h-4 mr-3"></i>
+                <span>All Students</span></a>
             </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
-              <div id="progressBar" class="bg-blue-600 h-2.5 rounded-full w-0"></div>
-            </div>
-            <p class="text-xs text-gray-600 mt-1" id="progressText">0% done</p>
-          </div>
+          </details>
 
-          <div class="flex justify-end mt-6">
-            <button type="button" id="cancelButton"
-              class="px-4 py-2 mr-2 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400">
-              <i class="fas fa-times mr-2"></i>Cancel
-            </button>
-            <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-              <i class="fas fa-check mr-2"></i>Import
-            </button>
-          </div>
-        </form>
+          <!-- Assignment Section -->
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-tasks-alt mr-3"></i>Assignments
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./add_assignment.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-plus-circle w-4 h-4 mr-3"></i>
+                <span>Add Assignment</span>
+              </a>
+              <a href="./assignments.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-tasks w-4 h-4 mr-3"></i>
+                <span>Status</span>
+              </a>
+            </div>
+          </details>
+
+          <!-- Quiz Section -->
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-question-circle mr-3"></i>Quiz
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./add_assignment.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-plus-square w-4 h-4 mr-3"></i>
+                <span>Add Quiz</span>
+              </a>
+              <a href="./assignments.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-list w-4 h-4 mr-3"></i>
+                <span>Quiz List</span>
+              </a>
+            </div>
+          </details>
+
+          <a href="./add_notice.html" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md">
+            <i class="fas fa-bullhorn mr-3"></i>Notices
+          </a>
+
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-cogs mr-3"></i>Actions
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./profile.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-user w-4 h-4 mr-3"></i>
+                <span>Profile</span>
+              </a>
+              <a href="./logout.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-sign-out-alt w-4 h-4 mr-3"></i>
+                <span>Logout</span></a>
+            </div>
+          </details>
+
+          <a href="../index.html" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md">
+            <i class="fa-solid fa-circle-left mr-3"></i>
+            Back To Home
+          </a>
+        </nav>
       </div>
-    </div>
+    </aside>
 
-    <!-- Table for displaying data -->
-    <div id="dataTableContainer" class="mt-8">
-      <h3 class="text-gray-800 text-xl font-bold">Uploaded Assignment</h3>
-      <table id="dataTable" class="mt-4">
-        <thead>
-          <tr>
-            <th>File Name</th>
-            <th>Division</th>
-            <th>Semester</th>
-            <th>Subject</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Data rows will be inserted here -->
-        </tbody>
-      </table>
-    </div>
-  </main>
+    <!-- Main content -->
+    <div class="flex-1 flex flex-col overflow-y-auto h-screen">
+      <!-- Navbar -->
+      <header class="flex items-center justify-between p-4 bg-white shadow-md sticky top-0">
+        <div class="flex-1 text-center">
+          <span class="text-2xl font-bold underline">Teacher's Panel</span>
+        </div>
+        <div class="flex items-center">
+          <img src="https://readymadeui.com/profile_2.webp" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+        </div>
+      </header>
 
-  <script>
-    document.querySelectorAll('.group').forEach(group => {
-      group.addEventListener('click', function () {
-        const expanded = this.getAttribute('aria-expanded') === 'true' || false;
-        this.setAttribute('aria-expanded', !expanded);
-        this.nextElementSibling.classList.toggle('hidden');
-      });
-    });
-  </script>
+      <main class="p-4 space-y-8">
+        <!-- Upload Material Button -->
+        <button id="openUploadModal"
+          class="w-full px-4 py-2 rounded-lg text-white text-sm bg-blue-600 hover:bg-blue-700 flex items-center justify-center">
+          <i class="fas fa-plus mr-2"></i>
+          Add Assignment
+        </button>
+
+        <!-- Upload Modal -->
+        <div id="uploadModal"
+          class="fixed inset-0 p-4 flex justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto hidden">
+          <div class="w-full max-w-lg bg-white shadow-lg rounded-lg p-6 relative">
+            <div class="flex items-center pb-3 border-b border-gray-200">
+              <div class="flex-1">
+                <h3 class="text-gray-800 text-xl font-bold">Upload Assignment</h3>
+                <p class="text-gray-600 text-xs mt-1">Upload file to Assignment</p>
+              </div>
+              <i class="fas fa-times cursor-pointer ml-2 text-gray-400 hover:text-red-500" id="closeModal"></i>
+            </div>
+
+            <form id="uploadForm" class="flex flex-col">
+              <!-- Dropdowns for selection -->
+              <label for="semester" class="text-gray-600 text-sm font-bold mb-2">Semester</label>
+              <select id="semester" name="semester" class="mb-4 border-gray-300 rounded-lg">
+                <option value="">Select Semester</option>
+                <option value="sem1">Semester 1</option>
+                <option value="sem2">Semester 2</option>
+                <!-- Add more options as needed -->
+              </select>
+
+              <label for="subject" class="text-gray-600 text-sm font-bold mb-2">Subject</label>
+              <select id="subject" name="subject" class="mb-4 border-gray-300 rounded-lg">
+                <option value="">Select Subject</option>
+                <option value="subject1">Subject 1</option>
+                <option value="subject2">Subject 2</option>
+                <!-- Add more options as needed -->
+              </select>
+
+              <label for="division" class="text-gray-600 text-sm font-bold mb-2">Division</label>
+              <select id="division" name="division" class="mb-4 border-gray-300 rounded-lg">
+                <option value="">Select Division</option>
+                <option value="div1">Division 1</option>
+                <option value="div2">Division 2</option>
+                <!-- Add more options as needed -->
+              </select>
+
+              <label for="description" class="text-gray-600 text-sm font-bold mb-2">Description</label>
+              <input type="text" id="description" name="description" class="mb-4 border-gray-300 rounded-lg p-2"
+                placeholder="Enter a description" />
+
+              <!-- File upload area -->
+              <div class="rounded-lg border-2 border-gray-200 border-dashed mt-6">
+                <div class="p-4 min-h-[180px] flex flex-col items-center justify-center text-center cursor-pointer"
+                  id="fileDropArea">
+                  <i class="fas fa-cloud-upload-alt w-10 mb-4 text-gray-600"></i>
+                  <h4 class="text-sm text-gray-600">Drag & Drop or <label for="chooseFile"
+                      class="text-blue-600 cursor-pointer">Choose file</label> to upload</h4>
+                  <input id="chooseFile" type="file" name="file" multiple class="hidden" />
+                </div>
+              </div>
+
+              <!-- Progress container -->
+              <div class="flex-col bg-gray-50 p-4 rounded-lg mt-4 hidden" id="progressContainer">
+                <div class="flex">
+                  <p class="text-xs text-gray-600 flex-1" id="fileName"></p>
+                  <i id="cancelUpload" class="fas fa-times cursor-pointer text-gray-600 hover:text-red-600"></i>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                  <div id="progressBar" class="bg-blue-600 h-2.5 rounded-full w-0"></div>
+                </div>
+                <p class="text-xs text-gray-600 mt-1" id="progressText">0% done</p>
+              </div>
+
+              <!-- Action buttons -->
+              <div class="flex justify-end mt-6">
+                <button type="button" id="cancelButton"
+                  class="px-4 py-2 mr-2 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400"><i
+                    class="fas fa-times mr-2"></i>Cancel</button>
+                <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"><i
+                    class="fas fa-file-import mr-2"></i>Import</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+        <!-- Table for displaying data -->
+        <div id="dataTableContainer" class="mt-8">
+          <h3 class="text-gray-800 text-xl font-bold mb-4">Uploaded Assignment</h3>
+          <div class="overflow-x-auto">
+            <table id="dataTable" class="w-full min-w-full border border-gray-300 text-sm text-gray-600">
+              <thead class="bg-gray-100">
+                <tr>
+                  <th class="px-4 py-2 border-b">File Name</th>
+                  <th class="px-4 py-2 border-b">Semester</th>
+                  <th class="px-4 py-2 border-b">Division</th>
+                  <th class="px-4 py-2 border-b">Subject</th>
+                  <th class="px-4 py-2 border-b">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Data rows will be inserted here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </main>
+
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+  <script src="./upload.js"></script>
 </body>
 
 </html>
