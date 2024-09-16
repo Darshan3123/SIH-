@@ -24,7 +24,7 @@
       class="fixed lg:relative bg-white w-64 h-full transition-transform transform -translate-x-full lg:translate-x-0 z-40 shadow-lg overflow-y-auto">
       <div class="flex flex-col h-full">
         <div class="flex items-center justify-center py-5">
-          <img src="../SCMS-logo.png" alt="Logo" class="w-32 h-auto" />
+          <img src="../SCMS-logo.png" alt="Logo" class="w-40 h-auto" />
         </div>
 
         <nav class="flex-1 px-4 py-6 space-y-1">
@@ -39,9 +39,12 @@
             </summary>
             <div class="ml-5 mt-1 space-y-1">
               <a href="./time-table.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
-                <i class="fas fa-user-plus w-4 h-4 mr-3"></i>Time Table</a>
+                <i class="fas fa-user-plus w-4 h-4 mr-3"></i>
+                <span>Time Table</span>
+              </a>
               <a href="./material_upload.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
-                <i class="fas fa-folder-open w-4 h-4 mr-3"></i>Materials</a>
+                <i class="fas fa-folder-open w-4 h-4 mr-3"></i>
+                <span>Materials</span></a>
             </div>
           </details>
 
@@ -53,11 +56,15 @@
             </summary>
             <div class="ml-5 mt-1 space-y-1">
               <a href="./take_attendance.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
-                <i class="fas fa-check-square w-4 h-4 mr-3"></i>Take Attendance</a>
+                <i class="fas fa-check-square w-4 h-4 mr-3"></i>
+                <span>Take Attendance</span>
+              </a>
               <a href="./see_attendance.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
-                <i class="fas fa-list-ol w-4 h-4 mr-3"></i>See Attendance</a>
+                <i class="fas fa-list-ol w-4 h-4 mr-3"></i>
+                <span>See Attendance</span></a>
               <a href="./students.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
-                <i class="fas fa-users w-4 h-4 mr-3"></i>All Students</a>
+                <i class="fas fa-users w-4 h-4 mr-3"></i>
+                <span>All Students</span></a>
             </div>
           </details>
 
@@ -69,9 +76,13 @@
             </summary>
             <div class="ml-5 mt-1 space-y-1">
               <a href="./add_assignment.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
-                <i class="fas fa-plus-circle w-4 h-4 mr-3"></i>Add Assignment</a>
+                <i class="fas fa-plus-circle w-4 h-4 mr-3"></i>
+                <span>Add Assignment</span>
+              </a>
               <a href="./assignments.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
-                <i class="fas fa-tasks w-4 h-4 mr-3"></i>Status</a>
+                <i class="fas fa-tasks w-4 h-4 mr-3"></i>
+                <span>Status</span>
+              </a>
             </div>
           </details>
 
@@ -82,10 +93,14 @@
               <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
             </summary>
             <div class="ml-5 mt-1 space-y-1">
-              <a href="./add_assignment.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
-                <i class="fas fa-plus-square w-4 h-4 mr-3"></i>Add Quiz</a>
-              <a href="./assignments.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
-                <i class="fas fa-list w-4 h-4 mr-3"></i>Quiz List</a>
+              <a href="./quizze/add_quiz.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-plus-square w-4 h-4 mr-3"></i>
+                <span>Add Quiz</span>
+              </a>
+              <a href="./quizze/quiz_list.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-list w-4 h-4 mr-3"></i>
+                <span>Quiz List</span>
+              </a>
             </div>
           </details>
 
@@ -100,14 +115,19 @@
             </summary>
             <div class="ml-5 mt-1 space-y-1">
               <a href="./profile.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
-                <i class="fas fa-user w-4 h-4 mr-3"></i>Profile</a>
+                <i class="fas fa-user w-4 h-4 mr-3"></i>
+                <span>Profile</span>
+              </a>
               <a href="./logout.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
-                <i class="fas fa-sign-out-alt w-4 h-4 mr-3"></i>Logout</a>
+                <i class="fas fa-sign-out-alt w-4 h-4 mr-3"></i>
+                <span>Logout</span></a>
             </div>
           </details>
 
           <a href="../index.html" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md">
-            <i class="fa-solid fa-circle-left mr-3"></i>Back To Home</a>
+            <i class="fa-solid fa-circle-left mr-3"></i>
+            Back To Home
+          </a>
         </nav>
       </div>
     </aside>
@@ -118,8 +138,14 @@
         <div class="flex-1 text-center">
           <span class="text-2xl font-bold underline">Teacher's Panel</span>
         </div>
-        <div class="flex items-center">
-          <img src="https://readymadeui.com/profile_2.webp" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+        <div class="relative">
+          <button id="profileDropdown" class="flex items-center focus:outline-none">
+            <img src="https://readymadeui.com/profile_2.webp" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+          </button>
+          <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
+            <a href="./profile.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a>
+            <a href="./logout.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</a>
+          </div>
         </div>
       </header>
 

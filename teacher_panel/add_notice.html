@@ -4,295 +4,261 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="upload.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <title>Teacher's Panel</title>
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-    }
-
-    .main-content {
-      margin-left: 16rem;
-      padding: 1rem;
-      margin-top: 5rem;
-    }
-  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 </head>
 
-<body class="main-content">
-  <header
-    class="flex justify-between items-center py-4 pr-4 shadow-md border-gray-200 bg-white fixed top-0 left-0 w-full z-10">
-    <div class="flex-1 flex justify-center items-center">
-      <!-- Admin Panel text and icon -->
-      <div class="flex items-center space-x-2">
-        <i class="fas fa-chalkboard-teacher text-xl"></i> <!-- Admin icon -->
-        <span class="text-2xl font-bold underline">Teacher's Panel</span>
-      </div>
-    </div>
-    <div>
-      <!-- Profile icon -->
-      <img src="https://readymadeui.com/profile_2.webp" class="w-10 h-10 rounded-full" />
-    </div>
-  </header>
-
+<body class="bg-gray-100">
   <!-- Sidebar -->
-  <nav class="bg-[#fcfcfc] fixed top-0 left-0 w-64 h-screen py-6 px-4 font-[sans-serif] overflow-auto z-10">
-    <!-- Logo -->
-    <div class="flex items-center justify-center mb-6">
-      <img src="../SCMS-logo.png" alt="Logo" class="w-32 h-auto" />
-    </div>
+  <div class="flex h-screen overflow-hidden">
+    <!-- Sidebar toggle button -->
+    <button id="toggleSidebar"
+      class="lg:hidden fixed top-4 left-4 z-50 p-2 text-white bg-blue-500 rounded-md focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
 
-    <!-- Dashboard Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group">
-        <a href="index.html" class="flex cursor-pointer">
-          <i class="fas fa-home w-5 h-5 mr-2"></i>
-          <h6 class="text-sm font-bold px-4 flex-1 hover:text-black">Dashboard</h6>
-        </a>
+    <!-- Sidebar Content -->
+    <aside id="sidebar"
+      class="fixed lg:relative bg-white w-64 h-full transition-transform transform -translate-x-full lg:translate-x-0 z-40 shadow-lg overflow-y-auto">
+      <div class="flex flex-col h-full">
+        <div class="flex items-center justify-center py-5">
+          <img src="../SCMS-logo.png" alt="Logo" class="w-40 h-auto" />
+        </div>
+
+        <nav class="flex-1 px-4 py-6 space-y-1">
+          <a href="./index.html" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md"><i
+              class="fas fa-home mr-3"></i>Dashboard</a>
+
+          <!-- Documents Section -->
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-chalkboard-teacher mr-3"></i>Documents
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./time-table.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-user-plus w-4 h-4 mr-3"></i>
+                <span>Time Table</span>
+              </a>
+              <a href="./material_upload.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-folder-open w-4 h-4 mr-3"></i>
+                <span>Materials</span></a>
+            </div>
+          </details>
+
+          <!-- Students Section -->
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-user-graduate mr-3"></i>Students
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./take_attendance.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-check-square w-4 h-4 mr-3"></i>
+                <span>Take Attendance</span>
+              </a>
+              <a href="./see_attendance.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-list-ol w-4 h-4 mr-3"></i>
+                <span>See Attendance</span></a>
+              <a href="./students.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-users w-4 h-4 mr-3"></i>
+                <span>All Students</span></a>
+            </div>
+          </details>
+
+          <!-- Assignment Section -->
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-tasks-alt mr-3"></i>Assignments
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./add_assignment.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-plus-circle w-4 h-4 mr-3"></i>
+                <span>Add Assignment</span>
+              </a>
+              <a href="./assignments.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-tasks w-4 h-4 mr-3"></i>
+                <span>Status</span>
+              </a>
+            </div>
+          </details>
+
+          <!-- Quiz Section -->
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-question-circle mr-3"></i>Quiz
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./quizze/quizzes.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-plus-square w-4 h-4 mr-3"></i>
+                <span>Add Quiz</span>
+              </a>
+              <a href="./quizze/quiz_list.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-list w-4 h-4 mr-3"></i>
+                <span>Quiz List</span>
+              </a>
+            </div>
+          </details>
+
+          <a href="./add_notice.html" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md">
+            <i class="fas fa-bullhorn mr-3"></i>Notices
+          </a>
+
+          <details class="group">
+            <summary class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md cursor-pointer">
+              <i class="fas fa-cogs mr-3"></i>Actions
+              <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
+            </summary>
+            <div class="ml-5 mt-1 space-y-1">
+              <a href="./profile.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-user w-4 h-4 mr-3"></i>
+                <span>Profile</span>
+              </a>
+              <a href="./logout.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                <i class="fas fa-sign-out-alt w-4 h-4 mr-3"></i>
+                <span>Logout</span></a>
+            </div>
+          </details>
+
+          <a href="../index.html" class="flex items-center p-2 text-gray-700 hover:bg-blue-100 rounded-md">
+            <i class="fa-solid fa-circle-left mr-3"></i>
+            Back To Home
+          </a>
+        </nav>
       </div>
-    </div>
+    </aside>
 
-    <!-- Documents Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-file-alt w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Documents</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="time-table.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-calendar-alt w-4 h-4 mr-2"></i>
-            <span>Time Table</span>
-          </a>
-        </li>
-        <li>
-          <a href="material_upload.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-folder-open w-4 h-4 mr-2"></i>
-            <span>Materials</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Students Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-user-graduate w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Students</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="take_attendance.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-check-square w-4 h-4 mr-2"></i>
-            <span>Take Attendance</span>
-          </a>
-        </li>
-        <li>
-          <a href="see_attendance.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-list-ol w-4 h-4 mr-2"></i>
-            <span>See Attendance</span>
-          </a>
-        </li>
-        <li>
-          <a href="students.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-users w-4 h-4 mr-2"></i>
-            <span>All Students</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Assignment Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-tasks w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Assignments</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="add_assignment.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-plus-circle w-4 h-4 mr-2"></i>
-            <span>Add Assignment</span>
-          </a>
-        </li>
-        <li>
-          <a href="assignments.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-tasks w-4 h-4 mr-2"></i>
-            <span>Status</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Quiz Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-question-circle w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Quiz</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="./quizze/add_quiz.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-plus-square w-4 h-4 mr-2"></i>
-            <span>Add Quiz</span>
-          </a>
-        </li>
-        <li>
-          <a href="./quizze/quizzes.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-list w-4 h-4 mr-2"></i>
-            <span>Quizzes List</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Notices Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-bullhorn w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Notices</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="add_notice.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-plus-circle w-4 h-4 mr-2"></i>
-            <span>Add Notice</span>
-          </a>
-        </li>
-         
-      </ul>
-    </div>
-
-    <!-- Actions Section -->
-    <div class="mt-6">
-      <div class="flex cursor-pointer group" aria-expanded="false">
-        <i class="fas fa-cogs w-5 h-5 mr-2"></i>
-        <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Actions</h6>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <ul class="space-y-1 mt-2 pl-4 hidden">
-        <li>
-          <a href="profile.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-user w-4 h-4 mr-2"></i>
-            <span>Profile</span>
-          </a>
-        </li>
-        <li>
-          <a href="settings.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-cog w-4 h-4 mr-2"></i>
-            <span>Settings</span>
-          </a>
-        </li>
-        <li>
-          <a href="logout.html"
-            class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
-            <i class="fas fa-sign-out-alt w-4 h-4 mr-2"></i>
-            <span>Logout</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="mt-6"></div>
-      <div class="flex cursor-pointer group">
-        <a href="../index.html" class="flex cursor-pointer">
-          <i class="fa-solid fa-house w-5 h-5 mr-2"></i>
-          <h6 class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Back to Home</h6>
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <main>
-    <div class="">
-
-      <h1 class="text-3xl font-bold mb-6">Events Notices</h1>
-
-      <!-- Add Notice Form -->
-      <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-        <h2 class="text-xl font-semibold mb-4">Add New Notice</h2>
-        <form id="addEventNoticeForm" class="space-y-4">
-          <div>
-            <label for="eventTitle" class="block text-sm font-medium text-gray-700">Title</label>
-            <input type="text" id="eventTitle" name="eventTitle"
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-              placeholder="Event Title">
+    <!-- Main content -->
+    <div class="flex-1 flex flex-col overflow-y-auto h-screen">
+      <!-- Navbar -->
+      <header class="flex items-center justify-between p-4 bg-white shadow-md sticky top-0">
+        <div class="flex-1 text-center">
+          <span class="text-2xl font-bold underline">Teacher's Panel</span>
+        </div>
+        <div class="relative">
+          <button id="profileDropdown" class="flex items-center focus:outline-none">
+            <img src="https://readymadeui.com/profile_2.webp" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+          </button>
+          <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
+            <a href="./profile.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a>
+            <a href="./logout.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</a>
           </div>
-          <div>
-            <label for="eventContent" class="block text-sm font-medium text-gray-700">Content</label>
-            <textarea id="eventContent" name="eventContent"
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-              placeholder="Event Content"></textarea>
-          </div>
-          <div class="text-center">
-            <button type="submit"
-              class="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
-              Add Notice
-            </button>
-          </div>
-        </form>
-      </div>
+        </div>
+      </header>
 
-      <!-- Notices List -->
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <h2 class="text-xl font-semibold mb-4">Existing Notices</h2>
-        <ul id="eventNoticesList" class="space-y-4">
-          <!-- Notice Item -->
-          <li class="flex justify-between items-start p-4 border-b border-gray-200">
+      <!-- Dashboard Content -->
+      <main class="p-4 space-y-8">
+        <!-- Add Notice Form -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold mb-4 text-center md:text-left">
+            Add New Notice
+          </h2>
+          <form id="addNoticeForm" class="space-y-4">
             <div>
-              <h3 class="text-lg font-semibold">Event Title</h3>
-              <p class="text-gray-700">This is a placeholder for the event content.</p>
-              <p class="text-gray-500">Date: September 2024</p>
+              <label for="noticeType" class="block text-sm font-medium text-gray-700">Type of Notice</label>
+              <select id="noticeType" name="noticeType"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                <option value="" disabled selected>Select type</option>
+                <option value="fees">Fees Related</option>
+                <option value="events">Events</option>
+                <option value="exams">Exams</option>
+                <option value="general">General</option>
+              </select>
             </div>
-            <div class="flex space-x-2">
-              <button class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 flex items-center space-x-1">
-                <i class="fas fa-edit"></i>
-                <span>Edit</span>
-              </button>
-              <button class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 flex items-center space-x-1">
-                <i class="fas fa-trash-alt"></i>
-                <span>Delete</span>
-              </button>
-            </div>
-          </li>
-          <!-- More notice items can be added here -->
-        </ul>
-      </div>
 
+            <div>
+              <label for="noticeTitle" class="block text-sm font-medium text-gray-700">Title</label>
+              <input type="text" id="noticeTitle" name="noticeTitle"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="Notice Title">
+            </div>
+
+            <div>
+              <label for="noticeContent" class="block text-sm font-medium text-gray-700">Content</label>
+              <textarea id="noticeContent" name="noticeContent"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="Notice Content"></textarea>
+            </div>
+
+            <div class="text-center md:flex flex justify-center md:justify-start">
+              <button type="submit"
+                class="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 flex items-center justify-center">
+                <i class="fas fa-plus mr-2"></i> Add Notice
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Notices List -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fas fa-list mr-3"></i> Existing Notices
+          </h2>
+          <ul id="noticesList" class="space-y-4">
+            <!-- Notice Item -->
+            <li class="flex flex-wrap justify-between items-start p-4 border-b border-gray-200">
+              <div class="w-full md:w-auto">
+                <h3 class="text-lg font-semibold flex items-center">
+                  Notice Title: Upcoming Fee Deadline</h3>
+                <p class="text-gray-700">Please note that the deadline for fee submission is September 30th, 2024.</p>
+                <p class="text-gray-500">Date: September 5th, 2024</p>
+              </div>
+              <div class="flex space-x-2 mt-4 md:mt-0">
+                <button class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 flex items-center">
+                  <i class="fas fa-edit mr-1"></i> Edit
+                </button>
+                <button class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 flex items-center">
+                  <i class="fas fa-trash-alt mr-1"></i> Delete
+                </button>
+              </div>
+            </li>
+
+            <!-- Notice Item -->
+            <li class="flex flex-wrap justify-between items-start p-4 border-b border-gray-200">
+              <div class="w-full md:w-auto">
+                <h3 class="text-lg font-semibold flex items-center"> Notice Title: Cultural Event Announcement</h3>
+                <p class="text-gray-700">Join us for the annual cultural event on October 15th, 2024.</p>
+                <p class="text-gray-500">Date: September 2nd, 2024</p>
+              </div>
+              <div class="flex space-x-2 mt-4 md:mt-0">
+                <button class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 flex items-center">
+                  <i class="fas fa-edit mr-1"></i> Edit
+                </button>
+                <button class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 flex items-center">
+                  <i class="fas fa-trash-alt mr-1"></i> Delete
+                </button>
+              </div>
+            </li>
+
+            <!-- Notice Item -->
+            <li class="flex flex-wrap justify-between items-start p-4 border-b border-gray-200">
+              <div class="w-full md:w-auto">
+                <h3 class="text-lg font-semibold flex items-center">
+                  Notice Title: General Meeting for Parents</h3>
+                <p class="text-gray-700">A general meeting for all parents will be held on September 20th, 2024.</p>
+                <p class="text-gray-500">Date: August 30th, 2024</p>
+              </div>
+              <div class="flex space-x-2 mt-4 md:mt-0">
+                <button class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 flex items-center">
+                  <i class="fas fa-edit mr-1"></i> Edit
+                </button>
+                <button class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 flex items-center">
+                  <i class="fas fa-trash-alt mr-1"></i> Delete
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </main>
     </div>
-  </main>
+  </div>
+  <script src="./script.js"></script>
 
-  <script>
-    document.querySelectorAll('.group').forEach(group => {
-      group.addEventListener('click', function () {
-        const expanded = this.getAttribute('aria-expanded') === 'true' || false;
-        this.setAttribute('aria-expanded', !expanded);
-        this.nextElementSibling.classList.toggle('hidden');
-      });
-    });
-  </script>
 </body>
 
 </html>

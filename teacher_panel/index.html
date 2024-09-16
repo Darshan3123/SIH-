@@ -94,11 +94,11 @@
               <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
             </summary>
             <div class="ml-5 mt-1 space-y-1">
-              <a href="./add_assignment.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+              <a href="./quizze/add_quiz.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
                 <i class="fas fa-plus-square w-4 h-4 mr-3"></i>
                 <span>Add Quiz</span>
               </a>
-              <a href="./assignments.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+              <a href="./quizze/quiz_list.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
                 <i class="fas fa-list w-4 h-4 mr-3"></i>
                 <span>Quiz List</span>
               </a>
@@ -140,8 +140,14 @@
         <div class="flex-1 text-center">
           <span class="text-2xl font-bold underline">Teacher's Panel</span>
         </div>
-        <div class="flex items-center">
-          <img src="https://readymadeui.com/profile_2.webp" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+        <div class="relative">
+          <button id="profileDropdown" class="flex items-center focus:outline-none">
+            <img src="https://readymadeui.com/profile_2.webp" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+          </button>
+          <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
+            <a href="./profile.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a>
+            <a href="./logout.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</a>
+          </div>
         </div>
       </header>
 

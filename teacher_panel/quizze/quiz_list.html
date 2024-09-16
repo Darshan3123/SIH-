@@ -101,11 +101,11 @@
                             <i class="fas fa-chevron-down ml-auto transition-transform group-open:rotate-180"></i>
                         </summary>
                         <div class="ml-5 mt-1 space-y-1">
-                            <a href="add_quiz.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                            <a href="./add_quiz.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
                                 <i class="fas fa-plus-square w-4 h-4 mr-3"></i>
                                 <span>Add Quiz</span>
                             </a>
-                            <a href="quiz_list.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
+                            <a href="./quiz_list.html" class="block p-2 text-gray-600 hover:bg-blue-50 rounded-md">
                                 <i class="fas fa-list w-4 h-4 mr-3"></i>
                                 <span>Quiz List</span>
                             </a>
@@ -154,65 +154,101 @@
                         class="w-10 h-10 rounded-full object-cover">
                 </div>
             </header>
-
             <!-- Dashboard Content -->
             <main class="p-4 space-y-8">
-                <div class="bg-gray-200 p-4 rounded-md shadow-md">
-                    <div class="flex justify-between items-center mb-4">
-                        <h2 class="text-xl font-bold">Add Quiz</h2>
-                    </div>
-                    <form>
-                        <div class="mb-4">
-                            <label for="course" class="block text-gray-700 text-sm font-bold mb-2">Select Course</label>
-                            <select id="course"
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                <option value="">Select Course</option>
-                                <option value="Course 1">Course 1</option>
-                                <option value="Course 2">Course 2</option>
-                            </select>
-                        </div>
-                        <div class="mb-4">
-                            <label for="time" class="block text-gray-700 text-sm font-bold mb-2">Quiz Time Limit</label>
-                            <select id="time"
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                <option value="">Select time</option>
-                                <option value="5 minutes">5 minutes</option>
-                                <option value="10 minutes">10 minutes</option>
-                                <option value="15 minutes">15 minutes</option>
-                            </select>
-                        </div>
-                        <div class="mb-4">
-                            <label for="questions" class="block text-gray-700 text-sm font-bold mb-2">No. of
-                                Question/s</label>
-                            <input type="number" id="questions"
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                placeholder="Input number of questions in exam">
-                        </div>
-                        <div class="mb-4">
-                            <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Exam Title</label>
-                            <input type="text" id="title"
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                placeholder="Input Exam Title">
-                        </div>
-                        <div class="mb-4">
-                            <label for="subject" class="block text-gray-700 text-sm font-bold mb-2">Subject</label>
-                            <textarea id="subject"
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                placeholder="Input Subject"></textarea>
-                        </div>
-                        <div class="flex justify-end">
-                            <button type="button"
-                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-2"
-                                onclick="window.location.href='quiz_list.html'">
-                                <i class="fas fa-check mr-2"></i> Add Now
-                            </button>
-                        </div>
-                    </form>
+                <h1 class="text-2xl font-bold mb-4">QUIZ LIST</h1>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white">
+                        <thead>
+                            <tr>
+                                <th class="px-4 py-2 border">Quiz Title</th>
+                                <th class="px-4 py-2 border">Course</th>
+                                <th class="px-4 py-2 border">Subject</th>
+                                <th class="px-4 py-2 border">Time limit</th>
+                                <th class="px-4 py-2 border">No. of Question</th>
+                                <th class="px-4 py-2 border">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-4 py-2 border">short php quze</td>
+                                <td class="px-4 py-2 border">PHP</td>
+                                <td class="px-4 py-2 border">qwertyuiop[</td>
+                                <td class="px-4 py-2 border">10</td>
+                                <td class="px-4 py-2 border">4</td>
+                                <td class="px-4 py-2 border">
+                                    <button
+                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto"
+                                        onclick="window.location.href='./manequizze.html'">
+                                        <i class="fas fa-cog mr-2"></i>Manage
+                                    </button>
+                                    <button
+                                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-0 sm:ml-2 mt-2 sm:mt-0 w-full sm:w-auto">
+                                        <i class="fas fa-trash-alt mr-2"></i>Delete
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 border">drashan</td>
+                                <td class="px-4 py-2 border">PHP</td>
+                                <td class="px-4 py-2 border">darshan is impoetan</td>
+                                <td class="px-4 py-2 border">10</td>
+                                <td class="px-4 py-2 border">10</td>
+                                <td class="px-4 py-2 border">
+                                    <button
+                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto"
+                                        onclick="window.location.href='./manequizze.html'">
+                                        <i class="fas fa-cog mr-2"></i>Manage
+                                    </button>
+                                    <button
+                                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-0 sm:ml-2 mt-2 sm:mt-0 w-full sm:w-auto">
+                                        <i class="fas fa-trash-alt mr-2"></i>Delete
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 border">UNIT TEST 2</td>
+                                <td class="px-4 py-2 border">PHP</td>
+                                <td class="px-4 py-2 border">csdfsdf</td>
+                                <td class="px-4 py-2 border">10</td>
+                                <td class="px-4 py-2 border">1</td>
+                                <td class="px-4 py-2 border">
+                                    <button
+                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto"
+                                        onclick="window.location.href='./manequizze.html'">
+                                        <i class="fas fa-cog mr-2"></i>Manage
+                                    </button>
+                                    <button
+                                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-0 sm:ml-2 mt-2 sm:mt-0 w-full sm:w-auto">
+                                        <i class="fas fa-trash-alt mr-2"></i>Delete
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 border">UNIT</td>
+                                <td class="px-4 py-2 border">BCA</td>
+                                <td class="px-4 py-2 border">ffkv</td>
+                                <td class="px-4 py-2 border">10</td>
+                                <td class="px-4 py-2 border">1</td>
+                                <td class="px-4 py-2 border">
+                                    <button
+                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto"
+                                        onclick="window.location.href='./manequizze.html'">
+                                        <i class="fas fa-cog mr-2"></i>Manage
+                                    </button>
+                                    <button
+                                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-0 sm:ml-2 mt-2 sm:mt-0 w-full sm:w-auto">
+                                        <i class="fas fa-trash-alt mr-2"></i>Delete
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </main>
         </div>
     </div>
-    <script src="./script.js"></script>
+    <script src="../script.js"></script>
 
 </body>
 
